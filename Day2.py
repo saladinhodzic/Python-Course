@@ -34,3 +34,9 @@ print(6//2)
 bmi=78/180
 
 print(round(bmi,2))
+
+# f-string
+
+score=1
+
+print(f"Your score is {score}")
