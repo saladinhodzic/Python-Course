@@ -15,10 +15,12 @@ if number%2==0:
     print("Number is even")
     age=int(input('Enter your age'))
     
-    if age<=18:
+    if age<=12:
         print('7$')
+    elif age<18:
+        print('10$')
     else:
-        print("10$")    
+        print("12$")    
 
 
 else:
