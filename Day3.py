@@ -13,6 +13,13 @@ number=int(input('Enter number'))
 
 if number%2==0:
     print("Number is even")
+    age=int(input('Enter your age'))
+    
+    if age<=18:
+        print('7$')
+    else:
+        print("10$")    
+
+
 else:
     print("Number is odd")    
-    
