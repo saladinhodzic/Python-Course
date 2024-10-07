@@ -44,13 +44,13 @@ print(f"Your score is {score}")
 # Tip calculator
 
 total_bill=float(input('How much is the the total bill? $'))
-tip_percentage=float(input("How much tip you want to give? 10, 12, 15% "))
+tip_percentage=int(input("How much tip you want to give? 10, 12, 15% "))
 
 bill_tip=total_bill + total_bill/tip_percentage
 
 costumers=int(input('How much people were at the table?'))
 
-final_price=bill_tip/costumers
+final_price=round(bill_tip/costumers,2)
 
 
 print(f"Each person should pay: {final_price}$")
