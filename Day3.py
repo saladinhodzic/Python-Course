@@ -44,18 +44,43 @@ extra_cheese = input("Do you want extra cheese? Y or N: ")
 bill=0
 if size=='S':
     bill+=15
-    if pepperoni == "Y":
-        bill += 2
+    
 elif size == "M":
     bill+=20
-    if pepperoni == "Y":
-        bill += 3
+    
 else:
     bill+=25
-    if pepperoni == "Y":
+    
+
+if pepperoni == "Y":
+    if size=='S':
+        bill+=2
+    else:
         bill += 3
 
 if extra_cheese=='Y':
     bill+=1
 
 print(bill)
+
+# Island Treasure Game
+
+direction=input("You arrive at some place, do you want go left or right?")
+
+if direction != 'right':
+    wait_or_not=input("You see lake and island, do you want to wait for boat or swim accross")
+
+    if wait_or_not == 'wait':
+        house=input("You arrived on island and you see three houses, red, yellow and blue. Which one you choose?")
+
+        if house != 'red' and house != 'blue':
+            print("You win!")
+
+        else:
+            print("You lose.")
+
+    else:
+        print('Game over')
+
+else:
+    print("Game over")
