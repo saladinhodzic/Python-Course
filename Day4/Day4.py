@@ -18,3 +18,11 @@ if random_number_0_to_1<0.5:
     print('Tails')
 else:
     print("Head")
+
+# list
+
+fruits=['pear','apple','banana']
+
+fruits.append('cherry')
+
+print(fruits)
