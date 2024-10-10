@@ -26,3 +26,9 @@ fruits=['pear','apple','banana']
 fruits.append('cherry')
 
 print(fruits)
+
+# friends
+
+friends=["Charlie","Emanuel","Sara",'Me']
+
+print(friends[random.randint(0,3)])
