@@ -31,4 +31,7 @@ print(fruits)
 
 friends=["Charlie","Emanuel","Sara",'Me']
 
-print(friends[random.randint(0,3)])
+# print(friends[random.randint(0,3)])
+
+# 2nd way
+print(random.choice(friends))
