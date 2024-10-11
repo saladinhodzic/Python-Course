@@ -26,7 +26,17 @@ for score in student_scores:
 
 print(number)
 
-# range function
+# range function - first argument is the number which we start from second argument is where we want to stop
+#  third argument is the increment we can put some number for exp 2 and its gonna skip two steps
+
 
 for number in range(1,10):
     print(number)
+
+zbir=0
+
+for number in range(1,101,1):
+    zbir+=number
+
+
+print(zbir)
