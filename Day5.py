@@ -25,3 +25,8 @@ for score in student_scores:
         number=score
 
 print(number)
+
+# range function
+
+for number in range(1,10):
+    print(number)
