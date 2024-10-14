@@ -9,7 +9,7 @@ print(random_word)
 blanks=''
 for letter in range(len(random_word)):
     blanks+="_"
-    print(blanks)
+print(blanks)
 
 game_over=False
 correct_letters=[]
@@ -25,6 +25,6 @@ while not game_over:
             display+=letter
         else:
             display+='_'
-        print(display)
-        if "_" not in display:
+    print(display)
+    if "_" not in display:
             game_over=True
