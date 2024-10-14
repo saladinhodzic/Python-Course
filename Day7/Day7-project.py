@@ -3,16 +3,28 @@ import random
 
 words=['cat','cookie','sticks','paper','scissors','player','women','box']
 
-lives=6
 
+random_word=random.choice(words)
+print(random_word)
+blanks=''
+for letter in range(len(random_word)):
+    blanks+="_"
+    print(blanks)
 
-def starting_game():
-    random_word=random.choice(words)
+game_over=False
+correct_letters=[]
+while not game_over:
+
+    display=""
     user_guess=input("Enter letter lowercase: ")
     for letter in random_word:
         if user_guess == letter:
-            print("You got one")
+            display+=letter
+            correct_letters.append(user_guess)
+        elif letter in correct_letters:
+            display+=letter
         else:
-            print("You messed up")
-
-starting_game()
+            display+='_'
+        print(display)
+        if "_" not in display:
+            game_over=True
