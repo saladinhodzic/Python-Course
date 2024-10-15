@@ -2,7 +2,7 @@
 import random
 
 words=['cat','cookie','sticks','paper','scissors','player','women','box']
-
+lives=6
 
 random_word=random.choice(words)
 print(random_word)
@@ -25,6 +25,8 @@ while not game_over:
             display+=letter
         else:
             display+='_'
+            
     print(display)
-    if "_" not in display:
+    print(lives)
+    if "_" not in display or lives==0:
             game_over=True
