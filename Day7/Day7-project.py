@@ -1,12 +1,19 @@
 # hangman
 import random
+import Day7_words
+import Day7_art
 
-words=['cat','cookie','sticks','paper','scissors','player','women','box']
+logo=Day7_art.logo
+art=Day7_art.stages
+words=Day7_words.word_list
+
 lives=6
-
 random_word=random.choice(words)
-print(random_word)
 blanks=''
+
+print(logo)
+print(random_word)
+
 for letter in range(len(random_word)):
     blanks+="_"
 print(blanks)
