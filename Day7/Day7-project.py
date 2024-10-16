@@ -1,14 +1,11 @@
 # hangman
 import random
-import Day7_words
-import Day7_art
+from Day7_art import stages,logo
+from Day7_words import word_list
 
-logo=Day7_art.logo
-art=Day7_art.stages
-words=Day7_words.word_list
 
 lives=6
-random_word=random.choice(words)
+random_word=random.choice(word_list)
 blanks=''
 game_over=False
 correct_letters=[]
@@ -24,6 +21,7 @@ print(blanks)
 while not game_over:
     display=""
     user_guess=input("Enter letter lowercase: ").lower()
+        
     for letter in random_word:
         if user_guess == letter:
             display+=letter
@@ -38,7 +36,7 @@ while not game_over:
 
     if user_guess not in random_word:
         lives-=1
-        print(art[lives])
+        print(stages[lives])
         if lives==0:
             game_over=True
     
