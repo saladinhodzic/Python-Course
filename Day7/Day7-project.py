@@ -10,20 +10,20 @@ words=Day7_words.word_list
 lives=6
 random_word=random.choice(words)
 blanks=''
+game_over=False
+correct_letters=[]
 
 print(logo)
 print(random_word)
 
 for letter in range(len(random_word)):
     blanks+="_"
+
 print(blanks)
 
-game_over=False
-correct_letters=[]
 while not game_over:
-
     display=""
-    user_guess=input("Enter letter lowercase: ")
+    user_guess=input("Enter letter lowercase: ").lower()
     for letter in random_word:
         if user_guess == letter:
             display+=letter
@@ -38,6 +38,7 @@ while not game_over:
 
     if user_guess not in random_word:
         lives-=1
+        print(art[lives])
         if lives==0:
             game_over=True
     
