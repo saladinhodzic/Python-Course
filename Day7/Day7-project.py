@@ -26,7 +26,15 @@ while not game_over:
         else:
             display+='_'
             
+            
     print(display)
-    print(lives)
-    if "_" not in display or lives==0:
+
+    if user_guess not in random_word:
+        lives-=1
+        if lives==0:
             game_over=True
+    
+    if "_" not in display :
+            game_over=True
+    print(lives)
+    
