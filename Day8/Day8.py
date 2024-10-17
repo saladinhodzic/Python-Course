@@ -8,3 +8,4 @@ def greet_with(name,location):
     print(f"How is it in {location}")
 
 greet_with('saladin','novi pazar')
+greet_with(location="Novi pazar",name="saki")
