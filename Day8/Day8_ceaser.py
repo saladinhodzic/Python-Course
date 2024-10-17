@@ -7,16 +7,22 @@ def encrypt():
         shift = int(input("Type the shift number:\n"))
         encrypt_text=''
         for letter in text:
-            index=alphabet.index(letter)
-            encrypt_text+=alphabet[index-shift]
+            if letter not in alphabet:
+                encrypt_text+=letter
+            else:
+                index=alphabet.index(letter)
+                encrypt_text+=alphabet[index+shift]
         print(encrypt_text)   
 def decrypt():
         text = input("Type your message:\n").lower()
         shift = int(input("Type the shift number:\n"))
         decrypt_text=''
         for letter in text:
-            index=alphabet.index(letter)
-            decrypt_text+=alphabet[index+shift]
+           if letter not in alphabet:
+                decrypt_text+=letter
+           else:
+                index=alphabet.index(letter)
+                decrypt_text+=alphabet[index-shift]
         print(decrypt_text)        
 
 if direction == 'encode':
