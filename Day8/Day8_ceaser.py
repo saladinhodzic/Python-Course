@@ -19,7 +19,7 @@ ceaser(direction,text,shift)
 restart=input('Do you want to go again?')
 
 if restart=='yes':
-        ceaser(direction,text,shift)        
+        ceaser(direction=direction,text=text,shift=shift)        
 
           
 
