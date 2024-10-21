@@ -14,12 +14,18 @@ def ceaser(direction,text,shift):
                         index=alphabet.index(letter)
                         encrypt_text+=alphabet[index+shift]
                 print(encrypt_text)  
-                
 ceaser(direction,text,shift)                  
-restart=input('Do you want to go again?')
 
-if restart=='yes':
-        ceaser(direction=direction,text=text,shift=shift)        
+is_choosing=True
 
+while is_choosing==True:
+              restart=input('Do you want to go again?')
+              if restart!='yes':
+                      is_choosing=False
+              else:
+                      direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+                      text = input("Type your message:\n").lower()
+                      shift = int(input("Type the shift number:\n"))
+                      ceaser(direction,text,shift)
           
 
