@@ -13,3 +13,10 @@ json['something']='something'
 
 for thing in json:
     print(thing)
+    
+# nesting
+
+obj={
+    "list":['da','ne']
+}
+print(obj['list'][1])
