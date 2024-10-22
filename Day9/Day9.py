@@ -5,3 +5,6 @@ json={
 }
 
 print(json['bug'])
+
+# setting new value into the object
+json['something']='something'
