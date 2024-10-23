@@ -1,6 +1,17 @@
 bidders={}
 print("Start bidding")
-first_user_name=input("Enter your name ")
-first_user_bid=int(input("Enter your bidding value "))
-bidders[first_user_name]=first_user_bid
+
+def check_bidders():
+    user_name=input("Enter your name ")
+    user_bid=int(input("Enter your bidding value $ "))
+    bidders[user_name]=user_bid
+
+check_bidders()
+
+other_bidders=input("Are there other bidders? ")
+
+while other_bidders=='yes':
+    check_bidders()
+    other_bidders=input("Are there other bidders? ")
+
 print(bidders)
