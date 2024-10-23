@@ -1,4 +1,6 @@
 bidders={}
+highest_bidder=''
+highest_value=0
 print("Start bidding")
 
 def check_bidders():
@@ -11,7 +13,13 @@ check_bidders()
 other_bidders=input("Are there other bidders? ")
 
 while other_bidders=='yes':
+    print('\n'*100)
     check_bidders()
     other_bidders=input("Are there other bidders? ")
 
-print(bidders)
+for key in bidders:
+    if bidders[key]>highest_value:
+        highest_value=bidders[key]
+        highest_bidder=key
+        
+print("The highest bidder is {} with {} $.".format(highest_bidder,highest_value))
