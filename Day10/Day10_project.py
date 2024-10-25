@@ -17,3 +17,21 @@ operators={
 }
 
 print(operators["*"](4,8))
+
+first_num=int(input('Enter first number: '))
+operator=input("Enter the operator: ")
+second_num=int(input('Enter second number: '))
+
+result=operators[operator](first_num,second_num)
+print(result)
+
+extend_result=input("Do you want to continue working with this result or no?\ntype y or n")
+
+
+
+while extend_result=='y':
+    operator=input("Enter the operator: ")
+    second_num=int(input('Enter second number: '))
+    result=operators[operator](result,second_num)
+    print(result)
+    extend_result=input("Do you want to continue working with this result or no?\ntype y or n ")
