@@ -15,3 +15,5 @@ operators={
     "*":mult,
     "/":div
 }
+
+print(operators["*"](4,8))
