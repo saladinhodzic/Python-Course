@@ -8,3 +8,10 @@ def mult(n1,n2):
     return n1* n2
 def div(n1,n2):
     return n1/ n2
+
+operators={
+    "+":add,
+    "-":sub,
+    "*":mult,
+    "/":div
+}
