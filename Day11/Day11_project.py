@@ -9,15 +9,21 @@ my_score=0
 
 wanna_play=input("Do you want to play Blackjack y or n? ")
 
-def draw_cards(dealer_score,my_score):
+def check_end(my_score,dealer_score):
+    if my_score==21 or dealer_score==21:
+        print("Blackjack")
+
+def draw_first_cards(dealer_score,my_score):
     for card in range(2):
         my_cards.append(random.choice(cards))
         dealer_cards.append(random.choice(cards))
         dealer_score+=dealer_cards[card]
         my_score+=my_cards[card]
-    print(my_cards)
+    print(f"Your cards are {my_cards[0]} and {my_cards[1]}")
     print(my_score)
-    print(dealer_cards[0])
-    print(dealer_score)
+    print(f"Dealers cards are {dealer_cards[0]} _")
+    
+    check_end(my_score=my_score,dealer_score=dealer_score)
+
 if wanna_play == 'y':
-    draw_cards(dealer_score,my_score)
+    draw_first_cards(dealer_score,my_score)
