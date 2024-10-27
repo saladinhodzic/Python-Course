@@ -15,18 +15,33 @@ def draw_again_card(user_or_dealer,my_score,dealer_score):
         my_score+=my_cards[2]
         print(my_cards)
         print(my_score)
+        check_end(my_score,dealer_score)
     else:
         dealer_cards.append(random.choice(cards))
         dealer_score+=dealer_cards[2]
+        print(dealer_cards)
+        print(dealer_score)
+        check_end(my_score,dealer_score)
         
 def check_end(my_score,dealer_score):
     if my_score==21 or dealer_score==21:
-        print("Blackjack")
+        if my_score==21:
+            print("You win Blackjack")
+        else:
+            print("You lost")
+        return
+    elif my_score>21 or dealer_score>21:
+        if my_score>21:
+            print("You lost your score is over 21")
+        else:
+            print("You win dealers score is over 21")
+        return
     else: 
          wanna_draw_another_card=input("Do you wanna draw another card or not? ")
          if wanna_draw_another_card=='y' :
              draw_again_card(user_or_dealer='user',my_score=my_score,dealer_score=dealer_score)
-         draw_again_card(user_or_dealer='dealer',my_score=my_score,dealer_score=dealer_score) 
+         else:
+             draw_again_card(user_or_dealer='dealer',my_score=my_score,dealer_score=dealer_score) 
 
 def draw_first_cards(dealer_score,my_score):
     for card in range(2):
