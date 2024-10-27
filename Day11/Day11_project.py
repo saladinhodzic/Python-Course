@@ -14,20 +14,19 @@ def draw_again_card(user_or_dealer,my_score,dealer_score):
         check_if_ace=random.choice(cards)
         if check_if_ace == 11 and my_score+11>21:
             my_cards.append(1)
-            my_score+=my_cards[2]
+            my_score+=my_cards[len(my_cards)-1]
         elif check_if_ace == 11:
             my_cards.append(11)
-            my_score+=my_cards[2]
+            my_score+=my_cards[len(my_cards)-1]
         else:
-            my_cards.append(random.choice(cards))
-            my_score+=my_cards[2]
+            my_cards.append(check_if_ace)
+            my_score+=my_cards[len(my_cards)-1]
         print(my_cards)
         print(my_score)
         check_end(my_score,dealer_score)
     else:
-        if dealer_score<=16:
             dealer_cards.append(random.choice(cards))
-            dealer_score+=dealer_cards[2]
+            dealer_score+=dealer_cards[len(dealer_cards)-1]
             print(dealer_cards)
             print(dealer_score)
             check_end(my_score,dealer_score)
@@ -42,9 +41,11 @@ def check_end(my_score,dealer_score):
     elif my_score>21 or dealer_score>21:
         if my_score>21:
             print("You lost your score is over 21")
+            return
         else:
             print("You win dealers score is over 21")
-        return
+            return
+        
     elif my_score>=16 and dealer_score>=16:
         wanna_draw_another_card=input("Do you wanna draw another card or not? ")
         if wanna_draw_another_card=='y' :
@@ -53,8 +54,10 @@ def check_end(my_score,dealer_score):
                 draw_again_card(user_or_dealer='dealer',my_score=my_score,dealer_score=dealer_score) 
         if my_score> dealer_score:
             print(f"You win your score is {my_score} and dealer score is {dealer_score}")
+            return
         else:
             print(f"You lost your score is {my_score} and dealers score is {dealer_score}")
+            return
     else: 
          wanna_draw_another_card=input("Do you wanna draw another card or not? ")
          if wanna_draw_another_card=='y' :
