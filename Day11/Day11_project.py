@@ -21,14 +21,12 @@ def draw_again_card(user_or_dealer,my_score,dealer_score):
         else:
             my_cards.append(check_if_ace)
             my_score+=my_cards[len(my_cards)-1]
-        print(my_cards)
-        print(my_score)
+        print(f"Your cards are {my_cards} and your score is {my_score}")
         check_end(my_score,dealer_score)
     else:
             dealer_cards.append(random.choice(cards))
             dealer_score+=dealer_cards[len(dealer_cards)-1]
-            print(dealer_cards)
-            print(dealer_score)
+            print(f"Dealer cards are {dealer_cards} and dealer score is {dealer_score}")
             check_end(my_score,dealer_score)
         
 def check_end(my_score,dealer_score):
