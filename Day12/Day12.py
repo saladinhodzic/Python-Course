@@ -5,6 +5,10 @@
 
 enemies=1
 
-def increase_enemies():
-    global enemies
-    enemies+=1
+def increase_enemies(enemies):
+#     global enemies
+    return enemies +1
+
+# best practice is to pass it as argument and then save it into the variable
+
+enemies+=increase_enemies(enemies)
