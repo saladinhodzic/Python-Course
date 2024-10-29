@@ -12,3 +12,7 @@ def increase_enemies(enemies):
 # best practice is to pass it as argument and then save it into the variable
 
 enemies+=increase_enemies(enemies)
+
+# if you want to define constants then best convetion is to use uppercase
+
+PI=3.1415
