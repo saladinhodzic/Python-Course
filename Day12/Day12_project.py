@@ -11,4 +11,22 @@ if difficulty=='easy':
 else:
     lives=5
 
-guess=input("Guess the number: ")
+got_right_answer=False
+    
+while lives!=0 and got_right_answer==False:
+
+    guess=int(input("Guess the number: "))
+
+    if guess==random_num:
+        print("Wow you got the right answer")
+        got_right_answer=True
+    elif guess<random_num:
+        print("Too low")
+        lives-=1
+        print(f"You have {lives} remaining lives")
+        
+    elif guess > random_num:
+        print("Too high")
+        lives-=1
+        print(f"You have {lives} remaining lives")
+        
