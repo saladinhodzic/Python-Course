@@ -2,10 +2,20 @@
 from Day14_data import data
 import random
 
-a=random.choice(data)['name']
+score = 0
 
-b=random.choice(data)['name']
+a=random.choice(data)
+b=random.choice(data)
+print(a['name'])
+
+print(b['name'])
+
+a_follower_count=a["follower_count"]
+b_follower_count=b["follower_count"]
 
 
+lower_or_higher=input("Which of these two are more popular 'A' or 'B': ")
 
-print(a)
+if lower_or_higher=='A':
+    if a_follower_count>b_follower_count:
+        print("Bingo")
