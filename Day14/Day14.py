@@ -13,9 +13,9 @@ def first_cards():
         list.append(random.choice(data))
 first_cards()
 while is_playing==True:
-    
     a=list[0]
     b=list[1]
+    
     
     a_follower_count=a['follower_count']
     b_follower_count=b['follower_count']
@@ -27,6 +27,8 @@ while is_playing==True:
     if lower_or_higher=='A':
         if a_follower_count>b_follower_count:
             score+=1
+            list.remove(b)
+            list.append(random.choice(data))
             print("Bingo")
             print(f"Your score is {score}")
         else:
@@ -35,6 +37,8 @@ while is_playing==True:
     if lower_or_higher=='B':
         if  b_follower_count>a_follower_count:
             score+=1
+            list.remove(a)
+            list.append(random.choice(data))
             print("Bingo")
             print(f"Your score is {score}")
         else:
