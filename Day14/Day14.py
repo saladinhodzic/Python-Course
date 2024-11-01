@@ -6,17 +6,21 @@ score = 0
 
 is_playing=True
 
+list=[]
+
+def first_cards():
+    for _ in range(2):
+        list.append(random.choice(data))
+first_cards()
 while is_playing==True:
-
-    a=random.choice(data)
-    b=random.choice(data)
-
-
-    a_follower_count=a["follower_count"]
-    b_follower_count=b["follower_count"]
-
-    print(a['name'])
-    print(b['name'])
+    
+    a=list[0]
+    b=list[1]
+    
+    a_follower_count=a['follower_count']
+    b_follower_count=b['follower_count']
+    
+    print(f"{a['name']} or {b['name']}")
 
     lower_or_higher=input("Which of these two are more popular 'A' or 'B': ")
 
