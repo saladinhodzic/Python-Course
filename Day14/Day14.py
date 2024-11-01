@@ -13,10 +13,10 @@ def first_cards():
         list.append(random.choice(data))
 first_cards()
 while is_playing==True:
+    
     a=list[0]
     b=list[1]
-    
-    
+        
     a_follower_count=a['follower_count']
     b_follower_count=b['follower_count']
     
@@ -29,7 +29,7 @@ while is_playing==True:
             score+=1
             list.remove(b)
             list.append(random.choice(data))
-            print("Bingo")
+            print(f"Bingo! {a['name']} {a['follower_count']} mil followers while {b['name']} {b['follower_count']} mil.")
             print(f"Your score is {score}")
         else:
             print(f'You lost! Your score is {score}')
@@ -39,7 +39,7 @@ while is_playing==True:
             score+=1
             list.remove(a)
             list.append(random.choice(data))
-            print("Bingo")
+            print(f"Bingo! {b['name']} {b['follower_count']} mil followers while {a['name']} {a['follower_count']} mil.")
             print(f"Your score is {score}")
         else:
             print(f'You lost! Your score is {score}')
