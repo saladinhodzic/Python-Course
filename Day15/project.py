@@ -14,7 +14,7 @@ def check_resources(resources,user_coffee):
             print("There is not enough water in machine!")
         elif resources['coffee'] < user_coffee['ingredients']['coffee']:
             print("There is not enough coffee in machine!")
-        elif user_coffee==MENU['espresso']:
+        elif order=='espresso':
             print("Espresso is on the way!")
             return
         elif resources['milk'] < user_coffee['ingredients']['milk']:
