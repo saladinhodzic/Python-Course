@@ -3,9 +3,21 @@ from data import MENU,resources
 # TODO - ask user for coffee
 
 
-order=input("What would you like? (espresso/latte/cappuccino): ")
+def ask_for_drink():
+    return input("What would you like? (espresso/latte/cappuccino): ")
 
+is_off=False
 # TODO - on saying word 'off' it should end the program
+
+order=ask_for_drink()
+while is_off==False:
+    if order =='off':
+        print("Have a nice day!")
+        is_off=True
+    elif order == 'report':
+        print(resources)
+        order=ask_for_drink()
+
 
 
 # TODO - on saying word 'report' it should print the coffee machine current resources
