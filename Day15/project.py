@@ -20,7 +20,7 @@ def check_resources(resources,user_coffee):
         elif resources['milk'] < user_coffee['ingredients']['milk']:
             print("There is not enough milk in machine!")
         else:
-            print("Coffe is on the way!")
+            print(f"{order.title()} is on the way!")
             return
 
 order=ask_for_drink()
@@ -35,6 +35,9 @@ while is_off==False:
         check_resources(resources,MENU['espresso'])
         order=ask_for_drink()
     elif order == 'cappuccino':
+        check_resources(resources,MENU['cappuccino'])
+        order=ask_for_drink()
+    elif order == 'latte':
         check_resources(resources,MENU['cappuccino'])
         order=ask_for_drink()
 
