@@ -22,6 +22,12 @@ def check_resources(resources,user_coffee):
         else:
             print(f"{order.title()} is on the way!")
             return
+def enter_coins():
+    pennys=int(input("Enter how much pennys"))
+    nickels=int(input("Enter how much nickels"))
+    dimes=int(input("Enter how much dimes"))
+    quarters=int(input("Enter how much quarters"))
+    return [pennys,nickels,dimes,quarters]
 
 order=ask_for_drink()
 while is_off==False:
@@ -33,13 +39,15 @@ while is_off==False:
         order=ask_for_drink()
     elif order == 'espresso':
         check_resources(resources,MENU['espresso'])
-        order=ask_for_drink()
+        coins=enter_coins()
+        print(coins)
+    
     elif order == 'cappuccino':
         check_resources(resources,MENU['cappuccino'])
-        order=ask_for_drink()
+        enter_coins()
     elif order == 'latte':
         check_resources(resources,MENU['cappuccino'])
-        order=ask_for_drink()
+        enter_coins()
 
 
 
