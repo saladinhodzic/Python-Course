@@ -30,8 +30,25 @@
 # 4. Napisati program u kojem korisnik unosi dan u nedelji i ispisuje "Vikend!" ako je dan subota
 # ili nedelja, u suprotnom ispisuje "Radni dan."
 
-dan=input("Unesi dan")
-if dan == 'nedelja' or dan == 'subota':
-    print("Neradan dan")
-else:
-    print("radan")
+# dan=input("Unesi dan")
+# if dan == 'nedelja' or dan == 'subota':
+#     print("Neradan dan")
+# else:
+#     print("radan")
+
+# 5. Napisati program u kojem korisnik unosi trocifren broj, a program treba da proveri da li je taj
+# broj Armstrongov broj. Armstrongov broj (takođe poznat kao narcisistički broj) je broj čija je
+# suma kubova njegovih cifara jednaka samom broju. Na primer, broj 153 je Armstrongov broj jer
+# 1
+# 3+53+33=153.
+
+def is_armstrong_number(input):
+    a=int(input[0])
+    b=int(input[1])
+    c=int(input[2])
+    if a**3 + b**3 + c**3 == int(input):
+        print("Its armstrong number")
+    else:
+        print("its not armstrong number")
+    
+is_armstrong_number(input("Unesi trocifren broj"))
