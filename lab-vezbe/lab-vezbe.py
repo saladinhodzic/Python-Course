@@ -120,11 +120,30 @@
 # broj pozitivan ili negativan, ali ne reaguje kada je
 # broj 0.
 
-br=int(input("Broj"))
+# br=int(input("Broj"))
 
-if br < 0:
-    print("Broj je manji od 0")
-elif br >0:
-    print("Broj je veci od 0")
-else:
-    pass
+# if br < 0:
+#     print("Broj je manji od 0")
+# elif br >0:
+#     print("Broj je veci od 0")
+# else:
+#     pass
+
+# Napisati program u programskom jeziku Python
+# koji dodaje element 'novi_element' na početak
+# postojeće liste i zatim ispisuje izmenjenu listu.
+
+# list=[1,2,3,4,5]
+# list.insert(0,'da')
+# print(list)
+
+# Napisati program koji nalazi minimalnu i
+# maksimalnu vrednost u listi lista = [3, 7,
+# 1, 9, 4]
+
+lista=[3,7,1,9,4]
+
+najmanji=min(lista)
+najveci=max(lista)
+
+print(f"Najmanja vrednost liste je {najmanji} a najveca je {najveci}")
