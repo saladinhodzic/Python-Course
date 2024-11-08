@@ -80,16 +80,30 @@
 # brojeva od 1 do N i proverava da li su "brojevi sreće" (brojevi gde zbir kvadrata njihovih cifara
 # na kraju dovodi do 1).
 
-N=int(input("Unesi broj"))
-i=1
-while i<=N:
-    novi=str(i)
-    list=[]
-    is_happy=0
-    for char in novi:
-        list.append(int(char))
-    for num in list:
-        is_happy+=num**2
-    if is_happy==1:
-        print(novi)
-    i+=1
+# N=int(input("Unesi broj"))
+# i=1
+# while i<=N:
+#     novi=str(i)
+#     list=[]
+#     is_happy=0
+#     for char in novi:
+#         list.append(int(char))
+#     for num in list:
+#         is_happy+=num**2
+#     if is_happy==1:
+#         print(novi)
+#     i+=1
+
+# Napisati program koji obrće cifre unetog broja.
+# Na primer, ako korisnik unese broj 1234, program
+# treba da ispiše 4321.
+
+broj=int(input("Unesite broj"))
+
+broj_to_string=str(broj)
+new_str=""
+for char in range(len(broj_to_string)-1,0,-1):
+    new_str+=broj_to_string[char]
+
+broj_reversed=int(new_str)
+print(broj_reversed)
