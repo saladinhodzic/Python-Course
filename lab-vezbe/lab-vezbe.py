@@ -111,7 +111,20 @@
 #  Napisati program koji ispisuje sve brojeve od 1 do
 # 10, ali preskače broj 5..
 
-for num in range(1,11):
-    if num == 5:
-        continue
-    print(num)
+# for num in range(1,11):
+#     if num == 5:
+#         continue
+#     print(num)
+
+# Napisati program koji proverava da li je uneti
+# broj pozitivan ili negativan, ali ne reaguje kada je
+# broj 0.
+
+br=int(input("Broj"))
+
+if br < 0:
+    print("Broj je manji od 0")
+elif br >0:
+    print("Broj je veci od 0")
+else:
+    pass
