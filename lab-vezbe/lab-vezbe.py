@@ -98,12 +98,20 @@
 # Na primer, ako korisnik unese broj 1234, program
 # treba da ispiše 4321.
 
-broj=int(input("Unesite broj"))
+# broj=int(input("Unesite broj"))
 
-broj_to_string=str(broj)
-new_str=""
-for char in range(len(broj_to_string)-1,0,-1):
-    new_str+=broj_to_string[char]
+# broj_to_string=str(broj)
+# new_str=""
+# for char in range(len(broj_to_string)-1,0,-1):
+#     new_str+=broj_to_string[char]
 
-broj_reversed=int(new_str)
-print(broj_reversed)
+# broj_reversed=int(new_str)
+# print(broj_reversed)
+
+#  Napisati program koji ispisuje sve brojeve od 1 do
+# 10, ali preskače broj 5..
+
+for num in range(1,11):
+    if num == 5:
+        continue
+    print(num)
