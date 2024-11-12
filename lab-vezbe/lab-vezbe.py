@@ -168,11 +168,101 @@
 # njegovi delioci 1, 2 i 3, a zbir 1 + 2 + 3 = 6. Napisati
 # program koji proverava da li je uneti broj savršen.
 
-broj=int(input("Broj "))
-delioci=0
+# broj=int(input("Broj "))
+# delioci=0
 
-for i in range (1,broj):
-    if broj % i==0:
-        delioci+=i
-if delioci==broj:
-    print("savrsen ")
+# for i in range (1,broj):
+#     if broj % i==0:
+#         delioci+=i
+# if delioci==broj:
+#     print("savrsen ")
+
+# Napisati koji traži unos brojeva od korisnika. Kada
+# korisnik unese broj 0, petlja se prekida i program
+# završava.
+
+# broj=int(input("Unesite brojeve: ")) 
+
+# while True:
+#     broj=int(input("Unesite brojeve: ")) 
+#     if broj==0:
+#         break
+
+# Napisati program koji ispisuje sve proste brojeve u
+# opsegu od 1 do unetog broja.
+
+# broj = int(input("Broj "))
+
+# i=2
+# while i<=broj:
+#     prost=True
+#     for b in range(2,i+1):
+#         if i % b == 0:
+#             prost=False
+#             break
+#     if prost == True:
+#         print(i)
+#     i+=1
+
+# Napisati program koji ispisuje sve brojeve od 1 do
+# 10, ali preskače broj 5.
+
+# i=1
+
+# while i<=10:
+#     if i==5:
+#         i+=1
+        
+#         continue
+#     print(i)
+#     i+=1
+    
+    
+# Napisati program koji proverava da li je uneti
+# broj pozitivan ili negativan, ali ne reaguje kada je
+# broj 0.
+
+# broj=int(input("Unesite broj: "))
+
+# if broj>0:
+#     print("Uneti broj je pozitivan.")
+# elif broj<0:
+#     print("Uneti broj je negativan.")
+# else:
+#     pass
+
+# Napisati program koji ispisuje brojeve od 1 do
+# 10, ali preskače sve brojeve koji su deljivi sa 3.
+
+# i=1
+
+# while i<=10:
+#     if i%3==0:
+#         pass
+#     else:
+#         print(i)
+#     i+=1
+
+# Napisati program koji proverava da li lista
+# sadrži određeni element..
+
+
+# if lista.index(3) != -1:
+#     print("VERUJ MI")
+# else:
+#     print("NE SADRZI")
+    
+# if "kon" in lista:
+#     print("jeste")
+# else:
+#     print("nije")
+
+# Napisati program koji računa sumu svih celih
+# brojeva u listi lista = [3, 'tekst', 1, 9, 4]
+
+lista=["konj","koza",'pasce',1,2,3]
+acc=0
+for element in lista:
+    if isinstance(element,int):
+        acc+=element
+print(acc)
