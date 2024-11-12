@@ -141,9 +141,38 @@
 # maksimalnu vrednost u listi lista = [3, 7,
 # 1, 9, 4]
 
-lista=[3,7,1,9,4]
+# lista=[3,7,1,9,4]
 
-najmanji=min(lista)
-najveci=max(lista)
+# najmanji=min(lista)
+# najveci=max(lista)
 
-print(f"Najmanja vrednost liste je {najmanji} a najveca je {najveci}")
+# print(f"Najmanja vrednost liste je {najmanji} a najveca je {najveci}")
+
+# Napisati program u programskom jeziku Python koji
+# ispisuje sve parne brojeve između 1 i 20
+
+# for i in range(1,21):
+#     if i%2==0:
+#         print(i)
+        
+# i=1
+
+# while i<=20:
+#     i+=1
+    
+#     if i%2==0:
+#         print(i)
+        
+# Savršen broj je broj koji je jednak zbiru svih svojih delilaca
+# (osim samog sebe). Na primer, broj 6 je savršen jer su
+# njegovi delioci 1, 2 i 3, a zbir 1 + 2 + 3 = 6. Napisati
+# program koji proverava da li je uneti broj savršen.
+
+broj=int(input("Broj "))
+delioci=0
+
+for i in range (1,broj):
+    if broj % i==0:
+        delioci+=i
+if delioci==broj:
+    print("savrsen ")
