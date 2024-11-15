@@ -332,3 +332,21 @@
 #     print("Prvi broj je stepen drugog")
 # else:
 #     print("Nije")
+
+# Napisati program u kojem korisnik unosi petocifreni broj i proverava da li je broj palindrom
+# (da li se čita isto sa obe strane). Ako jeste, ispisuje "Broj je palindrom", u suprotnom "Broj nije
+# palindrom."
+
+broj = input('Uneti petocifreni broj ')
+
+def check_palindrom(broj):
+    novi_broj=''
+    length=len(broj)
+    for char in range(length-1,-1,-1):
+        novi_broj+=broj[char]
+    if novi_broj==broj:
+        print("Broj je palindrom")
+    else:
+        print("Broj nije palindrom")
+
+check_palindrom(broj)
