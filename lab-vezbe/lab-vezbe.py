@@ -260,9 +260,75 @@
 # Napisati program koji računa sumu svih celih
 # brojeva u listi lista = [3, 'tekst', 1, 9, 4]
 
-lista=["konj","koza",'pasce',1,2,3]
-acc=0
-for element in lista:
-    if isinstance(element,int):
-        acc+=element
-print(acc)
+# lista=["konj","koza",'pasce',1,2,3]
+# acc=0
+# for element in lista:
+#     if isinstance(element,int):
+#         acc+=element
+# print(acc)
+
+# Napisati program koji broji koliko je parnih i
+# neparnih brojeva u listi brojevi = [1, 2, 3, 4, 5,
+# 6, 7, 8, 9, 10]
+
+# brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# neparni=0
+# parni=0
+
+# for i in brojevi:
+#     if i%2==0:
+#         parni.append(i)
+#     else:
+#         neparni.append(i)
+        
+
+# parnilen=len(parni)
+# neparnilen=len(neparni)
+
+# print(neparnilen)
+# print(parnilen)
+
+# Napisati program koji prolazi kroz listu brojeva lista =
+# [1, 2, 3, 4, 5] i kreira novu listu gde je svakom elementu
+# dodeljen njegov kvadrat. Na izlazu, ispisuje obe liste –
+# originalnu i novu listu sa kvadratima brojeva.
+
+# lista = [1, 2, 3, 4, 5]
+# kvadrat=[]
+
+# for i in lista:
+#     i+=pow(i,2)
+#     kvadrat.append(i)
+    
+# print(kvadrat)
+# print(lista)
+
+# Napisati program koji traži od korisnika da unese listu
+# brojeva i zatim izdvaja brojeve veće od 4. Na izlazu
+# ispisuje originalnu listu i listu brojeva većih od 4.
+
+# brojevi=input("Brojevi ")
+# list=[]
+# i=0
+# trenutni=''
+# while i<len(brojevi)-1:
+#     if brojevi[i]==' ' or brojevi[i]==brojevi[-1]:
+#         list.append(trenutni)
+#         trenutni=''
+#     else:
+#         trenutni+=brojevi[i]
+#     i+=1
+# print(list) // neuradjen
+
+# Napisati program u kojem korisnik unosi dva broja i proverava da li je prvi broj stepen
+# drugog. Ako jeste, ispisuje "Prvi broj je stepen drugog", u suprotnom "Prvi broj nije stepen
+# drugog."
+
+# prvi_broj=int(input("Unesi prvi broj "))
+# drugi_broj=int(input("Unesi drugi broj "))
+
+# if drugi_broj ** drugi_broj == prvi_broj:
+#     print("Prvi broj je stepen drugog")
+# else:
+#     print("Nije")
