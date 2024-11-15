@@ -337,16 +337,30 @@
 # (da li se čita isto sa obe strane). Ako jeste, ispisuje "Broj je palindrom", u suprotnom "Broj nije
 # palindrom."
 
-broj = input('Uneti petocifreni broj ')
+# broj = input('Uneti petocifreni broj ')
 
-def check_palindrom(broj):
-    novi_broj=''
-    length=len(broj)
-    for char in range(length-1,-1,-1):
-        novi_broj+=broj[char]
-    if novi_broj==broj:
-        print("Broj je palindrom")
-    else:
-        print("Broj nije palindrom")
+# def check_palindrom(broj):
+#     novi_broj=''
+#     length=len(broj)
+#     for char in range(length-1,-1,-1):
+#         novi_broj+=broj[char]
+#     if novi_broj==broj:
+#         print("Broj je palindrom")
+#     else:
+#         print("Broj nije palindrom")
 
-check_palindrom(broj)
+# check_palindrom(broj)
+
+# Napisati program u kojem korisnik unosi broj i izračunava zbir njegovih cifara, a zatim
+# proverava da li je taj broj deljiv zbirom svojih cifara. Ako jeste, ispisuje "Broj je deljiv zbirom
+# cifara", u suprotnom "Broj nije deljiv zbirom cifara."
+
+broj = input("Unesi broj ")
+zbir=0
+for br in broj:
+    zbir+=int(br)
+    
+if int(broj)%zbir==0:
+    print("Broj je deljiv zbirom svojih cifara")
+else:
+    print("Nije")
