@@ -355,12 +355,44 @@
 # proverava da li je taj broj deljiv zbirom svojih cifara. Ako jeste, ispisuje "Broj je deljiv zbirom
 # cifara", u suprotnom "Broj nije deljiv zbirom cifara."
 
-broj = input("Unesi broj ")
-zbir=0
-for br in broj:
-    zbir+=int(br)
+# broj = input("Unesi broj ")
+# zbir=0
+# for br in broj:
+#     zbir+=int(br)
     
-if int(broj)%zbir==0:
-    print("Broj je deljiv zbirom svojih cifara")
+# if int(broj)%zbir==0:
+#     print("Broj je deljiv zbirom svojih cifara")
+# else:
+#     print("Nije")
+
+# Napisati program u kojem korisnik unosi reč i proverava da li reč sadrži sve samoglasnike (a,
+# e, i, o, u). Ako sadrži, ispisuje "Reč sadrži sve samoglasnike", u suprotnom "Reč ne sadrži sve
+# samoglasnike."
+
+# rec= input("Unesite rec ")
+
+# if 'a' and 'e' and 'i' and 'o' and 'u' in rec:
+#     print("Rec sadrzi sve samoglasnike")
+# else:
+#     print("Rec ne sadrzi sve samoglasnike")
+
+# Za brzu orijentaciju u vezi sa stepenom gojaznosti ili mršavosti koristi se indeks telesne
+# mase (engl. body mass index, skraćeno bmi). Za izračunavanje indeksa telesne mase koristi se
+# formula 𝒃𝒎𝒊 =
+# 𝐦
+# 𝐡𝐱𝐡, gde je m masa u kilogramima, a h visina u metrima. Tumačenja vrednosti
+# bmi su sledeća:
+
+visina=float(input("Unesite vasu visinu: "))
+kg=float(input("Unesite vasu masu u kilogramima: "))
+
+formula=kg/(visina*visina)
+
+if formula < 18.5:
+    print("Premrsav si")
+elif formula >=18.5 and formula <=25:
+    print("Idealna razmera")
+elif formula >25 and formula <=30:
+    print("Vec si podebeo. Moras da smrsas.")
 else:
-    print("Nije")
+    print("Krme debelo!")
