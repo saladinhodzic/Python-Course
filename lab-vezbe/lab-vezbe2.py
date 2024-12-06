@@ -14,6 +14,7 @@ for i in range(length):
 
 # provera koliko se puta ispisuju date reci
 check={}
+largest_string=lista[0]
 for rec in lista:
     brojac=0
     for ista_rec in lista:
@@ -22,4 +23,7 @@ for rec in lista:
             check[rec]=brojac
     if rec == rec[::-1]:
         print(f"{rec} je palindrom")
+    if len(rec) > len(largest_string):
+        largest_string=rec
 print(check)
+print(f"Largest string is {largest_string}")
