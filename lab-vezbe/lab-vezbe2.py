@@ -20,4 +20,6 @@ for rec in lista:
         if rec == ista_rec:
             brojac+=1
             check[rec]=brojac
+    if rec == rec[::-1]:
+        print(f"{rec} je palindrom")
 print(check)
