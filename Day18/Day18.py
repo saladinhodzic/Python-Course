@@ -2,11 +2,15 @@ from turtle import Turtle, Screen
 
 our_turtle=Turtle()
 
-for _ in range(4):
-    our_turtle.pendown()
-    our_turtle.forward(10)
-    our_turtle.penup()
-    our_turtle.forward(10)
+degrees=360
+sides=4
+while (True):
+    for _ in range(sides):
+        our_turtle.forward(20)
+        our_turtle.right(degrees/sides)
+    sides+=1
+
+
 
 
 
