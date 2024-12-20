@@ -1,14 +1,16 @@
 from turtle import Turtle, Screen
-
+import random
 our_turtle=Turtle()
+our_turtle.shape("turtle")
+colors=['red','green','blue']
 
-degrees=360
-sides=4
-while (True):
-    for _ in range(sides):
-        our_turtle.forward(20)
-        our_turtle.right(degrees/sides)
-    sides+=1
+directions=[0,90,180,270]
+
+while(True):
+    our_turtle.color(random.choice(colors))
+    our_turtle.forward(20)
+    our_turtle.setheading(random.choice(directions))
+    
 
 
 
