@@ -15,3 +15,12 @@ lista_od_torke.remove("R")
 torka=tuple(lista_od_torke)
 
 print(torka)
+
+# creating simple set
+
+skup={1,2,3,4,5}
+
+# iterating over a set - they are unindexed
+
+for i in skup:
+    print(i)
