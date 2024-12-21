@@ -29,3 +29,12 @@
 #     print("Broj je savrsen")
 # else:
 #     print("Broj nije savrsen")
+
+# Napisati koji traži unos brojeva od korisnika. Kada
+# korisnik unese broj 0, petlja se prekida i program
+# završava.
+
+
+broj = int(input("Unesite broj "))
+while broj != 0:
+    broj = int(input("Unesite broj "))
