@@ -43,11 +43,24 @@
 # Na primer, ako korisnik unese broj 1234, program
 # treba da ispiše 4321.
 
-broj = int(input("Unesite neki broj "))
-novi_broj=0
+# broj = int(input("Unesite neki broj "))
+# novi_broj=0
 
-while broj>0:
-    ostatak = broj%10
-    novi_broj=novi_broj*10 + ostatak
-    broj //=10
-print(novi_broj)
+# while broj>0:
+#     ostatak = broj%10
+#     novi_broj=novi_broj*10 + ostatak
+#     broj //=10
+# print(novi_broj)
+
+# Napisati program koji ispisuje sve proste brojeve u
+# opsegu od 1 do unetog broja.
+
+broj = int(input("Unesite gornju granicu "))
+
+for i in range(2,broj):
+    prost_broj=True
+    for j in range(i-1,1,-1):
+        if i%j==0:
+            prost_broj=False
+    if prost_broj:
+        print(i)
