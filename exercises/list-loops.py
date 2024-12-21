@@ -35,6 +35,19 @@
 # završava.
 
 
-broj = int(input("Unesite broj "))
-while broj != 0:
-    broj = int(input("Unesite broj "))
+# broj = int(input("Unesite broj "))
+# while broj != 0:
+#     broj = int(input("Unesite broj "))
+
+# Napisati program koji obrće cifre unetog broja.
+# Na primer, ako korisnik unese broj 1234, program
+# treba da ispiše 4321.
+
+broj = int(input("Unesite neki broj "))
+novi_broj=0
+
+while broj>0:
+    ostatak = broj%10
+    novi_broj=novi_broj*10 + ostatak
+    broj //=10
+print(novi_broj)
