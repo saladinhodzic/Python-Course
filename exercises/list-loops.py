@@ -100,6 +100,33 @@
 # koji dodaje element 'novi_element' na početak
 # postojeće liste i zatim ispisuje izmenjenu listu.
 
-lista = [2,3,4,5]
-lista.insert(0,1)
-print(lista)
+# lista = [2,3,4,5]
+# lista.insert(0,1)
+# print(lista)
+
+# Napisati program koji proverava da li lista
+# sadrži određeni element.
+
+# lista = [4,'ne',True, 'da']
+# if lista.count('jas') > 0:
+#     print("Nalazi se u listi")
+# else:
+#     print("Ne nalazi se u listi")
+
+# Napisati program koji nalazi minimalnu i
+# maksimalnu vrednost u listi lista = [3, 7,
+# 1, 9, 4]
+
+lista = [3, 7, 1, 9, 4]
+
+# using sort method
+# lista.sort()
+# min=lista[0]
+# max=lista[-1]
+# using min and max method
+
+najmanji=min(lista)
+najveci = max(lista)
+
+# print("Najveci element u nizu je", max, 'a najmanji',min)
+print("Najveci element u nizu je", najveci, 'a najmanji',najmanji)
