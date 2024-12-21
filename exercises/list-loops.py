@@ -55,12 +55,51 @@
 # Napisati program koji ispisuje sve proste brojeve u
 # opsegu od 1 do unetog broja.
 
-broj = int(input("Unesite gornju granicu "))
+# broj = int(input("Unesite gornju granicu "))
 
-for i in range(2,broj):
-    prost_broj=True
-    for j in range(i-1,1,-1):
-        if i%j==0:
-            prost_broj=False
-    if prost_broj:
-        print(i)
+# for i in range(2,broj):
+#     prost_broj=True
+#     for j in range(i-1,1,-1):
+#         if i%j==0:
+#             prost_broj=False
+#     if prost_broj:
+#         print(i)
+
+# Napisati program koji ispisuje sve brojeve od 1 do
+# 10, ali preskače broj 5..
+
+# for i in range(1,11):
+#     if i == 5:
+#         continue
+#     print(i)
+
+# Napisati program koji proverava da li je uneti
+# broj pozitivan ili negativan, ali ne reaguje kada je
+# broj 0.
+
+# broj= int(input("Unesite neki broj "))
+
+# if broj>0:
+#     print("Broj je pozitivan")
+# elif broj<0:
+#     print("Broj je negativan")
+# else:
+#     pass
+
+# Napisati program koji ispisuje brojeve od 1 do
+# 10, ali preskače sve brojeve koji su deljivi sa 3.
+
+# for i in range(1,11):
+#     if i %3==0:
+#         continue
+#     print(i)
+
+# LISTS
+
+# Napisati program u programskom jeziku Python
+# koji dodaje element 'novi_element' na početak
+# postojeće liste i zatim ispisuje izmenjenu listu.
+
+lista = [2,3,4,5]
+lista.insert(0,1)
+print(lista)
