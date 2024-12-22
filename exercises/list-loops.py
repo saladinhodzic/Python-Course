@@ -162,22 +162,44 @@
 # dodeljen njegov kvadrat. Na izlazu, ispisuje obe liste –
 # originalnu i novu listu sa kvadratima brojeva.
 
-lista = [1, 2, 3, 4, 5]
-novaLista=[element*element for element in lista ]
-print("Lista pre izmena ", lista, "lista posle izmena ",novaLista)
+# lista = [1, 2, 3, 4, 5]
+# novaLista=[element*element for element in lista ]
+# print("Lista pre izmena ", lista, "lista posle izmena ",novaLista)
 
-# Napisati program koji traži od korisnika da unese listu
-# brojeva i zatim izdvaja brojeve veće od 4. Na izlazu
-# ispisuje originalnu listu i listu brojeva većih od 4.
+# # Napisati program koji traži od korisnika da unese listu
+# # brojeva i zatim izdvaja brojeve veće od 4. Na izlazu
+# # ispisuje originalnu listu i listu brojeva većih od 4.
 
-duzina=int(input("Unesite duzinu liste "))
-i=0
-lista=[]
-while i<duzina:
-    broj= int(input("Unesite neki broj "))
-    lista.append(broj)
-    i+=1
+# duzina=int(input("Unesite duzinu liste "))
+# i=0
+# lista=[]
+# while i<duzina:
+#     broj= int(input("Unesite neki broj "))
+#     lista.append(broj)
+#     i+=1
 
-nova_lista=[element for element in lista if element > 4]
+# nova_lista=[element for element in lista if element > 4]
 
-print("Originalna lista ",lista, "nova lista je ",nova_lista)
+# print("Originalna lista ",lista, "nova lista je ",nova_lista)
+
+# Na programskom jeziku Python sastaviti program
+# koji iz liste celih brojeva izdvaja najdužu podlistu
+# koja je uređena strogo rastuće. Pretpostaviti da
+# lista sadrži bar jedan element.
+
+lista= [1,2,3,4,6,2,4,9,6,7,8]
+pod_lista=[]
+najduza_podlista=[]
+pod_lista.append(lista[0])
+for i in range(1,len(lista)):
+    if lista[i]>pod_lista[-1]:
+        pod_lista.append(lista[i])
+    else:
+        if len(pod_lista)>len(najduza_podlista):
+            najduza_podlista = pod_lista
+        pod_lista=[lista[i]]
+if len(pod_lista)>len(najduza_podlista):
+    najduza_podlista = pod_lista
+    
+print(najduza_podlista)
+print(pod_lista)
