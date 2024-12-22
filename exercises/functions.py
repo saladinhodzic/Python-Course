@@ -111,19 +111,46 @@ igrač pogodio zamišljen broj.'''
 # ima više reči iste dužine ispisati prvu. Šta u kodu treba izmeniti da bi se
 # ispisala poslednja takva reč.
 
-def najduza_rec(recenica):
-    lista=[]
-    rec=''
-    for i in range(len(recenica)):
-        if recenica[i]==" ":
-            lista.append(rec)
-            rec=''
-        rec+=recenica[i]
-    lista.append(rec)
+# def najduza_rec(recenica):
+#     lista=[]
+#     rec=''
+#     for i in range(len(recenica)):
+#         if recenica[i]==" ":
+#             lista.append(rec)
+#             rec=''
+#         rec+=recenica[i]
+#     lista.append(rec)
 
-    najduza=''
-    for rec in lista:
-        if len(rec)>len(najduza):
-            najduza = rec
-    print("Najduza rec u recenici je",najduza)
-najduza_rec("Na primer ova recenica")
+#     najduza=''
+#     for rec in lista:
+#         if len(rec)>len(najduza):
+#             najduza = rec
+#     print("Najduza rec u recenici je",najduza)
+# najduza_rec("Na primer ova recenica")
+
+# Na programskom jeziku Python sastaviti
+# program koji u zadatom tekstu prebrojava
+# mala i velika slova, cifre i ostale znake.
+# Obrađuje se linija po linija, sve dok se ne
+# unese prazan red. U programu iskoristiti:
+#  a) ugrađene funkcije: ord() i chr()
+#  b) metode za rad sa stringovima: isupper(),
+# islower(), isalpha() i isdigit()
+
+tekst= input("Unesite neki tekst\n")
+mala_slova=0
+velika_slova=0
+cifre=0
+ostali=0
+
+for slovo in tekst:
+    if slovo.islower():
+        mala_slova+=1
+    elif slovo.isupper():
+        velika_slova+=1
+    elif slovo.isdigit():
+        cifre+=1
+    else:
+        ostali+=1
+
+print("U zadatom tekstu imamo",mala_slova,"malih slova,",velika_slova,"velikih slova",cifre,"cifara",ostali,"ostalih znakova.")
