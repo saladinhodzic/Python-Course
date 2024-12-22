@@ -117,16 +117,42 @@
 # maksimalnu vrednost u listi lista = [3, 7,
 # 1, 9, 4]
 
-lista = [3, 7, 1, 9, 4]
+# lista = [3, 7, 1, 9, 4]
 
-# using sort method
-# lista.sort()
-# min=lista[0]
-# max=lista[-1]
-# using min and max method
+# # using sort method
+# # lista.sort()
+# # min=lista[0]
+# # max=lista[-1]
+# # using min and max method
 
-najmanji=min(lista)
-najveci = max(lista)
+# najmanji=min(lista)
+# najveci = max(lista)
 
-# print("Najveci element u nizu je", max, 'a najmanji',min)
-print("Najveci element u nizu je", najveci, 'a najmanji',najmanji)
+# # print("Najveci element u nizu je", max, 'a najmanji',min)
+# print("Najveci element u nizu je", najveci, 'a najmanji',najmanji)
+
+# Napisati program koji računa sumu svih celih
+# brojeva u listi lista = [3, 'tekst', 1, 9, 4].
+
+# lista = [3, 'tekst', 1, 9, 4]
+# suma=0
+
+# for element in lista:
+#     if type(element)==int:
+#         suma+=element
+# # easier way is by using sum() method
+# print(suma)
+
+# Napisati program koji broji koliko je parnih i
+# neparnih brojeva u listi brojevi = [1, 2, 3, 4, 5,
+# 6, 7, 8, 9, 10]
+brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+parni=0
+neparni=0
+
+for broj in brojevi:
+    if broj % 2==0:
+        parni+=1
+    else:
+        neparni+=1
+print("Broj elemenata koji su neparni u listi su ",neparni,"a parnih je ",parni)
