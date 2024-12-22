@@ -146,13 +146,38 @@
 # Napisati program koji broji koliko je parnih i
 # neparnih brojeva u listi brojevi = [1, 2, 3, 4, 5,
 # 6, 7, 8, 9, 10]
-brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-parni=0
-neparni=0
+# brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# parni=0
+# neparni=0
 
-for broj in brojevi:
-    if broj % 2==0:
-        parni+=1
-    else:
-        neparni+=1
-print("Broj elemenata koji su neparni u listi su ",neparni,"a parnih je ",parni)
+# for broj in brojevi:
+#     if broj % 2==0:
+#         parni+=1
+#     else:
+#         neparni+=1
+# print("Broj elemenata koji su neparni u listi su ",neparni,"a parnih je ",parni)
+
+# Napisati program koji prolazi kroz listu brojeva lista =
+# [1, 2, 3, 4, 5] i kreira novu listu gde je svakom elementu
+# dodeljen njegov kvadrat. Na izlazu, ispisuje obe liste –
+# originalnu i novu listu sa kvadratima brojeva.
+
+lista = [1, 2, 3, 4, 5]
+novaLista=[element*element for element in lista ]
+print("Lista pre izmena ", lista, "lista posle izmena ",novaLista)
+
+# Napisati program koji traži od korisnika da unese listu
+# brojeva i zatim izdvaja brojeve veće od 4. Na izlazu
+# ispisuje originalnu listu i listu brojeva većih od 4.
+
+duzina=int(input("Unesite duzinu liste "))
+i=0
+lista=[]
+while i<duzina:
+    broj= int(input("Unesite neki broj "))
+    lista.append(broj)
+    i+=1
+
+nova_lista=[element for element in lista if element > 4]
+
+print("Originalna lista ",lista, "nova lista je ",nova_lista)
