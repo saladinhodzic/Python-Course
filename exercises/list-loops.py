@@ -187,19 +187,60 @@
 # koja je uređena strogo rastuće. Pretpostaviti da
 # lista sadrži bar jedan element.
 
-lista= [1,2,3,4,6,2,4,9,6,7,8]
-pod_lista=[]
-najduza_podlista=[]
-pod_lista.append(lista[0])
-for i in range(1,len(lista)):
-    if lista[i]>pod_lista[-1]:
-        pod_lista.append(lista[i])
-    else:
-        if len(pod_lista)>len(najduza_podlista):
-            najduza_podlista = pod_lista
-        pod_lista=[lista[i]]
-if len(pod_lista)>len(najduza_podlista):
-    najduza_podlista = pod_lista
+# lista= [1,2,3,4,6,2,4,9,6,7,8]
+# pod_lista=[]
+# najduza_podlista=[]
+# pod_lista.append(lista[0])
+# for i in range(1,len(lista)):
+#     if lista[i]>pod_lista[-1]:
+#         pod_lista.append(lista[i])
+#     else:
+#         if len(pod_lista)>len(najduza_podlista):
+#             najduza_podlista = pod_lista
+#         pod_lista=[lista[i]]
+# if len(pod_lista)>len(najduza_podlista):
+#     najduza_podlista = pod_lista
     
-print(najduza_podlista)
-print(pod_lista)
+# print(najduza_podlista)
+# print(pod_lista)
+
+# Na programskom jeziku Python sastaviti program
+# koji iz učitane liste izbacuje:
+#  a) sve elemente sa najvećom vrednošću
+#  b) prvi element sa najmanjom vrednošću
+#  c) poslednji element sa najmanjom vrednošću
+#  Prilikom izbacivanja svakog elementa, ispisuje se
+# njegova prvobitna pozicija u listi.
+#  Pri učitavanju se prvo unosi broj elemenata liste, a
+# zatim i sami elementi liste počevši od poslednjeg
+# elementa liste.
+
+duzina=int(input("Unesite duzinu liste "))
+i=duzina-1
+lista=[]
+while i>=0:
+    lista.append(int(input("Unesite broj ")))
+    i-=1
+
+# removing max elements
+max=max(lista)
+lista.remove(max)
+
+for broj in lista:
+    if broj == max:
+        lista.remove(broj)
+print(lista)
+
+# first occuring min number
+min= min(lista)
+lista.remove(min)
+print(lista)
+
+# last occuring min number
+
+for i in range(len(lista)-1,-1,-1):
+    last_min=lista[i]
+    if last_min>lista[i]:
+        last_min=lista[i]
+lista.remove(last_min)
+print(lista)
