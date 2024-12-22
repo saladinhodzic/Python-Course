@@ -80,19 +80,50 @@ veći ili manji od zamišljenog broja ispisuje se
 odgovarajuća poruka. Igra se završava u trenutku kada
 igrač pogodio zamišljen broj.'''
 
-import random
-def pogodi_broj():
-    zamisljen_broj=random.randint(0,100)
-    ime=input("Unesite vase ime: ")
-    print("Vase ime je",ime)
-    while True:
-        nas_broj=int(input("Unesite broj "))
-        if nas_broj>zamisljen_broj:
-            print("Manje")
-        elif nas_broj<zamisljen_broj:
-            print("Vise")
-        else:
-            print("Pogodili ste broj!")
-            break
+# import random
+# def pogodi_broj():
+#     zamisljen_broj=random.randint(0,100)
+#     ime=input("Unesite vase ime: ")
+#     print("Vase ime je",ime)
+#     while True:
+#         nas_broj=int(input("Unesite broj "))
+#         if nas_broj>zamisljen_broj:
+#             print("Manje")
+#         elif nas_broj<zamisljen_broj:
+#             print("Vise")
+#         else:
+#             print("Pogodili ste broj!")
+#             break
         
-pogodi_broj()
+# pogodi_broj()
+
+# LIST COMPREHENSION
+
+# Zadatak je da kreirate listu koja sadrži samo samoglasnike (a, e, i, o, u) iz
+# stringa "programiranje".
+
+# string = "programiranje"
+# lista = [slovo for slovo in string if slovo in 'aeiou']
+# print(lista)
+
+# Na programskom jeziku Python sastaviti f u n k c i j u koja pronalazi
+# i ispisuje najdužu od učitanih reči. Reči se odvajaju razmakom. Ako
+# ima više reči iste dužine ispisati prvu. Šta u kodu treba izmeniti da bi se
+# ispisala poslednja takva reč.
+
+def najduza_rec(recenica):
+    lista=[]
+    rec=''
+    for i in range(len(recenica)):
+        if recenica[i]==" ":
+            lista.append(rec)
+            rec=''
+        rec+=recenica[i]
+    lista.append(rec)
+
+    najduza=''
+    for rec in lista:
+        if len(rec)>len(najduza):
+            najduza = rec
+    print("Najduza rec u recenici je",najduza)
+najduza_rec("Na primer ova recenica")
