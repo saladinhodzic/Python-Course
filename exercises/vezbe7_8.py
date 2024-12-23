@@ -53,25 +53,44 @@ niza,obradu (formiranje rezultujućeg niza),ispis
 rezultata. Program se ponavlja sve dok korisnik ne
 unese nevalidnu vrednost za 𝑁(npr. 𝑁≥200 ili 𝑁≤0).'''
 
-def unos(n):
-    niz=[]
-    for _ in range(n):
-        broj = int(input(f"Unesite {_+1}. broj niza "))
-        niz.append(broj)
-    return niz
+# def unos(n):
+#     niz=[]
+#     for _ in range(n):
+#         broj = int(input(f"Unesite {_+1}. broj niza "))
+#         niz.append(broj)
+#     return niz
 
-def formiraj(prvi,drugi,n):
-    novi_niz=[]
-    for i in range(n):
-        novi_niz.append(max(prvi[i],drugi[i]))
-    return novi_niz
-while True:
-    n=int(input("Unesite duzinu dva niza: "))
-    if n>=200 or n<=0:
-        break
+# def formiraj(prvi,drugi,n):
+#     novi_niz=[]
+#     for i in range(n):
+#         novi_niz.append(max(prvi[i],drugi[i]))
+#     return novi_niz
+# while True:
+#     n=int(input("Unesite duzinu dva niza: "))
+#     if n>=200 or n<=0:
+#         break
     
-    prvi_niz=unos(n)
-    drugi_niz=unos(n)
+#     prvi_niz=unos(n)
+#     drugi_niz=unos(n)
     
-    novi = formiraj(prvi_niz,drugi_niz,n)
-    print(novi)
+#     novi = formiraj(prvi_niz,drugi_niz,n)
+#     print(novi)
+
+'''MATRICE'''
+
+# Na programskom jeziku Python sastaviti program
+# koji učitatava realnu matricu dimenzija n*m.
+# Ispisati novu matricu koja se sastoji od recipročnih
+# vrednosti elemenata unete matrice.
+
+n=int(input("Unesite n redova matrice "))
+m=int(input("Unesite m kolona matrice "))
+matrica=[]
+for i in range(n):
+    red=[]
+    for j in range(m):
+        red.append(int(input("Unesite broj matrice ")))
+    matrica.append(red)
+for i in range(n):
+    print(matrica[i])
+        
