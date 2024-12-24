@@ -83,14 +83,47 @@ unese nevalidnu vrednost za 𝑁(npr. 𝑁≥200 ili 𝑁≤0).'''
 # Ispisati novu matricu koja se sastoji od recipročnih
 # vrednosti elemenata unete matrice.
 
-n=int(input("Unesite n redova matrice "))
-m=int(input("Unesite m kolona matrice "))
-matrica=[]
-for i in range(n):
-    red=[]
-    for j in range(m):
-        red.append(int(input("Unesite broj matrice ")))
-    matrica.append(red)
-for i in range(n):
-    print(matrica[i])
+# n=int(input("Unesite n redova matrice "))
+# m=int(input("Unesite m kolona matrice "))
+# matrica=[]
+# for i in range(n):
+#     red=[]
+#     for j in range(m):
+#         red.append(int(input("Unesite broj matrice ")))
+#     matrica.append(red)
+# for i in range(n):
+#     print(matrica[i])
         
+'''Na programskom jeziku Python napisati pogram
+koji za odeljenje od najviše 25 učenika i najviše 15
+predmeta izračunava:
+ prosečne ocene učenika
+ prosečne ocene po predmetima na osnovu tabele
+ocena iz dnevnika. '''
+
+ucenici=int(input("Unesite broj ucenika: "))
+predmeti = int(input("Unesite broj predmeta: "))
+
+ocene=[]
+# inputing grades from each student into the array
+for i in range(ucenici):
+    ocene_ucenika=[]
+    for j in range(predmeti):
+        ocena = int(input(f"Unesite ocenu {i+1}. ucenika\n"))
+        ocene_ucenika.append(ocena)
+    ocene.append(ocene_ucenika)
+
+arit_ocene=[]
+# finding arithmetic mean of grades from each student
+for ucenik in ocene:
+    suma=sum(ucenik)
+    arit_ocene.append(suma/len(ucenik))
+
+arit_predmeta=[]
+
+for j in range(predmeti):
+    suma=0
+    for i in range(ucenici):
+        suma+=ocene[i][j]
+    arit_predmeta.append(suma/predmeti)
+print(arit_predmeta)
