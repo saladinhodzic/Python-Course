@@ -134,8 +134,25 @@ ocena iz dnevnika. '''
 # koji izračunava prosečnu vrednost svih elemenata u
 # torki brojeva..
 
-torka=(1,2,3,4,5)
-suma=0
-for i in torka:
-    suma+=i
-print(suma/len(torka))
+# torka=(1,2,3,4,5)
+# suma=0
+# for i in torka:
+#     suma+=i
+# print(suma/len(torka))
+
+# Na programskom jeziku Python sastaviti program
+# najveći i najmanji broj u torki..
+
+# torka = (1,2,3,4,5)
+# min = min(torka)
+# max = max(torka)
+
+# print(min,max)
+
+# Na programskom jeziku Python sastaviti program
+# koji spaja dve torke i sortira dobijenu torku.
+
+torka1=(1,2,3)
+torka2=(4,5,6)
+nova_torka=tuple(sorted(torka1+torka2))
+print(nova_torka)
