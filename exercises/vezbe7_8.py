@@ -152,7 +152,57 @@ ocena iz dnevnika. '''
 # Na programskom jeziku Python sastaviti program
 # koji spaja dve torke i sortira dobijenu torku.
 
-torka1=(1,2,3)
-torka2=(4,5,6)
-nova_torka=tuple(sorted(torka1+torka2))
-print(nova_torka)
+# torka1=(1,2,3)
+# torka2=(4,5,6)
+# nova_torka=tuple(sorted(torka1+torka2))
+# print(nova_torka)
+
+# Na programskom jeziku Python sastaviti program
+# koji izdvaja sve parne brojeve iz torke.
+
+# torka=(1,2,3,4,5,6,7,8)
+# parni = tuple(elem for elem in torka if elem % 2 == 0)
+
+# print(parni)
+
+# Na programskom jeziku Python sastaviti program
+# koji uzima dve torke iste dužine i računa: Zbir
+# odgovarajućih elemenata, razliku odgovarajućih
+# elemenata, proizvod odgovarajućih elemenata.
+
+# torka1=(1,2,3,4,5)
+# torka2=(5,6,7,8,9)
+
+# zbir = tuple(a+b for a,b in zip(torka1,torka2))
+# razlika = tuple(a-b for a,b in zip(torka1,torka2))
+# proizvod= tuple(a*b for a,b in zip(torka1,torka2))
+
+# print(zbir,razlika,proizvod)
+
+''' Korisnik unosi broj 𝑛, a zatim 𝑛 torki koje
+sadrže tri prirodna broja (na primer, (𝑎,𝑏,𝑐)).
+Napisati program koji:
+ Pronalazi torku sa najvećim zbirom elemenata.
+ Ispisuje sve torke čiji su svi elementi parni.
+ Sortira torke prema drugom elementu u
+opadajućem redosledu..'''
+
+n = int(input("Unesite n broj torki: "))
+lista_n=[]
+for i in range(n):
+    a,b,c = map(int,input().split(' '))
+    torka=(a,b,c)
+    lista_n.append(torka)
+# finding largest sum of tuples
+suma=[]
+max=0
+for torka in lista_n:
+    suma.append(sum(torka))
+for zbir in suma:
+    if zbir>max:
+        max=zbir
+print(max)
+# checking for every tuple where every element is even
+
+parni=[elem for elem in lista_n if all(x%2==0 for x in elem)]
+print(parni)
