@@ -101,29 +101,41 @@ predmeta izračunava:
  prosečne ocene po predmetima na osnovu tabele
 ocena iz dnevnika. '''
 
-ucenici=int(input("Unesite broj ucenika: "))
-predmeti = int(input("Unesite broj predmeta: "))
+# ucenici=int(input("Unesite broj ucenika: "))
+# predmeti = int(input("Unesite broj predmeta: "))
 
-ocene=[]
-# inputing grades from each student into the array
-for i in range(ucenici):
-    ocene_ucenika=[]
-    for j in range(predmeti):
-        ocena = int(input(f"Unesite ocenu {i+1}. ucenika\n"))
-        ocene_ucenika.append(ocena)
-    ocene.append(ocene_ucenika)
+# ocene=[]
+# # inputing grades from each student into the array
+# for i in range(ucenici):
+#     ocene_ucenika=[]
+#     for j in range(predmeti):
+#         ocena = int(input(f"Unesite ocenu {i+1}. ucenika\n"))
+#         ocene_ucenika.append(ocena)
+#     ocene.append(ocene_ucenika)
 
-arit_ocene=[]
-# finding arithmetic mean of grades from each student
-for ucenik in ocene:
-    suma=sum(ucenik)
-    arit_ocene.append(suma/len(ucenik))
+# arit_ocene=[]
+# # finding arithmetic mean of grades from each student
+# for ucenik in ocene:
+#     suma=sum(ucenik)
+#     arit_ocene.append(suma/len(ucenik))
 
-arit_predmeta=[]
+# arit_predmeta=[]
 
-for j in range(predmeti):
-    suma=0
-    for i in range(ucenici):
-        suma+=ocene[i][j]
-    arit_predmeta.append(suma/predmeti)
-print(arit_predmeta)
+# for j in range(predmeti):
+#     suma=0
+#     for i in range(ucenici):
+#         suma+=ocene[i][j]
+#     arit_predmeta.append(suma/predmeti)
+# print(arit_predmeta)
+
+'''TORKE'''
+
+# Na programskom jeziku Python sastaviti program
+# koji izračunava prosečnu vrednost svih elemenata u
+# torki brojeva..
+
+torka=(1,2,3,4,5)
+suma=0
+for i in torka:
+    suma+=i
+print(suma/len(torka))
