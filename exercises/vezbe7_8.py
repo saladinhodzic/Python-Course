@@ -187,22 +187,39 @@ Napisati program koji:
  Sortira torke prema drugom elementu u
 opadajućem redosledu..'''
 
-n = int(input("Unesite n broj torki: "))
-lista_n=[]
-for i in range(n):
-    a,b,c = map(int,input().split(' '))
-    torka=(a,b,c)
-    lista_n.append(torka)
-# finding largest sum of tuples
-suma=[]
-max=0
-for torka in lista_n:
-    suma.append(sum(torka))
-for zbir in suma:
-    if zbir>max:
-        max=zbir
-print(max)
-# checking for every tuple where every element is even
+# n = int(input("Unesite n broj torki: "))
+# lista_n=[]
+# for i in range(n):
+#     a,b,c = map(int,input().split(' '))
+#     torka=(a,b,c)
+#     lista_n.append(torka)
+# # finding largest sum of tuples
+# suma=[]
+# max=0
+# for torka in lista_n:
+#     suma.append(sum(torka))
+# for zbir in suma:
+#     if zbir>max:
+#         max=zbir
+# print(max)
+# # checking for every tuple where every element is even
 
-parni=[elem for elem in lista_n if all(x%2==0 for x in elem)]
-print(parni)
+# parni=[elem for elem in lista_n if all(x%2==0 for x in elem)]
+# print(parni)
+
+'''SKUPOVI'''
+
+# Na programskom jeziku Python sastaviti program
+# koji za prosleđene liste pronalazi:
+#  a) presek elemenata prve dve liste
+#  b) elemente koji se nalaze u svim listama
+#  c) elemente koji se nalaze u samo jednoj listi
+
+def presek(lista1,lista2):
+    return lista1.intersection(lista2)
+
+def both(*liste):
+    sets=[set(list) for list in liste]
+    return set.intersection(*sets)
+print(presek({1,2,3},{3,2,4}))
+print(both({1,2,3},{3,2,4},{4,2,5}))
