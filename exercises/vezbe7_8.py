@@ -215,15 +215,28 @@ opadajućem redosledu..'''
 #  b) elemente koji se nalaze u svim listama
 #  c) elemente koji se nalaze u samo jednoj listi
 
-def presek(lista1,lista2):
-    return lista1.intersection(lista2)
+# def presek(lista1,lista2):
+#     return lista1.intersection(lista2)
 
-def both(*liste):
-    sets=[set(list) for list in liste]
-    return set.intersection(*sets)
-def only(*liste):
-    sets = [set(list) for list in liste]
-    return set.difference(*sets)
-print(presek({1,2,3},{3,2,4}))
-print(both({1,2,3},{3,2,4},{4,2,5}))
-print(only({1,2,3},{3,2,4},{4,2,5}))
+# def both(*liste):
+#     sets=[set(list) for list in liste]
+#     return set.intersection(*sets)
+# def only(*liste):
+#     sets = [set(list) for list in liste]
+#     return set.difference(*sets)
+# print(presek({1,2,3},{3,2,4}))
+# print(both({1,2,3},{3,2,4},{4,2,5}))
+# print(only({1,2,3},{3,2,4},{4,2,5}))
+
+# Na programskom jeziku Python sastaviti funkciju
+# koja proverava da li je zadata rečenica heterogram
+# (nijedno slovo se ne pojavljuje više od jednom)
+
+def heterogram(recenica):
+    slova = [char for char in recenica if char.isalpha()]
+    return len(set(slova)) == len(recenica)
+recenica=input("Unesite neku recenicu: ")
+if heterogram(recenica):
+    print("Recenica je heterogram.")
+else:
+    print("Recenica nije heterogram.")
