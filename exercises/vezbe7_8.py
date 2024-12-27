@@ -221,5 +221,9 @@ def presek(lista1,lista2):
 def both(*liste):
     sets=[set(list) for list in liste]
     return set.intersection(*sets)
+def only(*liste):
+    sets = [set(list) for list in liste]
+    return set.difference(*sets)
 print(presek({1,2,3},{3,2,4}))
 print(both({1,2,3},{3,2,4},{4,2,5}))
+print(only({1,2,3},{3,2,4},{4,2,5}))
