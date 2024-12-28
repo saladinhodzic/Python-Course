@@ -232,11 +232,25 @@ opadajućem redosledu..'''
 # koja proverava da li je zadata rečenica heterogram
 # (nijedno slovo se ne pojavljuje više od jednom)
 
-def heterogram(recenica):
-    slova = [char for char in recenica if char.isalpha()]
-    return len(set(slova)) == len(recenica)
-recenica=input("Unesite neku recenicu: ")
-if heterogram(recenica):
-    print("Recenica je heterogram.")
+# def heterogram(recenica):
+#     slova = [char for char in recenica if char.isalpha()]
+#     return len(set(slova)) == len(recenica)
+# recenica=input("Unesite neku recenicu: ")
+# if heterogram(recenica):
+#     print("Recenica je heterogram.")
+# else:
+#     print("Recenica nije heterogram.")
+
+# Na programskom jeziku Python sastaviti funkciju
+# koja proverava da li je zadata rečenica pangram
+# (sva slova se pojavljuju bar jednom).
+
+def pangram(recenica):
+    abeceda = set('abcdefghijklmnopqrstuvwxy')
+    slova_u_recenici = set(char.lower() for char in recenica if char.isalpha())
+    return abeceda.issubset(slova_u_recenici)
+recenica = input("Unesite neku recenicu:\n")
+if pangram(recenica):
+    print("Recenica je pangram.")
 else:
-    print("Recenica nije heterogram.")
+    print("Recenica nije pangram")
