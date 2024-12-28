@@ -245,12 +245,27 @@ opadajućem redosledu..'''
 # koja proverava da li je zadata rečenica pangram
 # (sva slova se pojavljuju bar jednom).
 
-def pangram(recenica):
-    abeceda = set('abcdefghijklmnopqrstuvwxy')
-    slova_u_recenici = set(char.lower() for char in recenica if char.isalpha())
-    return abeceda.issubset(slova_u_recenici)
-recenica = input("Unesite neku recenicu:\n")
-if pangram(recenica):
-    print("Recenica je pangram.")
-else:
-    print("Recenica nije pangram")
+# def pangram(recenica):
+#     abeceda = set('abcdefghijklmnopqrstuvwxy')
+#     slova_u_recenici = set(char.lower() for char in recenica if char.isalpha())
+#     return abeceda.issubset(slova_u_recenici)
+# recenica = input("Unesite neku recenicu:\n")
+# if pangram(recenica):
+#     print("Recenica je pangram.")
+# else:
+#     print("Recenica nije pangram")
+
+'''DATOTEKE'''
+
+# Na programskom jeziku Python sastaviti funkciju
+# koja pronalazi srednju dužinu reči zadate datoteke.
+suma=0
+brojac=0
+with open('tekst.txt','r') as f:
+    for line in f:
+        reci = line.split()
+        for rec in reci:
+            suma +=len(rec)
+            brojac+=1
+srednja=suma/brojac
+print(srednja)
