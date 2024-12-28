@@ -259,13 +259,13 @@ opadajućem redosledu..'''
 
 # Na programskom jeziku Python sastaviti funkciju
 # koja pronalazi srednju dužinu reči zadate datoteke.
-suma=0
-brojac=0
-with open('tekst.txt','r') as f:
-    for line in f:
-        reci = line.split()
-        for rec in reci:
-            suma +=len(rec)
-            brojac+=1
-srednja=suma/brojac
-print(srednja)
+# suma=0
+# brojac=0
+# with open('tekst.txt','r') as f:
+#     for line in f:
+#         reci = line.split()
+#         for rec in reci:
+#             suma +=len(rec)
+#             brojac+=1
+# srednja=suma/brojac
+# print(srednja)
