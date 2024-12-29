@@ -45,5 +45,5 @@ for i in range(n):
     niz.append(broj)
 
 for i in range(1,n-1):
-    if niz[i] == (niz[i-1] + niz[i+1])//2:
+    if niz[i] == (niz[i-1] + niz[i+1])/2:
         print(i)
