@@ -84,27 +84,61 @@ PALINDROM“. Program treba da ponavlja opisani postupak sve dok se sa glavnog u
 ne unese prazan string.
 '''
 
-dozvoljeni_znakovi = input("Unesite dozvoljene znakove za koriscenje: ")
+# dozvoljeni_znakovi = input("Unesite dozvoljene znakove za koriscenje: ")
 
-def check(dozvoljeni_znakovi):
-    recenica=input("Unesite recenicu od dozvoljenih znakova: ")
-    while recenica != '':
-        for slovo in recenica:
-            if slovo not in dozvoljeni_znakovi:
-                print("Uneli ste nevalidne vrednosti!")
-                recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+# def check(dozvoljeni_znakovi):
+#     recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+#     while recenica != '':
+#         for slovo in recenica:
+#             if slovo not in dozvoljeni_znakovi:
+#                 print("Uneli ste nevalidne vrednosti!")
+#                 recenica=input("Unesite recenicu od dozvoljenih znakova: ")
         
-        palindrom=''
+#         palindrom=''
         
-        for slovo in range(len(recenica)-1,-1,-1):
-            palindrom += recenica[slovo]
+#         for slovo in range(len(recenica)-1,-1,-1):
+#             palindrom += recenica[slovo]
         
-        if recenica == palindrom:
-            print("PALINDROM")
-            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+#         if recenica == palindrom:
+#             print("PALINDROM")
+#             recenica=input("Unesite recenicu od dozvoljenih znakova: ")
             
-        else:
-            print("NIJE PALINDROM")
-            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
-    return
-print(check(dozvoljeni_znakovi=dozvoljeni_znakovi))
+#         else:
+#             print("NIJE PALINDROM")
+#             recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+#     return
+# print(check(dozvoljeni_znakovi=dozvoljeni_znakovi))
+
+'''8. Napisati program u programskom jeziku Python koji pronalazi torku sa najvećim
+zbirom elemenata među n torki koje korisnik unosi, ispisuje sve torke čiji su svi
+elementi parni, sortira torke prema drugom elementu u opadajućem redosledu'''
+
+n = int(input("Unesite n broj torki: "))
+niz_torki=[]
+
+for i in range(n):
+    torka = tuple(input("Unesite elemente torke: ").split(' '))
+    niz_torki.append(torka)
+
+def najveci_zbir(niz_torki):
+    suma = 0
+    max=0
+    for torka in niz_torki:
+        for broj in torka:
+            suma+=int(broj)
+        if suma > max:
+            max = suma
+        suma = 0
+    return max
+najveci_zbir(niz_torki)
+
+def svi_parni(niz_torki):
+    for torka in niz_torki:
+        is_true=True
+        for broj in torka:
+            if int(broj) % 2 != 0:
+                is_true=False
+                break
+        if is_true:
+            print(torka)
+svi_parni(niz_torki)
