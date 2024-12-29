@@ -55,19 +55,56 @@ da li se u nizu nalaze samo dozvoljeni znakovi (cifre 0..9 i znakovi A..F). Ukol
 nizu nalaze nedozvoljeni znakovi, ispisati odgovarajuću poruku i prekinuti izvršavanje. U
 suprotnom, ispisati izračunatu decimalnu vrednost.'''
 
-def decimal():
-    niz = input("Unesite heksadecimalni broj(najvise do 6 cifara): ").strip()
-    hex = "0123456789ABCDEF"
-    if len(niz)>6:
-        print("Uneli ste predugacak broj!")
-        return 
-    for znak in niz.upper():
-        if znak not in hex:
-            print("Niste uneli validne vrednosti!")
-            return
-    decimal=0
-    for i,znak in enumerate(reversed(niz)):
-        vrednost = int(znak,16)
-        decimal += vrednost * (16 ** i)
-    return decimal
-print(decimal())
+# def decimal():
+#     niz = input("Unesite heksadecimalni broj(najvise do 6 cifara): ").strip()
+#     hex = "0123456789ABCDEF"
+#     if len(niz)>6:
+#         print("Uneli ste predugacak broj!")
+#         return 
+#     for znak in niz.upper():
+#         if znak not in hex:
+#             print("Niste uneli validne vrednosti!")
+#             return
+#     decimal=0
+#     for i,znak in enumerate(reversed(niz)):
+#         vrednost = int(znak,16)
+#         decimal += vrednost * (16 ** i)
+#     return decimal
+# print(decimal())
+
+'''5. Napisati program na programskom jeziku Python koji proverava da li je niz znakova
+(string) učitan sa glavnog ulaza palindrom koji je sastavljen od tačno određenih znakova.
+Palindrom je string koji se čita isto u oba smera. Program prvo treba da učita iz posebnog
+reda znakove koji smeju da se pojave u stringovima, a zatim da iz narednih redova
+učitava stringove i proverava da li su učitani stringovi palindromi koji se sastoje samo od
+dozvoljenih znakova. Svaki string se zadaje u posebnom redu. Stringovi se mogu sastojati
+od proizvoljnih znakova, a ne samo od slova. Mala i velika slova se razlikuju. Ukoliko
+reč zadovoljava navedene uslove, ispisati poruku „PALINDROM“, a u suprotnom „NIJE
+PALINDROM“. Program treba da ponavlja opisani postupak sve dok se sa glavnog ulaza
+ne unese prazan string.
+'''
+
+dozvoljeni_znakovi = input("Unesite dozvoljene znakove za koriscenje: ")
+
+def check(dozvoljeni_znakovi):
+    recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+    while recenica != '':
+        for slovo in recenica:
+            if slovo not in dozvoljeni_znakovi:
+                print("Uneli ste nevalidne vrednosti!")
+                recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+        
+        palindrom=''
+        
+        for slovo in range(len(recenica)-1,-1,-1):
+            palindrom += recenica[slovo]
+        
+        if recenica == palindrom:
+            print("PALINDROM")
+            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+            
+        else:
+            print("NIJE PALINDROM")
+            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+    return
+print(check(dozvoljeni_znakovi=dozvoljeni_znakovi))
