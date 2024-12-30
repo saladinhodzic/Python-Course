@@ -149,19 +149,41 @@ Program sortira torke prema njihovom proseku u rastućem redosledu i na kraju is
 sve torke zajedno sa njihovim prosekom.
 '''
 
+# n = int(input("Unesite n broj torki: "))
+# niz_torki = []
+
+# for i in range(n):
+#     torka = tuple(input("Unesite tri realna broja: ").split(" "))
+#     niz_torki.append(torka)
+
+# def prosek(torka):
+#     suma=0
+#     for broj in torka:
+#         suma+=float(broj)
+#     return suma / 3
+# niz_torki.sort(key = prosek )
+# print(niz_torki)
+
+'''15. Napisati program u programskom jeziku Python koji pronalazi torku sa najmanjom
+razlikom između najvećeg i najmanjeg elementa. Korisnik unosi broj n, a zatim unosi n
+torki sa po tri prirodna broja'''
+
 n = int(input("Unesite n broj torki: "))
-niz_torki = []
+niz_torki=[]
 
 for i in range(n):
-    torka = tuple(input("Unesite tri realna broja: ").split(" "))
+    torka = tuple(input("Unesite tri elementa torke: ").split(" "))
     niz_torki.append(torka)
+    
+def sort (torka):
+    return int(max(torka)) - int(min(torka))
+        
 
-def prosek(torka):
-    suma=0
-    for broj in torka:
-        suma+=float(broj)
-    return suma / 3
-niz_torki.sort(key = prosek )
-print(niz_torki)
+def najmanja_razlika(niz_torki):
+    '''funkcija vraca torku sa najmanjom razlikom izmedju najveceg i najmanjeg elementa torke'''
 
+    niz_torki.sort(key = sort)
+    
+    return niz_torki[0]
+print(najmanja_razlika(niz_torki))
         
