@@ -113,32 +113,55 @@ ne unese prazan string.
 zbirom elemenata među n torki koje korisnik unosi, ispisuje sve torke čiji su svi
 elementi parni, sortira torke prema drugom elementu u opadajućem redosledu'''
 
+# n = int(input("Unesite n broj torki: "))
+# niz_torki=[]
+
+# for i in range(n):
+#     torka = tuple(input("Unesite elemente torke: ").split(' '))
+#     niz_torki.append(torka)
+
+# def najveci_zbir(niz_torki):
+#     suma = 0
+#     max=0
+#     for torka in niz_torki:
+#         for broj in torka:
+#             suma+=int(broj)
+#         if suma > max:
+#             max = suma
+#         suma = 0
+#     return max
+# najveci_zbir(niz_torki)
+
+# def svi_parni(niz_torki):
+#     for torka in niz_torki:
+#         is_true=True
+#         for broj in torka:
+#             if int(broj) % 2 != 0:
+#                 is_true=False
+#                 break
+#         if is_true:
+#             print(torka)
+# svi_parni(niz_torki)
+
+'''14. Napisati program u programskom jeziku Python koji računa prosek svake torke unete
+od strane korisnika. Korisnik unosi broj n, zatim n torki koje sadrže po tri realna broja.
+Program sortira torke prema njihovom proseku u rastućem redosledu i na kraju ispisuje
+sve torke zajedno sa njihovim prosekom.
+'''
+
 n = int(input("Unesite n broj torki: "))
-niz_torki=[]
+niz_torki = []
 
 for i in range(n):
-    torka = tuple(input("Unesite elemente torke: ").split(' '))
+    torka = tuple(input("Unesite tri realna broja: ").split(" "))
     niz_torki.append(torka)
 
-def najveci_zbir(niz_torki):
-    suma = 0
-    max=0
-    for torka in niz_torki:
-        for broj in torka:
-            suma+=int(broj)
-        if suma > max:
-            max = suma
-        suma = 0
-    return max
-najveci_zbir(niz_torki)
+def prosek(torka):
+    suma=0
+    for broj in torka:
+        suma+=float(broj)
+    return suma / 3
+niz_torki.sort(key = prosek )
+print(niz_torki)
 
-def svi_parni(niz_torki):
-    for torka in niz_torki:
-        is_true=True
-        for broj in torka:
-            if int(broj) % 2 != 0:
-                is_true=False
-                break
-        if is_true:
-            print(torka)
-svi_parni(niz_torki)
+        
