@@ -168,22 +168,50 @@ sve torke zajedno sa njihovim prosekom.
 razlikom između najvećeg i najmanjeg elementa. Korisnik unosi broj n, a zatim unosi n
 torki sa po tri prirodna broja'''
 
+# n = int(input("Unesite n broj torki: "))
+# niz_torki=[]
+
+# for i in range(n):
+#     torka = tuple(input("Unesite tri elementa torke: ").split(" "))
+#     niz_torki.append(torka)
+    
+# def sort (torka):
+#     return int(max(torka)) - int(min(torka))
+        
+
+# def najmanja_razlika(niz_torki):
+#     '''funkcija vraca torku sa najmanjom razlikom izmedju najveceg i najmanjeg elementa torke'''
+
+#     niz_torki.sort(key = sort)
+    
+#     return niz_torki[0]
+# print(najmanja_razlika(niz_torki))
+        
+'''16. Napisati program u programskom jeziku Python koji razvrstava unete torke u dve
+liste: jednu listu sa torkama čiji je zbir elemenata paran i drugu sa torkama čiji je zbir
+neparan. Korisnik unosi broj n, a zatim n torki koje sadrže po tri cela broja. Na kraju
+program ispisuje obe liste'''
+
 n = int(input("Unesite n broj torki: "))
-niz_torki=[]
+niz_torki =[]
 
 for i in range(n):
-    torka = tuple(input("Unesite tri elementa torke: ").split(" "))
+    torka = tuple(input("Unesite po tri elementa torke: ").split(" "))
     niz_torki.append(torka)
-    
-def sort (torka):
-    return int(max(torka)) - int(min(torka))
-        
 
-def najmanja_razlika(niz_torki):
-    '''funkcija vraca torku sa najmanjom razlikom izmedju najveceg i najmanjeg elementa torke'''
-
-    niz_torki.sort(key = sort)
+def razvrstavanje_torki(niz_torki):
+    '''Funkcija razvrstava torke u dva niza, jedan niz je za zbir elemenata torki ciji je zbir paran, a drugi niz je za torke ciji je zbir neparan'''
+    parne_torke = []
+    neparne_torke = []
     
-    return niz_torki[0]
-print(najmanja_razlika(niz_torki))
-        
+    for torka in niz_torki:
+        paran = True
+        for broj in torka:
+            if int(broj) % 2 != 0:
+                paran = False
+        if paran:
+            parne_torke.append(torka)
+        else:
+            neparne_torke.append(torka)
+    print(f"U nizu torki, torke sa parnim zbirom su {parne_torke} a sa neparnim {neparne_torke}")
+razvrstavanje_torki(niz_torki)
