@@ -63,9 +63,22 @@ Input:
 Output:
 True'''
 
-numbers = list(map(int,input("Enter a list of integers: ").split(" ")))
-def length_and_fifth(lista):
-    if len(lista)==8 and lista.count(lista[4]) == 3:
-        return True
-    return False
-print(length_and_fifth(numbers))
+# numbers = list(map(int,input("Enter a list of integers: ").split(" ")))
+# def length_and_fifth(lista):
+#     if len(lista)==8 and lista.count(lista[4]) == 3:
+#         return True
+#     return False
+# print(length_and_fifth(numbers))
+
+'''3. Stone Piles Distribution
+
+We are making n stone piles! The first pile has n stones. If n is even, then all piles have an even number of stones. If n is odd, all piles have an odd number of stones. Each pile must more stones than the previous pile but as few as possible. Write a Python program to find the number of stones in each pile.
+Input: 2
+Output:
+[2, 4'''
+
+n_stones = int(input("Enter n of stone piles: "))
+n_piles = [n_stones]
+for stone in range(1,n_stones):
+    n_piles.append(n_piles[stone - 1] + 2)
+print(n_piles)
