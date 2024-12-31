@@ -77,8 +77,25 @@ Input: 2
 Output:
 [2, 4'''
 
-n_stones = int(input("Enter n of stone piles: "))
-n_piles = [n_stones]
-for stone in range(1,n_stones):
-    n_piles.append(n_piles[stone - 1] + 2)
-print(n_piles)
+# n_stones = int(input("Enter n of stone piles: "))
+# n_piles = [n_stones]
+# for stone in range(1,n_stones):
+#     n_piles.append(n_piles[stone - 1] + 2)
+# print(n_piles)
+
+'''7. Sum of First i Equals i
+
+Write a  Python program to check a given list of integers where the sum of the first i integers is i.'''
+
+def sum_of_i(list):
+    sum = 0
+    brojac = 1
+    for broj in list:
+        sum+=broj
+        if sum == brojac:
+            brojac+=1
+        else:
+            return False
+    return True
+print(sum_of_i([1, 1, 1, 1, 1, 1]))
+    
