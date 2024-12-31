@@ -84,30 +84,30 @@ PALINDROM“. Program treba da ponavlja opisani postupak sve dok se sa glavnog u
 ne unese prazan string.
 '''
 
-# dozvoljeni_znakovi = input("Unesite dozvoljene znakove za koriscenje: ")
+dozvoljeni_znakovi = input("Unesite dozvoljene znakove za koriscenje: ")
 
-# def check(dozvoljeni_znakovi):
-#     recenica=input("Unesite recenicu od dozvoljenih znakova: ")
-#     while recenica != '':
-#         for slovo in recenica:
-#             if slovo not in dozvoljeni_znakovi:
-#                 print("Uneli ste nevalidne vrednosti!")
-#                 recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+def check(dozvoljeni_znakovi):
+    recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+    while recenica != '':
+        for slovo in recenica:
+            if slovo not in dozvoljeni_znakovi:
+                print("Uneli ste nevalidne vrednosti!")
+                recenica=input("Unesite recenicu od dozvoljenih znakova: ")
         
-#         palindrom=''
+        palindrom=''
         
-#         for slovo in range(len(recenica)-1,-1,-1):
-#             palindrom += recenica[slovo]
+        for slovo in range(len(recenica)-1,-1,-1):
+            palindrom += recenica[slovo]
         
-#         if recenica == palindrom:
-#             print("PALINDROM")
-#             recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+        if recenica == palindrom:
+            print("PALINDROM")
+            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
             
-#         else:
-#             print("NIJE PALINDROM")
-#             recenica=input("Unesite recenicu od dozvoljenih znakova: ")
-#     return
-# print(check(dozvoljeni_znakovi=dozvoljeni_znakovi))
+        else:
+            print("NIJE PALINDROM")
+            recenica=input("Unesite recenicu od dozvoljenih znakova: ")
+    return
+print(check(dozvoljeni_znakovi=dozvoljeni_znakovi))
 
 '''8. Napisati program u programskom jeziku Python koji pronalazi torku sa najvećim
 zbirom elemenata među n torki koje korisnik unosi, ispisuje sve torke čiji su svi
@@ -149,20 +149,21 @@ Program sortira torke prema njihovom proseku u rastućem redosledu i na kraju is
 sve torke zajedno sa njihovim prosekom.
 '''
 
-# n = int(input("Unesite n broj torki: "))
-# niz_torki = []
+n = int(input("Unesite n broj torki: "))
+niz_torki = []
 
-# for i in range(n):
-#     torka = tuple(input("Unesite tri realna broja: ").split(" "))
-#     niz_torki.append(torka)
+for i in range(n):
+    torka = tuple(input("Unesite tri realna broja: ").split(" "))
+    niz_torki.append(torka)
 
-# def prosek(torka):
-#     suma=0
-#     for broj in torka:
-#         suma+=float(broj)
-#     return suma / 3
-# niz_torki.sort(key = prosek )
-# print(niz_torki)
+def prosek(torka):
+    suma=0
+    for broj in torka:
+        suma+=float(broj)
+    return suma / 3
+
+niz_torki.sort(key = prosek )
+print(niz_torki)
 
 '''15. Napisati program u programskom jeziku Python koji pronalazi torku sa najmanjom
 razlikom između najvećeg i najmanjeg elementa. Korisnik unosi broj n, a zatim unosi n
