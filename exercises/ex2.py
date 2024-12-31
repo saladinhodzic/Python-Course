@@ -87,15 +87,38 @@ Output:
 
 Write a  Python program to check a given list of integers where the sum of the first i integers is i.'''
 
-def sum_of_i(list):
-    sum = 0
-    brojac = 1
-    for broj in list:
-        sum+=broj
-        if sum == brojac:
-            brojac+=1
+# def sum_of_i(list):
+#     sum = 0
+#     brojac = 1
+#     for broj in list:
+#         sum+=broj
+#         if sum == brojac:
+#             brojac+=1
+#         else:
+#             return False
+#     return True
+# print(sum_of_i([1, 1, 1, 1, 1, 1]))
+
+'''8. Split String into Words and Separators
+
+Write a Python program to split a string of words separated by commas and spaces into two lists, words and separators.
+Input: W3resource Python, Exercises.
+Output:
+[['W3resource', 'Python', 'Exercises.'], [' ', ', ']]'''
+def split(input):
+    words = []
+    sep = []
+    separators = ', -'
+    word = ''
+    for letter in input:
+        if letter not in separators:
+            word += letter
         else:
-            return False
-    return True
-print(sum_of_i([1, 1, 1, 1, 1, 1]))
+            if word != '':
+                words.append(word)
+                word= ''
+            sep.append(letter)
+    words.append(word)
+    print(words,sep)
+split("Danas je, lep dan.")
     
