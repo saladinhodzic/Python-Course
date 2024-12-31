@@ -39,18 +39,33 @@ Input:
 Output:
 True'''
 
-def check_19_and_5(list):
-    acc1=0
-    acc2=0
-    for broj in list:
-        if broj == 19:
-            acc1+=1
-        elif broj == 5:
-            acc2+=1
-    if acc1 == 2:
-        if acc2 >=3:
-            return True
-    else:
-        return False
-lista = map(int,input("Enter a list of nubers: ").split(" "))
-print(check_19_and_5(lista))
+# def check_19_and_5(list):
+#     acc1=0
+#     acc2=0
+#     for broj in list:
+#         if broj == 19:
+#             acc1+=1
+#         elif broj == 5:
+#             acc2+=1
+#     if acc1 == 2:
+#         if acc2 >=3:
+#             return True
+#     else:
+#         return False
+# lista = map(int,input("Enter a list of nubers: ").split(" "))
+# print(check_19_and_5(lista))
+
+'''2. Fifth Element and List Length Check
+
+Write a Python program that accepts a list of integers and calculates the length and the fifth element. Return true if the length of the list is 8 and the fifth element occurs thrice in the said list.
+Input:
+[19, 19, 15, 5, 5, 5, 1, 2]
+Output:
+True'''
+
+numbers = list(map(int,input("Enter a list of integers: ").split(" ")))
+def length_and_fifth(lista):
+    if len(lista)==8 and lista.count(lista[4]) == 3:
+        return True
+    return False
+print(length_and_fifth(numbers))
