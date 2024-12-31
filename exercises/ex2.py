@@ -25,8 +25,32 @@ Write a Python program that accepts an integer (n) and computes the value of n+n
 Sample value of n is 5
 Expected Result : 615'''
 
-n = int(input("Enter number for expansion: "))
+# n = int(input("Enter number for expansion: "))
 
-acc= n + (n*10+n) + (n*100 + n*10 + n)
+# acc= n + (n*10+n) + (n*100 + n*10 + n)
 
-print(acc)
+# print(acc)
+
+'''1. Check Nineteen and Five Occurrences
+
+Write a Python program to find a list of integers with exactly two occurrences of nineteen and at least three occurrences of five. Return True otherwise False.
+Input:
+[19, 19, 15, 5, 3, 5, 5, 2]
+Output:
+True'''
+
+def check_19_and_5(list):
+    acc1=0
+    acc2=0
+    for broj in list:
+        if broj == 19:
+            acc1+=1
+        elif broj == 5:
+            acc2+=1
+    if acc1 == 2:
+        if acc2 >=3:
+            return True
+    else:
+        return False
+lista = map(int,input("Enter a list of nubers: ").split(" "))
+print(check_19_and_5(lista))
