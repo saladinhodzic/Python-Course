@@ -105,20 +105,39 @@ Write a Python program to split a string of words separated by commas and spaces
 Input: W3resource Python, Exercises.
 Output:
 [['W3resource', 'Python', 'Exercises.'], [' ', ', ']]'''
-def split(input):
-    words = []
-    sep = []
-    separators = ', -'
-    word = ''
-    for letter in input:
-        if letter not in separators:
-            word += letter
-        else:
-            if word != '':
-                words.append(word)
-                word= ''
-            sep.append(letter)
-    words.append(word)
-    print(words,sep)
-split("Danas je, lep dan.")
-    
+# def split(input):
+#     words = []
+#     sep = []
+#     separators = ', -'
+#     word = ''
+#     for letter in input:
+#         if letter not in separators:
+#             word += letter
+#         else:
+#             if word != '':
+#                 words.append(word)
+#                 word= ''
+#             sep.append(letter)
+#     words.append(word)
+#     print(words,sep)
+# split("Danas je, lep dan.")
+
+'''9. Four Distinct Values Non-Consecutive
+
+Write a Python program to find a list of integers containing exactly four distinct values, such that no integer repeats twice consecutively among the first twenty entries.
+Input:
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+Output:
+True'''
+
+def check(list):
+    for i in range(3,len(list)):
+        for j in range(i-1,i-4,-1):
+            if list[i] !=list[j]:
+                pass
+            else:
+                return False
+    return True
+
+print(check([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]))
+print(check([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3]))
