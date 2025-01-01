@@ -179,14 +179,71 @@ Input:
 Output:
 [False, True, True, False, False]'''
 
-def check_palindroms(list):
-    is_palindrome = []
+# def check_palindroms(list):
+#     is_palindrome = []
     
-    for word in list:
-        if word == word[::-1]:
-            is_palindrome.append(True)
-        else:
-            is_palindrome.append(False)
-    print(list)
-    print(is_palindrome)
-check_palindroms(['palindrome', 'madamimadam', '', 'foo', 'eyes'])
+#     for word in list:
+#         if word == word[::-1]:
+#             is_palindrome.append(True)
+#         else:
+#             is_palindrome.append(False)
+#     print(list)
+#     print(is_palindrome)
+# check_palindroms(['palindrome', 'madamimadam', '', 'foo', 'eyes'])
+
+'''Exercise 1:
+
+Create a list with values ranging from 0 to 9.
+
+'''
+
+# lista = list(range(10))
+# print(lista)
+
+'''Exercise 2:
+
+Convert a list of integers to a list of strings.
+
+'''
+
+# lista_int = [1,2,3,4,5]
+
+# lista_str = list(map(str,lista_int))
+
+# print(lista_str)
+
+'''Exercise 3:
+
+Multiply all elements in a list by 2.
+
+'''
+
+# nums = [2,4,6,3,4]
+
+# multiply = [elem * 2 for elem in nums]
+
+# print(multiply)
+
+'''Exercise 4:
+
+Extract all odd numbers from a list of integers.
+
+'''
+
+# nums = [1,2,3,4,5]
+
+# odd_nums = [elem for elem in nums if elem % 2 != 0]
+
+# print(odd_nums)
+
+'''Exercise 5:
+
+Replace all odd numbers in a list with -1.
+
+'''
+
+nums = [1,2,3,4,5,6,7]
+
+replace = [-1 if num % 2 != 0 else num for num in nums]
+
+print(replace)
