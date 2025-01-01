@@ -150,23 +150,43 @@ Input:
 Output:
 ['(())', '((()()()))', '(())', '()']'''
 
-def parentheses(input):
-    arr = []
-    match = ''
-    brojac1 = 0
-    brojac2 = 0
-    for symbol in input:
-        if symbol == ' ':
-            continue
-        match+=symbol
-        if symbol == '(':
-            brojac1+=1
+# def parentheses(input):
+#     arr = []
+#     match = ''
+#     brojac1 = 0
+#     brojac2 = 0
+#     for symbol in input:
+#         if symbol == ' ':
+#             continue
+#         match+=symbol
+#         if symbol == '(':
+#             brojac1+=1
+#         else:
+#             brojac2+=1
+#         if brojac1 == brojac2 and brojac1 != 0:
+#             arr.append(match)
+#             match = ''
+#             brojac1 = 0
+#             brojac2 = 0
+#     print(arr)
+# parentheses('( ()) ((()()())) (()) ()')
+
+'''12. Check Palindromes in List
+
+Write a Python program to check whether the given strings are palindromes or not. Return True otherwise False.
+Input:
+['palindrome', 'madamimadam', '', 'foo', 'eyes']
+Output:
+[False, True, True, False, False]'''
+
+def check_palindroms(list):
+    is_palindrome = []
+    
+    for word in list:
+        if word == word[::-1]:
+            is_palindrome.append(True)
         else:
-            brojac2+=1
-        if brojac1 == brojac2 and brojac1 != 0:
-            arr.append(match)
-            match = ''
-            brojac1 = 0
-            brojac2 = 0
-    print(arr)
-parentheses('( ()) ((()()())) (()) ()')
+            is_palindrome.append(False)
+    print(list)
+    print(is_palindrome)
+check_palindroms(['palindrome', 'madamimadam', '', 'foo', 'eyes'])
