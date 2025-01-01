@@ -130,14 +130,43 @@ Input:
 Output:
 True'''
 
-def check(list):
-    for i in range(3,len(list)):
-        for j in range(i-1,i-4,-1):
-            if list[i] !=list[j]:
-                pass
-            else:
-                return False
-    return True
+# def check(list):
+#     for i in range(3,len(list)):
+#         for j in range(i-1,i-4,-1):
+#             if list[i] !=list[j]:
+#                 pass
+#             else:
+#                 return False
+#     return True
 
-print(check([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]))
-print(check([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3]))
+# print(check([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]))
+# print(check([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3]))
+
+'''10. Split Matched Parentheses Groups
+
+Given a string consisting of whitespace and groups of matched parentheses, write a Python program to split it into groups of perfectly matched parentheses without any whitespace.
+Input:
+( ()) ((()()())) (()) ()
+Output:
+['(())', '((()()()))', '(())', '()']'''
+
+def parentheses(input):
+    arr = []
+    match = ''
+    brojac1 = 0
+    brojac2 = 0
+    for symbol in input:
+        if symbol == ' ':
+            continue
+        match+=symbol
+        if symbol == '(':
+            brojac1+=1
+        else:
+            brojac2+=1
+        if brojac1 == brojac2 and brojac1 != 0:
+            arr.append(match)
+            match = ''
+            brojac1 = 0
+            brojac2 = 0
+    print(arr)
+parentheses('( ()) ((()()())) (()) ()')
