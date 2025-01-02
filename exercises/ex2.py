@@ -242,8 +242,68 @@ Replace all odd numbers in a list with -1.
 
 '''
 
-nums = [1,2,3,4,5,6,7]
+# nums = [1,2,3,4,5,6,7]
 
-replace = [-1 if num % 2 != 0 else num for num in nums]
+# replace = [-1 if num % 2 != 0 else num for num in nums]
 
-print(replace)
+# print(replace)
+
+'''Exercise 6:
+
+Convert a list of integers to a list of booleans where all non-zero values become True.
+
+'''
+
+# nums = [1,2,3,0,0,2,5]
+
+# convert = [bool(num) for num in nums]
+
+# print(convert)
+
+'''Exercise 7:
+
+Replace all even numbers in a list with their negative.
+
+'''
+
+# nums = [1,2,3,4,5,6]
+
+# replace = [num * -1 if num % 2 == 0 else num for num in nums]
+
+# print(replace)
+
+'''Exercise 8:
+
+Create a 3x3 list of lists with random values and normalize it.
+
+'''
+# import random
+
+# matrix = [[random.randint(1,100) for _ in range(3)] for _ in range(3)]
+
+# flatten_matrix = [num for row in matrix for num in row]
+
+# min = min(flatten_matrix)
+# max = max(flatten_matrix)
+
+# normalized_matrix = [[round((value - min ) / (max - min),2) for value in row ] for row in matrix]
+
+# print(normalized_matrix)
+
+
+'''Exercise 9:
+
+Calculate the sum of the diagonal elements of a 3x3 matrix (list of lists).
+
+'''
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+diagonal_elements = []
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if i==j:
+            diagonal_elements.append(matrix[i][j])
+
+print(sum(diagonal_elements))
