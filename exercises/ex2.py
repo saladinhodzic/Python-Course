@@ -297,13 +297,26 @@ Calculate the sum of the diagonal elements of a 3x3 matrix (list of lists).
 
 '''
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
-diagonal_elements = []
+# diagonal_elements = []
 
-for i in range(len(matrix)):
-    for j in range(len(matrix[i])):
-        if i==j:
-            diagonal_elements.append(matrix[i][j])
+# for i in range(len(matrix)):
+#     for j in range(len(matrix[i])):
+#         if i==j:
+#             diagonal_elements.append(matrix[i][j])
 
-print(sum(diagonal_elements))
+# print(sum(diagonal_elements))
+
+'''
+Exercise 10:
+
+Find the indices of non-zero elements in a list.
+
+'''
+
+nums = [1,0,2,0,3,4]
+
+non_zero_indices = [i for i in range(len(nums)) if nums[i] != 0]
+
+print(non_zero_indices)
