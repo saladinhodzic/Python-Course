@@ -373,9 +373,70 @@ Get the common items between two lists.
 
 '''
 
-first = [1,2,3,4,5]
-second = [4,5,2,6,7]
-# common_items = [first[i] for i in range(len(first)) for j in range(len(second))  if first[i] == second[j] ]
-common_items = list(set(first) & set(second))
+# first = [1,2,3,4,5]
+# second = [4,5,2,6,7]
+# # common_items = [first[i] for i in range(len(first)) for j in range(len(second))  if first[i] == second[j] ]
+# common_items = list(set(first) & set(second))
 
-print(common_items)
+# print(common_items)
+
+'''Exercise 16:
+
+Create a 5x5 list of lists with row values ranging from 0 to 4.
+
+'''
+
+# matrix = [[value for value in range(5)] for _ in range(5)]
+# print(matrix)
+
+'''Exercise 17:
+
+Find the index of the maximum value in a list.
+'''
+
+# nums = [1,2,3,4,5,6,7]
+
+# max = max(nums)
+
+# print(nums.index(max))
+
+'''Exercise 18:
+
+Normalize the values in a list between 0 and 1.
+
+'''
+
+# nums = [1,2,3,4,5,6,7]
+
+# min = min(nums)
+# max = max(nums)
+
+# normalized_list = [round((value - min) / (max - min),2) for value in nums]
+
+# print(normalized_list)
+
+'''
+Exercise 19:
+
+Calculate the dot product of two lists.
+
+'''
+
+# first_list = [1,2,3,4,5]
+# second_list = [6,7,8,9,10]    
+# # sum=0
+# # for i in range(len(first_list)):
+# #     sum+=first_list[i] * second_list[i]
+# sum = sum(x * y for x, y in zip(first_list,second_list))
+# print(sum)
+
+'''Exercise 20:
+
+Count the number of elements in a list within a specific range.
+'''
+
+nums = [1,2,3,4,5,6,7]
+
+count = sum(5 <= num <=10 for num in nums)
+
+print(count)
