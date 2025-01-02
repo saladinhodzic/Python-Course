@@ -315,8 +315,67 @@ Find the indices of non-zero elements in a list.
 
 '''
 
-nums = [1,0,2,0,3,4]
+# nums = [1,0,2,0,3,4]
 
-non_zero_indices = [i for i in range(len(nums)) if nums[i] != 0]
+# non_zero_indices = [i for i in range(len(nums)) if nums[i] != 0]
 
-print(non_zero_indices)
+# print(non_zero_indices)
+
+'''
+Exercise 11:
+
+Reverse a list.
+
+'''
+
+# arr = [1,2,3,4,5,6]
+
+# # reverse = [arr[i] for i in range(len(arr)-1,-1,-1)]
+# reverse = arr[::-1]
+
+# print(reverse)
+
+'''Exercise 12:
+
+Create a 3x3 identity matrix as a list of lists.
+
+'''
+
+# matrix = [[1 if i == j else 0 for j in range(3)] for i in range(3)]
+
+# print(matrix)
+
+'''Exercise 13:
+
+Reshape a 1D list to a 2D list with 2 rows.
+
+'''
+
+# one_dimension = [1,2,3,4,5]
+# two_dimension = [one_dimension[:len(one_dimension)//2] , one_dimension[len(one_dimension)//2:]]
+# print(two_dimension)
+
+'''
+Exercise 14:
+
+Stack two lists vertically.
+
+'''
+
+# first = [1,2,3]
+# second = [4,5,6]
+# stack = [first,second]
+# print(stack)
+
+'''Exercise 15:
+
+Get the common items between two lists.
+
+'''
+
+first = [1,2,3,4,5]
+second = [4,5,2,6,7]
+# common_items = [first[i] for i in range(len(first)) for j in range(len(second))  if first[i] == second[j] ]
+common_items = list(set(first) & set(second))
+
+print(common_items)
