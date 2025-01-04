@@ -447,10 +447,18 @@ Find the mean of each row in a 2D list.
 
 '''
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
-for row in matrix:
-    suma = 0
-    for broj in row:
-        suma += broj
-    print(suma / len(row))
+# for row in matrix:
+#     suma = 0
+#     for broj in row:
+#         suma += broj
+#     print(suma / len(row))
+
+import random 
+
+matrix = [[random.random() for _ in range(3)] for _ in range(3)]
+
+means = [sum(row) / len(row) for row in matrix]
+print(matrix)
+print(means)
