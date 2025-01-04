@@ -571,11 +571,22 @@ Exercise 31:
 Create a random 3x3 list of lists and replace all values greater than 0.5 with 1 and all others with 0.
 '''
 
-import random
+# import random
 
-matrix = [[random.random() for _ in range(3)] for _ in range(3)]
+# matrix = [[random.random() for _ in range(3)] for _ in range(3)]
 
-swap = [[1 if broj > 0.5 else 0 for broj in row]for row in matrix]
+# swap = [[1 if broj > 0.5 else 0 for broj in row]for row in matrix]
 
-print(matrix)
-print(swap)
+# print(matrix)
+# print(swap)
+
+'''Exercise 32:
+
+Find the indices of the top N maximum values in a list.
+'''
+
+lst = [10, 5, 8, 20, 15]
+n = 3
+
+indices = sorted(range(len(lst)), key= lambda i:lst[i], reverse=True)[:n]
+print(indices)
