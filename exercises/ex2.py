@@ -435,8 +435,22 @@ Calculate the dot product of two lists.
 Count the number of elements in a list within a specific range.
 '''
 
-nums = [1,2,3,4,5,6,7]
+# nums = [1,2,3,4,5,6,7]
 
-count = sum(5 <= num <=10 for num in nums)
+# count = sum(5 <= num <=10 for num in nums)
 
-print(count)
+# print(count)
+
+'''Exercise 21:
+
+Find the mean of each row in a 2D list.
+
+'''
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+for row in matrix:
+    suma = 0
+    for broj in row:
+        suma += broj
+    print(suma / len(row))
