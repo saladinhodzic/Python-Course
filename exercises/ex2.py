@@ -512,6 +512,20 @@ Exercise 26:
 Create a 2D list with 1 on the border and 0 inside.
 '''
 
-matrix = [[1 if i == 0 or i == 3  or j == 0 or j == 3 else 0 for j in range(4)]for i in range(4)]
+# matrix = [[1 if i == 0 or i == 3  or j == 0 or j == 3 else 0 for j in range(4)]for i in range(4)]
 
-print(matrix)
+# print(matrix)
+
+'''
+Exercise 27:
+
+Find the unique values and their counts in a list.
+'''
+
+lst = [1, 2, 3, 2, 4, 1, 5, 4, 6]
+
+remove_duplicates = list(set(lst))
+find_counts = {broj:lst.count(broj) for broj in remove_duplicates}
+
+print(remove_duplicates)
+print(find_counts)
