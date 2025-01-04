@@ -490,7 +490,28 @@ Replace all values in a list with the mean of the list.
 
 '''
 
-nums = [1,2,3,4,5,6,4,2,9]
+# nums = [1,2,3,4,5,6,4,2,9]
 
-mean = [sum(nums)/len(nums) for _ in range(len(nums))]
-print(mean)
+# mean = [sum(nums)/len(nums) for _ in range(len(nums))]
+# print(mean)
+
+'''
+Exercise 25:
+
+Find the indices of the maximum and minimum values in a list.
+'''
+
+# lst = [5, 2, 8, 1, 7]
+
+# max_index = lst.index(max(lst))
+# min_index = lst.index(min(lst))
+
+'''
+Exercise 26:
+
+Create a 2D list with 1 on the border and 0 inside.
+'''
+
+matrix = [[1 if i == 0 or i == 3  or j == 0 or j == 3 else 0 for j in range(4)]for i in range(4)]
+
+print(matrix)
