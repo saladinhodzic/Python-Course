@@ -585,8 +585,19 @@ Create a random 3x3 list of lists and replace all values greater than 0.5 with 1
 Find the indices of the top N maximum values in a list.
 '''
 
-lst = [10, 5, 8, 20, 15]
-n = 3
+# lst = [10, 5, 8, 20, 15]
+# n = 3
 
-indices = sorted(range(len(lst)), key= lambda i:lst[i], reverse=True)[:n]
-print(indices)
+# indices = sorted(range(len(lst)), key= lambda i:lst[i], reverse=True)[:n]
+# print(indices)
+
+'''
+Exercise 33:
+
+Calculate the mean of each column in a 2D list.
+'''
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+column_means = [ sum([matrix[i][j] for i in range(len(matrix)) ])/len(matrix[j]) for j in range(len(matrix)) ]
+print(column_means)
