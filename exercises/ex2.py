@@ -513,7 +513,7 @@ Create a 2D list with 1 on the border and 0 inside.
 '''
 
 # matrix = [[1 if i == 0 or i == 3  or j == 0 or j == 3 else 0 for j in range(4)]for i in range(4)]
-
+ 
 # print(matrix)
 
 '''
@@ -522,10 +522,44 @@ Exercise 27:
 Find the unique values and their counts in a list.
 '''
 
-lst = [1, 2, 3, 2, 4, 1, 5, 4, 6]
+# lst = [1, 2, 3, 2, 4, 1, 5, 4, 6]
 
-remove_duplicates = list(set(lst))
-find_counts = {broj:lst.count(broj) for broj in remove_duplicates}
+# remove_duplicates = list(set(lst))
+# find_counts = {broj:lst.count(broj) for broj in remove_duplicates}
 
-print(remove_duplicates)
-print(find_counts)
+# print(remove_duplicates)
+# print(find_counts)
+
+'''Exercise 28:
+
+Create a 3x3 list of lists with values ranging from 0 to 8.
+'''
+# matrix = [[i + j * 3 for i in range(3)]for j in range(3)]
+
+# print(matrix)
+
+'''
+Exercise 29:
+
+Calculate the exponential of all elements in a list.
+'''
+# import math
+# lst = [1, 2, 3, 4, 5]
+
+# exponents = [math.exp(broj) for broj in lst]
+# print(exponents)
+
+'''
+Exercise 30:
+
+Swap two rows in a 2D list.
+'''
+
+import random
+
+matrix = [[random.randint(0,5) for _ in range(3)]for _ in range(2)]
+
+print(matrix)
+
+swap = [matrix[i] for i in range(1,-1,-1)]
+print(swap)
