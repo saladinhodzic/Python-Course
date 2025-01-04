@@ -597,7 +597,18 @@ Exercise 33:
 Calculate the mean of each column in a 2D list.
 '''
 
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+# column_means = [ sum([matrix[i][j] for i in range(len(matrix)) ])/len(matrix[j]) for j in range(len(matrix)) ]
+# print(column_means)
+
+'''
+Exercise 34:
+
+Normalize the values in each column of a 2D list.
+'''
+
 matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
-column_means = [ sum([matrix[i][j] for i in range(len(matrix)) ])/len(matrix[j]) for j in range(len(matrix)) ]
-print(column_means)
+find_columns = [[(broj - min(col))/ (max(col) - min(col))for broj in col] for col in zip(*matrix)]
+print(find_columns)
