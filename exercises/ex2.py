@@ -555,11 +555,27 @@ Exercise 30:
 Swap two rows in a 2D list.
 '''
 
+# import random
+
+# matrix = [[random.randint(0,5) for _ in range(3)]for _ in range(2)]
+
+# print(matrix)
+
+# swap = [matrix[i] for i in range(1,-1,-1)]
+# print(swap)
+
+
+'''
+Exercise 31:
+
+Create a random 3x3 list of lists and replace all values greater than 0.5 with 1 and all others with 0.
+'''
+
 import random
 
-matrix = [[random.randint(0,5) for _ in range(3)]for _ in range(2)]
+matrix = [[random.random() for _ in range(3)] for _ in range(3)]
+
+swap = [[1 if broj > 0.5 else 0 for broj in row]for row in matrix]
 
 print(matrix)
-
-swap = [matrix[i] for i in range(1,-1,-1)]
 print(swap)
