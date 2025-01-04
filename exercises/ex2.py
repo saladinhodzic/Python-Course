@@ -455,10 +455,42 @@ Find the mean of each row in a 2D list.
 #         suma += broj
 #     print(suma / len(row))
 
-import random 
+# import random 
 
-matrix = [[random.random() for _ in range(3)] for _ in range(3)]
+# matrix = [[random.random() for _ in range(3)] for _ in range(3)]
 
-means = [sum(row) / len(row) for row in matrix]
-print(matrix)
-print(means)
+# means = [sum(row) / len(row) for row in matrix]
+# print(matrix)
+# print(means)
+
+'''Exercise 22:
+
+Create a random 4x4 list of lists and extract the diagonal elements.
+
+'''
+# import random
+# matrix = [[random.randint(0,10) for _ in range(4)]for _ in range(4)]
+
+# diagonal_elements = [matrix[i][i] for i in range(len(matrix)) ]
+
+# print(diagonal_elements)
+
+'''Exercise 23:
+
+Count the number of occurrences of a specific value in a list.'''
+
+# nums = [1,1,2,2,3,4,5,5,5]
+
+# print(nums.count(5))
+
+'''
+Exercise 24:
+
+Replace all values in a list with the mean of the list.
+
+'''
+
+nums = [1,2,3,4,5,6,4,2,9]
+
+mean = [sum(nums)/len(nums) for _ in range(len(nums))]
+print(mean)
