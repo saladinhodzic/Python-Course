@@ -670,8 +670,18 @@ Exercise 40:
 
 Calculate the mean of each row in a 2D list ignoring nan values
 '''
-import math
-matrix = [[1, 2, 3], [4, float('nan'), 6], [7, 8, 9]]
+# import math
+# matrix = [[1, 2, 3], [4, float('nan'), 6], [7, 8, 9]]
 
-means = [sum(broj for broj in row if not math.isnan(broj) ) / sum(1 for broj in row if not math.isnan(broj)) for row in matrix ]
-print(means) 
+# means = [sum(broj for broj in row if not math.isnan(broj) ) / sum(1 for broj in row if not math.isnan(broj)) for row in matrix ]
+# print(means) 
+
+'''Exercise 41:
+
+Compute the sum of diagonal elements in a 2D list.
+'''
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+suma = sum(matrix[i][j] for i in range(len(matrix)) for j in range(len(matrix[i])) if i == j)
+print(suma)
