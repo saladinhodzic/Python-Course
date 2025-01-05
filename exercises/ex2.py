@@ -648,7 +648,19 @@ Check if all elements in a list are non-zero.
 Find the indices of the maximum value in each row of a 2D list.
 '''
 
-matrix = [[1,2,3],[4,5,6],[9,7,6]]
+# matrix = [[1,2,3],[4,5,6],[9,7,6]]
 
-indices = [col.index(max(col)) for col in matrix]
-print(indices)
+# indices = [col.index(max(col)) for col in matrix]
+# print(indices)
+
+'''
+Exercise 39:
+
+Create a 2D list and replace all nan values with the mean of the list.
+'''
+import math
+matrix = [[1,float('nan'),3] , [4,5,float('nan')]]
+
+mean = sum(broj for row in matrix for broj in row if not math.isnan(broj) ) / len(matrix)
+matrix_new = [ [mean if math.isnan(broj) else broj for broj in row]for row in matrix]
+print(matrix_new)
