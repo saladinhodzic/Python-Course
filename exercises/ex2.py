@@ -618,8 +618,37 @@ Exercise 35:
 
 Concatenate two lists.
 '''
-lst = [1, 2, 3]
-lst2 = [4, 5, 6]
+# lst = [1, 2, 3]
+# lst2 = [4, 5, 6]
 
-concatenate = lst + lst2
-print(concatenate)
+# concatenate = lst + lst2
+# print(concatenate)
+
+'''Exercise 36:
+
+Create a 2D list with random values and sort each row.
+'''
+# import random
+
+# matrix = [sorted([random.randint(1,10) for _ in range(5)]) for _ in range(3)]
+
+# print(matrix)
+
+'''
+Exercise 37:
+
+Check if all elements in a list are non-zero.
+'''
+
+# lst = [1,2,3,4,5,6]
+# print(all(lst))
+
+'''Exercise 38:
+
+Find the indices of the maximum value in each row of a 2D list.
+'''
+
+matrix = [[1,2,3],[4,5,6],[9,7,6]]
+
+indices = [col.index(max(col)) for col in matrix]
+print(indices)
