@@ -608,7 +608,18 @@ Exercise 34:
 Normalize the values in each column of a 2D list.
 '''
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
-find_columns = [[(broj - min(col))/ (max(col) - min(col))for broj in col] for col in zip(*matrix)]
-print(find_columns)
+# find_columns = [[(broj - min(col))/ (max(col) - min(col))for broj in col] for col in zip(*matrix)]
+# print(find_columns)
+
+'''
+Exercise 35:
+
+Concatenate two lists.
+'''
+lst = [1, 2, 3]
+lst2 = [4, 5, 6]
+
+concatenate = lst + lst2
+print(concatenate)
