@@ -700,9 +700,18 @@ Convert radians to degrees for each element in a list.
 
 Calculate the pairwise Euclidean distance between two lists.
 '''
-import math
-lst1 = [1, 2, 3]
-lst2 = [4, 5, 6]
+# import math
+# lst1 = [1, 2, 3]
+# lst2 = [4, 5, 6]
 
-euclidean = sum((x-y)** 2 for x,y in zip(lst1,lst2)) ** 0.5 
-print(euclidean)
+# euclidean = sum((x-y)** 2 for x,y in zip(lst1,lst2)) ** 0.5 
+# print(euclidean)
+
+'''Exercise 44:
+
+Create a list and set the values between the 25th and 75th percentile to 0.
+'''
+
+lst = [1,2,3,4,5]
+percentile_25th = sorted(lst)[int(len(lst) * 0.25)]
+print(percentile_25th)
