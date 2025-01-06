@@ -681,7 +681,28 @@ Calculate the mean of each row in a 2D list ignoring nan values
 Compute the sum of diagonal elements in a 2D list.
 '''
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
 
-suma = sum(matrix[i][j] for i in range(len(matrix)) for j in range(len(matrix[i])) if i == j)
-print(suma)
+# suma = sum(matrix[i][j] for i in range(len(matrix)) for j in range(len(matrix[i])) if i == j)
+# print(suma)
+
+'''
+Exercise 42:
+
+Convert radians to degrees for each element in a list.
+'''
+# import math
+# lst = [math.pi / 2, math.pi, 3 * math.pi / 2]
+# degrees_lst = [math.degrees(x) for x in lst]
+# print(degrees_lst)
+
+'''Exercise 43:
+
+Calculate the pairwise Euclidean distance between two lists.
+'''
+import math
+lst1 = [1, 2, 3]
+lst2 = [4, 5, 6]
+
+euclidean = sum((x-y)** 2 for x,y in zip(lst1,lst2)) ** 0.5 
+print(euclidean)
