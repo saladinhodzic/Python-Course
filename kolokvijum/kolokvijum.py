@@ -26,17 +26,34 @@ koji iz liste celih brojeva izdvaja najdužu podlistu
 koja je uređena strogo rastuće. Pretpostaviti da
 lista sadrži bar jedan element.'''
 
-lst = [1,2,3,1,2,4,5,6,7,8]
+# lst = [1,2,3,4,5,1,2]
 
-trenutna_najduza = []
-najduza = []
+# trenutna_najduza = []
+# najduza = []
 
-for i in range(len(lst)-1):
-    if lst[i] < lst[i+1]:
-        trenutna_najduza.append(lst[i])
-    else:
-        najduza = trenutna_najduza
-        trenutna_najduza = []
-if len(trenutna_najduza) > len(najduza):
-    najduza = trenutna_najduza
-print(najduza)
+# for i in range(len(lst)):
+#     if i== 0 or lst[i] > lst[i-1]:
+#         trenutna_najduza.append(lst[i])
+#     else:
+#         if len(trenutna_najduza) > len(najduza):
+#             najduza = trenutna_najduza
+#         trenutna_najduza=[lst[i]]
+# if len(trenutna_najduza) > len(najduza):
+#     najduza = trenutna_najduza
+# print(najduza)
+
+'''Na programskom jeziku Python sastaviti program
+koji tabelira polinom.
+Primer: 𝑃 𝑥 = 3𝑥
+2 + 𝑥 + 4'''
+
+stepen = int(input("Unesite stepen polinoma: "))
+koeficijenti = [int(input("Broj: ")) for _ in range(stepen+1)]
+xmin,xmax,dx = 1.0, 10.0 , 1.5
+x = xmin
+while x <= xmax:
+    pol = 0
+    for j in range(len(koeficijenti)):
+        pol += koeficijenti[j]* x ** (stepen - j)
+    x += dx
+    print(pol)
