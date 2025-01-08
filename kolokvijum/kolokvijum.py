@@ -47,13 +47,30 @@ koji tabelira polinom.
 Primer: 𝑃 𝑥 = 3𝑥
 2 + 𝑥 + 4'''
 
-stepen = int(input("Unesite stepen polinoma: "))
-koeficijenti = [int(input("Broj: ")) for _ in range(stepen+1)]
-xmin,xmax,dx = 1.0, 10.0 , 1.5
-x = xmin
-while x <= xmax:
-    pol = 0
-    for j in range(len(koeficijenti)):
-        pol += koeficijenti[j]* x ** (stepen - j)
-    x += dx
-    print(pol)
+# stepen = int(input("Unesite stepen polinoma: "))
+# koeficijenti = [int(input("Broj: ")) for _ in range(stepen+1)]
+# xmin,xmax,dx = 1.0, 10.0 , 1.5
+# x = xmin
+# while x <= xmax:
+#     pol = 0
+#     for j in range(len(koeficijenti)):
+#         pol += koeficijenti[j]* x ** (stepen - j)
+#     x += dx
+#     print(pol)
+
+'''8. Zadatak
+20/38 Kovanice od 1,2,5,10 i 20 dinara formiraju
+kvadratnu matricu para dimenzija n*n.
+ Napisati program u programskom jeziku Python koji
+pronalazi zbir kovanica na glavnoj dijagonali,
+najmanji element iznad glavne dijagonale.'''
+
+import random
+coins = [1,2,5,10,20]
+n = int(input("Enter the value of n: "))
+
+matrix = [[random.choice(coins) for _ in range(n)]for _ in range(n)]
+diagonal = sum(matrix[i][i] for i in range(n))
+above_diagonal = list (matrix[i][j] for j in range(n) for i in range(n) if j > i)
+min_above_diagonal = min(above_diagonal)
+print(min_above_diagonal)
