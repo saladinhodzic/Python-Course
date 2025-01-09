@@ -94,13 +94,26 @@ koji za prosleđene liste pronalazi:
 koja proverava da li je zadata rečenica heterogram
 (nijedno slovo se ne pojavljuje više od jednom).'''
 
-def heterogram(recenica):
-    lista = [char for char in recenica]
-    skup = set(lista)
-    if len(skup) == len(lista):
-        print("HETEROGRAM")
+# def heterogram(recenica):
+#     lista = [char for char in recenica]
+#     skup = set(lista)
+#     if len(skup) == len(lista):
+#         print("HETEROGRAM")
+#     else:
+#         print("NIJE HETEROGRAM")
+# recenica = input("Unesite neku recenicu: ").strip()
+# print(recenica)
+# heterogram(recenica)
+
+''' Na programskom jeziku Python sastaviti funkciju
+koja proverava da li je zadata rečenica pangram
+(sva slova se pojavljuju bar jednom)'''
+import string
+def pangram(recenica):
+    is_pangram = set(string.ascii_lowercase).issubset(recenica.lower())
+    if is_pangram:
+        print("PANGRAM")
     else:
-        print("NIJE HETEROGRAM")
-recenica = input("Unesite neku recenicu: ").strip()
-print(recenica)
-heterogram(recenica)
+        print("NIJE PANGRAM")
+recenica = input("Unesite neku recenicu: ")
+pangram(recenica)
