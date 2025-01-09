@@ -82,11 +82,25 @@ koji za prosleđene liste pronalazi:
  c) elemente koji se nalaze u samo jednoj listi
 '''
 
-presek = {1,2,3} & {2,3,4,5}
+# presek = {1,2,3} & {2,3,4,5}
 
-liste = [[1,2,3],[3,4,5,6],[3,4,5]]
-setovi = [set(lista) for lista in liste]
-presek_svih = set.intersection(*setovi)
+# liste = [[1,2,3],[3,4,5,6],[3,4,5]]
+# setovi = [set(lista) for lista in liste]
+# presek_svih = set.intersection(*setovi)
 
-razlike = set.difference(*setovi)
-print(razlike)
+# razlike = set.difference(*setovi)
+# print(razlike)
+'''Na programskom jeziku Python sastaviti funkciju
+koja proverava da li je zadata rečenica heterogram
+(nijedno slovo se ne pojavljuje više od jednom).'''
+
+def heterogram(recenica):
+    lista = [char for char in recenica]
+    skup = set(lista)
+    if len(skup) == len(lista):
+        print("HETEROGRAM")
+    else:
+        print("NIJE HETEROGRAM")
+recenica = input("Unesite neku recenicu: ").strip()
+print(recenica)
+heterogram(recenica)
