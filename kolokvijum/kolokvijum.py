@@ -65,12 +65,28 @@ kvadratnu matricu para dimenzija n*n.
 pronalazi zbir kovanica na glavnoj dijagonali,
 najmanji element iznad glavne dijagonale.'''
 
-import random
-coins = [1,2,5,10,20]
-n = int(input("Enter the value of n: "))
+# import random
+# coins = [1,2,5,10,20]
+# n = int(input("Enter the value of n: "))
 
-matrix = [[random.choice(coins) for _ in range(n)]for _ in range(n)]
-diagonal = sum(matrix[i][i] for i in range(n))
-above_diagonal = list (matrix[i][j] for j in range(n) for i in range(n) if j > i)
-min_above_diagonal = min(above_diagonal)
-print(min_above_diagonal)
+# matrix = [[random.choice(coins) for _ in range(n)]for _ in range(n)]
+# diagonal = sum(matrix[i][i] for i in range(n))
+# above_diagonal = list (matrix[i][j] for j in range(n) for i in range(n) if j > i)
+# min_above_diagonal = min(above_diagonal)
+# print(min_above_diagonal)
+
+'''Na programskom jeziku Python sastaviti program
+koji za prosleđene liste pronalazi:
+ a) presek elemenata prve dve liste
+ b) elemente koji se nalaze u svim listama
+ c) elemente koji se nalaze u samo jednoj listi
+'''
+
+presek = {1,2,3} & {2,3,4,5}
+
+liste = [[1,2,3],[3,4,5,6],[3,4,5]]
+setovi = [set(lista) for lista in liste]
+presek_svih = set.intersection(*setovi)
+
+razlike = set.difference(*setovi)
+print(razlike)
