@@ -108,12 +108,25 @@ koja proverava da li je zadata rečenica heterogram
 ''' Na programskom jeziku Python sastaviti funkciju
 koja proverava da li je zadata rečenica pangram
 (sva slova se pojavljuju bar jednom)'''
-import string
-def pangram(recenica):
-    is_pangram = set(string.ascii_lowercase).issubset(recenica.lower())
-    if is_pangram:
-        print("PANGRAM")
-    else:
-        print("NIJE PANGRAM")
-recenica = input("Unesite neku recenicu: ")
-pangram(recenica)
+# import string
+# def pangram(recenica):
+#     is_pangram = set(string.ascii_lowercase).issubset(recenica.lower())
+#     if is_pangram:
+#         print("PANGRAM")
+#     else:
+#         print("NIJE PANGRAM")
+# recenica = input("Unesite neku recenicu: ")
+# pangram(recenica)
+
+'''Na programskom jeziku Python sastaviti funkciju
+koja pronalazi srednju dužinu reči zadate datoteke.'''
+
+with open("tekst.txt") as file:
+    words = 0
+    letters = 0
+    for line in file:
+        words_line = file.readline().split()
+        words += len(words_line)
+        for word in words_line:
+            letters += len(word)
+    print(letters/ words)
