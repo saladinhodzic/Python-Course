@@ -121,12 +121,35 @@ koja proverava da li je zadata rečenica pangram
 '''Na programskom jeziku Python sastaviti funkciju
 koja pronalazi srednju dužinu reči zadate datoteke.'''
 
-with open("tekst.txt") as file:
-    words = 0
-    letters = 0
-    for line in file:
-        words_line = file.readline().split()
-        words += len(words_line)
-        for word in words_line:
-            letters += len(word)
-    print(letters/ words)
+# with open("tekst.txt") as file:
+#     words = 0
+#     letters = 0
+#     for line in file:
+#         words_line = file.readline().split()
+#         words += len(words_line)
+#         for word in words_line:
+#             letters += len(word)
+#     print(letters/ words)
+
+'''Na programskom jeziku Python sastaviti program
+koji:
+ a) prvo čita tekst iz ulazne tekstualne datoteke i upisuje
+tekst u ASCII formatu u izlaznu binarnu datoteku
+ b) zatim čita podatke iz formirane binarne datoteke i
+upisuje ih u izlaznu tekstualnu datoteku
+'''
+
+# a)
+
+import sys
+with open(sys.argv[1],encoding="utf-8") as text:
+    with open(sys.argv[2],"wb",) as binary:
+        for line in text:
+            binary.write(line.encode("ascii"))
+
+# b)
+
+with open(sys.argv[2],'rb') as binary:
+    with open(sys.argv[3],'w', encoding='utf-8') as new_text:
+        for line in binary:
+            new_text.write(line.decode("ascii"))
