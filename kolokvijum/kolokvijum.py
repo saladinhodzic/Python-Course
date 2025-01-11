@@ -143,7 +143,7 @@ upisuje ih u izlaznu tekstualnu datoteku
 
 import sys
 with open(sys.argv[1],encoding="utf-8") as text:
-    with open(sys.argv[2],"wb",) as binary:
+    with open(sys.argv[2],"wb") as binary:
         for line in text:
             binary.write(line.encode("ascii"))
 
