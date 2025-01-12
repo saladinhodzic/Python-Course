@@ -189,39 +189,60 @@ tvrđave u svakom redu i završava se praznim redom
  Ukupno vreme izraziti u satima i minutima
  Ignorisati mala i velika slova i suvišne blanko znakove'''
 
-import sys
-import csv
-rute = {}
-vreme= 0
-with open(sys.argv[1],encoding='utf-8') as routes:
-    reader = csv.reader(routes)
-    for putanja in reader:
-        tvrdjava1 = putanja[0].strip().lower()
-        tvrdjava2 = putanja[1].strip().lower()
-        vreme = int(putanja[2].strip())
+# import sys
+# import csv
+# rute = {}
+# vreme= 0
+# with open(sys.argv[1],encoding='utf-8') as routes:
+#     reader = csv.reader(routes)
+#     for putanja in reader:
+#         tvrdjava1 = putanja[0].strip().lower()
+#         tvrdjava2 = putanja[1].strip().lower()
+#         vreme = int(putanja[2].strip())
         
-        if tvrdjava1 not in rute:
-            rute[tvrdjava1] = {}
-        if tvrdjava2 not in rute:
-            rute[tvrdjava2] = {}
+#         if tvrdjava1 not in rute:
+#             rute[tvrdjava1] = {}
+#         if tvrdjava2 not in rute:
+#             rute[tvrdjava2] = {}
         
-        rute[tvrdjava1][tvrdjava2] = vreme
-        rute[tvrdjava2][tvrdjava1] = vreme
+#         rute[tvrdjava1][tvrdjava2] = vreme
+#         rute[tvrdjava2][tvrdjava1] = vreme
 
-tvrdjave = []
-while True:
-    tvrdjava = input("Unesite tvrdjavu: ").strip().lower()
-    if tvrdjava == '':
-        break
-    tvrdjave.append(tvrdjava)        
+# tvrdjave = []
+# while True:
+#     tvrdjava = input("Unesite tvrdjavu: ").strip().lower()
+#     if tvrdjava == '':
+#         break
+#     tvrdjave.append(tvrdjava)        
 
-for i in range(len(tvrdjave )- 1):
-    tvrdjava1 = tvrdjave[i]
-    tvrdjava2 = tvrdjave[i + 1]
+# for i in range(len(tvrdjave )- 1):
+#     tvrdjava1 = tvrdjave[i]
+#     tvrdjava2 = tvrdjave[i + 1]
     
-    if tvrdjava1 in rute and tvrdjava2 in rute[tvrdjava1]:
-        vreme+= rute[tvrdjava1][tvrdjava2]
+#     if tvrdjava1 in rute and tvrdjava2 in rute[tvrdjava1]:
+#         vreme+= rute[tvrdjava1][tvrdjava2]
         
-sati = vreme // 60
-minuti = vreme % 60
-print(sati, minuti)
+# sati = vreme // 60
+# minuti = vreme % 60
+# print(sati, minuti)
+
+'''Napisati program u programskom jeziku Python koji učitava
+datoteku sa ocenama učenika. Svaka linija u datoteci sadrži
+ime učenika i njegovu ocenu. Program treba da učita
+podatke i kreira rečnik gde je ime učenika ključ, a lista
+ocena vrednost. Nakon toga, ispisati prosečnu ocenu za
+svakog učenika.'''
+
+import sys
+dnevnik = {}
+with open(sys.argv[1],encoding='utf-8') as ocene:
+    for red in ocene:
+        ime,ocena = red.strip().split(" ")
+        if ime not in dnevnik:
+            dnevnik[ime] = [int(ocena)]
+        else:
+            dnevnik[ime] += [int(ocena)]
+srednje_ocene = {ime:sum(ocena for ocena in dnevnik[ime]) / len(dnevnik[ime]) for ime in dnevnik}
+print(srednje_ocene)
+            
+        
