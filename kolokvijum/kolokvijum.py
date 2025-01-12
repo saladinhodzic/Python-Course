@@ -141,15 +141,39 @@ upisuje ih u izlaznu tekstualnu datoteku
 
 # a)
 
+# import sys
+# with open(sys.argv[1],encoding="utf-8") as text:
+#     with open(sys.argv[2],"wb") as binary:
+#         for line in text:
+#             binary.write(line.encode("ascii"))
+
+# # b)
+
+# with open(sys.argv[2],'rb') as binary:
+#     with open(sys.argv[3],'w', encoding='utf-8') as new_text:
+#         for line in binary:
+#             new_text.write(line.decode("ascii"))
+
+''' Na programskom jeziku Python sastaviti funkciju
+koja vrši obradu nad spiskom nadimaka:
+ Ulazna datoteka u jednom redu sadrži podatke o
+nadimku, polu (0 – ženski, 1 – muški) i imenima.
+ Izlazna datoteka treba da grupiše imena po nadimcima.
+Ako je nadimak za imena oba pola koristiti oznaku 2.'''
+
 import sys
-with open(sys.argv[1],encoding="utf-8") as text:
-    with open(sys.argv[2],"wb") as binary:
-        for line in text:
-            binary.write(line.encode("ascii"))
-
-# b)
-
-with open(sys.argv[2],'rb') as binary:
-    with open(sys.argv[3],'w', encoding='utf-8') as new_text:
-        for line in binary:
-            new_text.write(line.decode("ascii"))
+imenik = {}
+with open(sys.argv[1],encoding='utf-8') as nadimci:
+    for red in nadimci:
+        nadimak,pol,*ime = red.rstrip().split(" ")
+        ime = ', '.join(ime)
+        if nadimak not in imenik:
+            imenik[nadimak] = [pol,ime]
+        else:
+            imenik[nadimak][1] += ", " + ime
+            if imenik[nadimak][0] != pol:
+                imenik[nadimak][0] = 2
+with open(sys.argv[2],'w',encoding='utf-8') as novi_nadimci:
+    for key , values in imenik.items():
+        novi_nadimci.write("{:6} {:<3} {}\n".format(key,values[0],values[1])) 
+            
