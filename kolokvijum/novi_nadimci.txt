@@ -1,0 +1,4 @@
+Tea    0   Dorotea, Teodora
+Saša   2   Aleksandra, Aleksandar
+Fića   1   Filip
+Jela   0   Jelisaveta, Jelica, Jelena
