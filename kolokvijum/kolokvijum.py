@@ -161,19 +161,67 @@ nadimku, polu (0 – ženski, 1 – muški) i imenima.
  Izlazna datoteka treba da grupiše imena po nadimcima.
 Ako je nadimak za imena oba pola koristiti oznaku 2.'''
 
-import sys
-imenik = {}
-with open(sys.argv[1],encoding='utf-8') as nadimci:
-    for red in nadimci:
-        nadimak,pol,*ime = red.rstrip().split(" ")
-        ime = ', '.join(ime)
-        if nadimak not in imenik:
-            imenik[nadimak] = [pol,ime]
-        else:
-            imenik[nadimak][1] += ", " + ime
-            if imenik[nadimak][0] != pol:
-                imenik[nadimak][0] = 2
-with open(sys.argv[2],'w',encoding='utf-8') as novi_nadimci:
-    for key , values in imenik.items():
-        novi_nadimci.write("{:6} {:<3} {}\n".format(key,values[0],values[1])) 
+# import sys
+# imenik = {}
+# with open(sys.argv[1],encoding='utf-8') as nadimci:
+#     for red in nadimci:
+#         nadimak,pol,*ime = red.rstrip().split(" ")
+#         ime = ', '.join(ime)
+#         if nadimak not in imenik:
+#             imenik[nadimak] = [pol,ime]
+#         else:
+#             imenik[nadimak][1] += ", " + ime
+#             if imenik[nadimak][0] != pol:
+#                 imenik[nadimak][0] = 2
+# with open(sys.argv[2],'w',encoding='utf-8') as novi_nadimci:
+#     for key , values in imenik.items():
+#         novi_nadimci.write("{:6} {:<3} {}\n".format(key,values[0],values[1])) 
             
+'''Na programskom jeziku Python sastaviti program
+koji pronalazi ukupno vreme potrebno za obliazak
+svih tvrđava na ruti unetoj sa standardnog ulaza:
+ Ulazna CSV datoteka sadrži informaciju o vremenu
+potrebnom da se stigne od jedne do druge tvrđave za
+svaki postojeći par tvrđava
+ Vreme je izraženo u minutima i isto je za oba smera
+ Ruta se unosi sa standardnog ulaza, po jedan naziv
+tvrđave u svakom redu i završava se praznim redom
+ Ukupno vreme izraziti u satima i minutima
+ Ignorisati mala i velika slova i suvišne blanko znakove'''
+
+import sys
+import csv
+rute = {}
+vreme= 0
+with open(sys.argv[1],encoding='utf-8') as routes:
+    reader = csv.reader(routes)
+    for putanja in reader:
+        tvrdjava1 = putanja[0].strip().lower()
+        tvrdjava2 = putanja[1].strip().lower()
+        vreme = int(putanja[2].strip())
+        
+        if tvrdjava1 not in rute:
+            rute[tvrdjava1] = {}
+        if tvrdjava2 not in rute:
+            rute[tvrdjava2] = {}
+        
+        rute[tvrdjava1][tvrdjava2] = vreme
+        rute[tvrdjava2][tvrdjava1] = vreme
+
+tvrdjave = []
+while True:
+    tvrdjava = input("Unesite tvrdjavu: ").strip().lower()
+    if tvrdjava == '':
+        break
+    tvrdjave.append(tvrdjava)        
+
+for i in range(len(tvrdjave )- 1):
+    tvrdjava1 = tvrdjave[i]
+    tvrdjava2 = tvrdjave[i + 1]
+    
+    if tvrdjava1 in rute and tvrdjava2 in rute[tvrdjava1]:
+        vreme+= rute[tvrdjava1][tvrdjava2]
+        
+sati = vreme // 60
+minuti = vreme % 60
+print(sati, minuti)
