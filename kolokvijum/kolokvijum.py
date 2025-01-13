@@ -286,14 +286,29 @@ koji ispisuje pozicije pojavljivanja reči u tekstu.'''
 koja pronalazi godine izbora u zvanje saradnika u
 nastavi i ispisuje ih na standardnom izlazu sortirane
 u opadajućem poretku.'''
-import re
-fajl = input("Unesite ime fajla za pretragu: ")
+# import re
+# fajl = input("Unesite ime fajla za pretragu: ")
 
-def find_sort(fajl):
-    with open(fajl) as fajl:
-        text = fajl.read()
-    sablon = re.compile(r"\d\d\d\d")
-    godine = sablon.findall(text)
-    sort_godine = sorted(godine,reverse=True)
-    return sort_godine
-print(find_sort(fajl))
+# def find_sort(fajl):
+#     with open(fajl) as fajl:
+#         text = fajl.read()
+#     sablon = re.compile(r"\d\d\d\d")
+#     godine = sablon.findall(text)
+#     sort_godine = sorted(godine,reverse=True)
+#     return sort_godine
+# print(find_sort(fajl))
+
+'''Na programskom jeziku Python sastaviti funkciju
+koja prosleđenoj datoteci menja format u kom su
+zapisani podaci o studentu.
+'''
+import re
+def format(students):
+    with open(students,'r+',encoding='utf-8') as studenti:
+        sadrzaj = studenti.read()
+        sablon = re.compile(r"\d{1,4}/\d{2}(\d{2}),\s+(\w+)\s+(\w+)")
+        novi_sablon = sablon.sub(r"\2/\1, \4 \3",sadrzaj)
+        studenti.seek(0)
+        studenti.truncate()
+        studenti.write(novi_sablon)
+format("./studenti/studenti.csv")
