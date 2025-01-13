@@ -233,16 +233,42 @@ podatke i kreira rečnik gde je ime učenika ključ, a lista
 ocena vrednost. Nakon toga, ispisati prosečnu ocenu za
 svakog učenika.'''
 
-import sys
-dnevnik = {}
-with open(sys.argv[1],encoding='utf-8') as ocene:
-    for red in ocene:
-        ime,ocena = red.strip().split(" ")
-        if ime not in dnevnik:
-            dnevnik[ime] = [int(ocena)]
-        else:
-            dnevnik[ime] += [int(ocena)]
-srednje_ocene = {ime:sum(ocena for ocena in dnevnik[ime]) / len(dnevnik[ime]) for ime in dnevnik}
-print(srednje_ocene)
+# import sys
+# dnevnik = {}
+# with open(sys.argv[1],encoding='utf-8') as ocene:
+#     for red in ocene:
+#         ime,ocena = red.strip().split(" ")
+#         if ime not in dnevnik:
+#             dnevnik[ime] = [int(ocena)]
+#         else:
+#             dnevnik[ime] += [int(ocena)]
+# srednje_ocene = {ime:sum(ocena for ocena in dnevnik[ime]) / len(dnevnik[ime]) for ime in dnevnik}
+# print(srednje_ocene)
             
+'''U svakom redu tekst datoteke katalog.txt se nalaze podaci o
+filmovima raspoloživim u nekom DVD klubu. Prvi podatak je
+celobrojna šifra, zatim celobrojna oznaka regiona, na kraju
+sledi ime filma koje nije duže od 70 znakova. Napraviti
+program koji u novu tekst datoteku sifre.txt zapisuje sve
+šifre koje se u ulaznoj tekst datoteci pojavljuje više puta
+(bar dva puta). Svaku takvu šifru u izlaznu datoteku upisati
+samo jednom. Broj zapisa u ulaznoj datoteci, kao ni najveća
+vrednost šifre nisu unapred poznati. Ulaznu datoteku je
+dozvoljeno čitati samo jednom. Voditi računa o ispravnoj
+alokaciji i dealokaciji svih potrebnih resursa.'''
+
+import sys
+novi_katalog = {}
+with open(sys.argv[1]) as katalog:
+    for film in katalog:
+        sifra, oznaka, *ime = film.rstrip().split(" ")
+        ime = " ".join(ime)
+        if sifra in novi_katalog:
+            novi_katalog[sifra] += [sifra]
+        if sifra not in novi_katalog:
+            novi_katalog[sifra] = [sifra]
+with open(sys.argv[2],'a') as sifre:
+    for sifra in novi_katalog:
+        if len(novi_katalog[sifra]) > 1:
+            sifre.write(f"{sifra}\n")
         
