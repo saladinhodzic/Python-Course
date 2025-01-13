@@ -275,9 +275,25 @@ alokaciji i dealokaciji svih potrebnih resursa.'''
 '''Na programskom jeziku Python sastaviti program
 koji ispisuje pozicije pojavljivanja reči u tekstu.'''
 
-import re
-rec = re.compile(input("Unesite rec za pretragu: "))
-tekst = input("Unesite neki tekst: ")
+# import re
+# rec = re.compile(input("Unesite rec za pretragu: "))
+# tekst = input("Unesite neki tekst: ")
 
-for pogodak in rec.finditer(tekst):
-    print(pogodak.start())
+# for pogodak in rec.finditer(tekst):
+#     print(pogodak.start())
+
+'''Na programskom jeziku Python sastaviti funkciju
+koja pronalazi godine izbora u zvanje saradnika u
+nastavi i ispisuje ih na standardnom izlazu sortirane
+u opadajućem poretku.'''
+import re
+fajl = input("Unesite ime fajla za pretragu: ")
+
+def find_sort(fajl):
+    with open(fajl) as fajl:
+        text = fajl.read()
+    sablon = re.compile(r"\d\d\d\d")
+    godine = sablon.findall(text)
+    sort_godine = sorted(godine,reverse=True)
+    return sort_godine
+print(find_sort(fajl))
