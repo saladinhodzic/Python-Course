@@ -257,18 +257,27 @@ vrednost šifre nisu unapred poznati. Ulaznu datoteku je
 dozvoljeno čitati samo jednom. Voditi računa o ispravnoj
 alokaciji i dealokaciji svih potrebnih resursa.'''
 
-import sys
-novi_katalog = {}
-with open(sys.argv[1]) as katalog:
-    for film in katalog:
-        sifra, oznaka, *ime = film.rstrip().split(" ")
-        ime = " ".join(ime)
-        if sifra in novi_katalog:
-            novi_katalog[sifra] += [sifra]
-        if sifra not in novi_katalog:
-            novi_katalog[sifra] = [sifra]
-with open(sys.argv[2],'a') as sifre:
-    for sifra in novi_katalog:
-        if len(novi_katalog[sifra]) > 1:
-            sifre.write(f"{sifra}\n")
-        
+# import sys
+# novi_katalog = {}
+# with open(sys.argv[1]) as katalog:
+#     for film in katalog:
+#         sifra, oznaka, *ime = film.rstrip().split(" ")
+#         ime = " ".join(ime)
+#         if sifra in novi_katalog:
+#             novi_katalog[sifra] += [sifra]
+#         if sifra not in novi_katalog:
+#             novi_katalog[sifra] = [sifra]
+# with open(sys.argv[2],'a') as sifre:
+#     for sifra in novi_katalog:
+#         if len(novi_katalog[sifra]) > 1:
+#             sifre.write(f"{sifra}\n")
+
+'''Na programskom jeziku Python sastaviti program
+koji ispisuje pozicije pojavljivanja reči u tekstu.'''
+
+import re
+rec = re.compile(input("Unesite rec za pretragu: "))
+tekst = input("Unesite neki tekst: ")
+
+for pogodak in rec.finditer(tekst):
+    print(pogodak.start())
