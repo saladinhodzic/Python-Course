@@ -315,27 +315,48 @@ zapisani podaci o studentu.
 
 '''Primicemo fajl razgovori.txt koji sadrzi imena osoba,datume i intervale razgovora izmedju osoba, nas zadatak je da ispisemo datume za svaku osobu kada je vodila najduzi razgovor'''
 
-import sys
-import re
-# funkcija za formatiranje intervala
+# import sys
+# import re
+# # funkcija za formatiranje intervala
 
-def formatiraj(interval):
-    pocetak,kraj = interval.split('-')
-    h1,min1 = map(int,pocetak.split(':'))
-    h2,min2 = map(int,kraj.split(':'))
-    return (h2 * 60 + min2) - (h1*60+min1)
-sablon = re.compile( r"(\w+)\s+(\w+)\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}-\d{2}:\d{2})")
-imenik = {}
-with open(sys.argv[1],'r',encoding='utf-8') as razgovori:
-    for linija in razgovori:
-        is_match = sablon.match(linija.strip())
-        if is_match:
+# def formatiraj(interval):
+#     pocetak,kraj = interval.split('-')
+#     h1,min1 = map(int,pocetak.split(':'))
+#     h2,min2 = map(int,kraj.split(':'))
+#     return (h2 * 60 + min2) - (h1*60+min1)
+# sablon = re.compile( r"(\w+)\s+(\w+)\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}-\d{2}:\d{2})")
+# imenik = {}
+# with open(sys.argv[1],'r',encoding='utf-8') as razgovori:
+#     for linija in razgovori:
+#         is_match = sablon.match(linija.strip())
+#         if is_match:
             
-            prvo_ime,drugo_ime,datum,interval = is_match.groups()
-            trajanje = formatiraj(interval)
+#             prvo_ime,drugo_ime,datum,interval = is_match.groups()
+#             trajanje = formatiraj(interval)
             
-            for ime in [prvo_ime,drugo_ime]:
-                if ime not in imenik or trajanje > imenik[ime]['trajanje']:
-                    imenik[ime] = {"datum":datum,"trajanje":trajanje}
-for k,v in imenik.items():
-    print(k,v)
+#             for ime in [prvo_ime,drugo_ime]:
+#                 if ime not in imenik or trajanje > imenik[ime]['trajanje']:
+#                     imenik[ime] = {"datum":datum,"trajanje":trajanje}
+# for k,v in imenik.items():
+#     print(k,v)
+
+'''Na programskom jeziku Python sastaviti program
+koji pronalazi i ispisuje sve nekorektne e-mail
+adrese iz zadatate datoteke. Smatrati da korektna
+adresa ima oblik local@domain pri čemu važi
+sledeće:
+ Oba dela adrese (local i domain) smeju da sadrže slova,
+brojeve, tačke, crtice i pluseve
+ Oba dela adrese moraju da počinju slovom
+ Prvi deo (local) ne sme da ima više od 64 karaktera
+ Drugi deo (domain) mora da se završi tačkom praćenom
+sa dva ili tri slova'''
+
+import re
+
+sablon = re.compile(r"^[a-zA-Z][\w.+-]{0,63}@[a-zA-Z][\w.+-]*\.[a-zA-Z]{2,3}$")
+
+domain ="local@domain.com"
+
+match = sablon.search(domain)
+print(match)
