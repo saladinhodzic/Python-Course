@@ -356,7 +356,8 @@ import re
 
 sablon = re.compile(r"^[a-zA-Z][\w.+-]{0,63}@[a-zA-Z][\w.+-]*\.[a-zA-Z]{2,3}$")
 
-domain ="local@domain.com"
-
-match = sablon.search(domain)
-print(match)
+with open("./domeni/domeni.txt") as file:
+    for line in file:
+        match = sablon.search(line)
+        if not match:
+            print(line)
