@@ -302,13 +302,40 @@ u opadajućem poretku.'''
 koja prosleđenoj datoteci menja format u kom su
 zapisani podaci o studentu.
 '''
+# import re
+# def formatiraj(students):
+#     with open(students,'r+',encoding='utf-8') as studenti:
+#         sadrzaj = studenti.read()
+#         sablon = re.compile(r"\d{1,4}/\d{2}(\d{2}),\s+(\w+)\s+(\w+)")
+#         novi_sablon = sablon.sub(r"\2/\1, \4 \3",sadrzaj)
+#         studenti.seek(0)
+#         studenti.truncate()
+#         studenti.write(novi_sablon)
+# formatiraj("./studenti/studenti.csv")
+
+'''Primicemo fajl razgovori.txt koji sadrzi imena osoba,datume i intervale razgovora izmedju osoba, nas zadatak je da ispisemo datume za svaku osobu kada je vodila najduzi razgovor'''
+
+import sys
 import re
-def format(students):
-    with open(students,'r+',encoding='utf-8') as studenti:
-        sadrzaj = studenti.read()
-        sablon = re.compile(r"\d{1,4}/\d{2}(\d{2}),\s+(\w+)\s+(\w+)")
-        novi_sablon = sablon.sub(r"\2/\1, \4 \3",sadrzaj)
-        studenti.seek(0)
-        studenti.truncate()
-        studenti.write(novi_sablon)
-format("./studenti/studenti.csv")
+# funkcija za formatiranje intervala
+
+def formatiraj(interval):
+    pocetak,kraj = interval.split('-')
+    h1,min1 = map(int,pocetak.split(':'))
+    h2,min2 = map(int,kraj.split(':'))
+    return (h2 * 60 + min2) - (h1*60+min1)
+sablon = re.compile( r"(\w+)\s+(\w+)\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}-\d{2}:\d{2})")
+imenik = {}
+with open(sys.argv[1],'r',encoding='utf-8') as razgovori:
+    for linija in razgovori:
+        is_match = sablon.match(linija.strip())
+        if is_match:
+            
+            prvo_ime,drugo_ime,datum,interval = is_match.groups()
+            trajanje = formatiraj(interval)
+            
+            for ime in [prvo_ime,drugo_ime]:
+                if ime not in imenik or trajanje > imenik[ime]['trajanje']:
+                    imenik[ime] = {"datum":datum,"trajanje":trajanje}
+for k,v in imenik.items():
+    print(k,v)
