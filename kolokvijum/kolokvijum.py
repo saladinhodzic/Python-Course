@@ -352,12 +352,12 @@ brojeve, tačke, crtice i pluseve
  Drugi deo (domain) mora da se završi tačkom praćenom
 sa dva ili tri slova'''
 
-import re
+# import re
 
-sablon = re.compile(r"^[a-zA-Z][\w.+-]{0,63}@[a-zA-Z][\w.+-]*\.[a-zA-Z]{2,3}$")
+# sablon = re.compile(r"^[a-zA-Z][\w.+-]{0,63}@[a-zA-Z][\w.+-]*\.[a-zA-Z]{2,3}$")
 
-with open("./domeni/domeni.txt") as file:
-    for line in file:
-        match = sablon.search(line)
-        if not match:
-            print(line)
+# with open("./domeni/domeni.txt") as file:
+#     for line in file:
+#         match = sablon.search(line)
+#         if not match:
+#             print(line)
