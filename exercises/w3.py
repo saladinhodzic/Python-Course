@@ -30,12 +30,20 @@
 #     print("False")
 
 # Napisi program koji prihvata listu floatova i gleda da li je sredisnji element liste aritmeticka sredina liste
-length = int(input("Unesite duzinu liste: "))
-lst = [float(input("Unesite element liste")) for _ in range(length)]
+# length = int(input("Unesite duzinu liste: "))
+# lst = [float(input("Unesite element liste")) for _ in range(length)]
 
-sredisnji_element = length//2
-arit_sredina = sum(broj for broj in lst) / length
-if lst[sredisnji_element] == arit_sredina:
-    print("True")
-else:
-    print("False")
+# sredisnji_element = length//2
+# arit_sredina = sum(broj for broj in lst) / length
+# if lst[sredisnji_element] == arit_sredina:
+#     print("True")
+# else:
+#     print("False")
+
+# 4. Stone Piles Distribution
+
+# We are making n stone piles! The first pile has n stones. If n is even, then all piles have an even number of stones. If n is odd, all piles have an odd number of stones. Each pile must more stones than the previous pile but as few as possible.
+
+stone = int(input("Enter first stone: "))
+lst = [stone + i*2 for i in range(stone)]
+print(lst)
