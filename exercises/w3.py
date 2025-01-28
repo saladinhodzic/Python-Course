@@ -23,8 +23,19 @@
 
 # Write a Python program that accepts a list of integers and calculates the length and the fifth element. Return true if the length of the list is 8 and the fifth element occurs thrice in the said list.
 
-lst = [1,2,3,4,5,5,5,6]
-if len(lst) == 8 and lst.count(lst[4]) == 3:
+# lst = [1,2,3,4,5,5,5,6]
+# if len(lst) == 8 and lst.count(lst[4]) == 3:
+#     print("True")
+# else:
+#     print("False")
+
+# Napisi program koji prihvata listu floatova i gleda da li je sredisnji element liste aritmeticka sredina liste
+length = int(input("Unesite duzinu liste: "))
+lst = [float(input("Unesite element liste")) for _ in range(length)]
+
+sredisnji_element = length//2
+arit_sredina = sum(broj for broj in lst) / length
+if lst[sredisnji_element] == arit_sredina:
     print("True")
 else:
     print("False")
