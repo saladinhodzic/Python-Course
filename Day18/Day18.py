@@ -4,12 +4,11 @@ nindza = Turtle()
 nindza.shape("turtle")
 nindza.color("red")
 
-for _ in range(5):
-    nindza.forward(10)
-    nindza.penup()
-    nindza.forward(10)
-    nindza.pendown()
-
+for i in range(4,10):
+    for j in range(i):
+        nindza.forward(50)
+        nindza.right(360/i)
+    
 
 
 screen = Screen()
