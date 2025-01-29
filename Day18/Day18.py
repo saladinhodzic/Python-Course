@@ -1,37 +1,14 @@
-from turtle import Turtle, Screen
-import random
-our_turtle=Turtle()
-our_turtle.shape("turtle")
-colors=['red','green','blue']
+from turtle import Turtle,Screen
 
-directions=[0,90,180,270]
+nindza = Turtle()
+nindza.shape("turtle")
+nindza.color("red")
 
-while(True):
-    our_turtle.color(random.choice(colors))
-    our_turtle.forward(20)
-    our_turtle.setheading(random.choice(directions))
-    
+for _ in range(4):
+    nindza.forward(100)
+    nindza.right(90)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-screen=Screen()
+screen = Screen()
 screen.exitonclick()
