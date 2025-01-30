@@ -2,7 +2,7 @@ import colorgram
 import turtle
 import random
 turtle.colormode(255)
-colors = colorgram.extract("hirst-painting.jpg",12)
+colors = colorgram.extract("image.jpg",12)
 new_colors = [tuple(color.rgb) for color in colors]
 
 ninja = turtle.Turtle()
