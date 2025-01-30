@@ -18,12 +18,11 @@ for turtle in colors:
 race_end = False
 while not race_end:
     for turtle in turtles:
-        if turtle.xcor()>230:
-            winning_color = turtle.pencolor()
-            if winning_color == user_bet:
+        if turtle.xcor()>=230:
+            race_end = True
+            if turtle == user_bet:
                 print("You won!")
             else:
                 print("You lost!")
-            race_end = True
         turtle.forward(random.randint(5,15))
 screen.exitonclick()
