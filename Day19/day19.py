@@ -1,25 +1,15 @@
 from turtle import Turtle,Screen
 
-ninja = Turtle()
 screen = Screen()
-def forward():
-    ninja.forward(20)
-def backward():
-    ninja.back(20)
-def clockwise():
-    current = ninja.heading()
-    ninja.setheading(current+10)
-def counter_clockwise():
-    current = ninja.heading()
-    ninja.setheading(current - 10)
-def clear():
-    ninja.setheading(0)
-    ninja.goto(0,0)
-    ninja.clear()
-screen.listen()
-screen.onkey(key="w", fun = forward)
-screen.onkey(key="s", fun = backward)
-screen.onkey(key="d", fun = clockwise)
-screen.onkey(key="a", fun = counter_clockwise)
-screen.onkey(key="c", fun = clear)
+screen.setup(500,500)
+user_bet = screen.textinput(title="Enter your bet:",prompt="Enter color: ")
+colors = ['red','green','purple','yellow','orange','blue']
+y = -150
+for turtle in colors:
+    new_turtle = Turtle()
+    new_turtle.penup()
+    new_turtle.shape('turtle')
+    new_turtle.color(turtle)
+    new_turtle.goto(-230,y)
+    y+=50
 screen.exitonclick()
