@@ -9,9 +9,11 @@ class Score(Turtle):
         self.goto(0,270)
         self.rewrite()
     def update_score(self):
-        self.clear()
         self.score+=1
+        self.clear()
         self.rewrite()
     def rewrite(self):
         self.write(f"Your Score: {self.score} ",align='center',font=(12))
-    
+    def game_over(self):
+        self.goto(0,0)
+        self.write(f"Game Over!",align='center',font=(16))
