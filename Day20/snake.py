@@ -1,16 +1,23 @@
 import turtle
+POSITIONS = [(0,0),(0,-20),(0,-40)]
 class Snake():
     def __init__(self):
         self.tails= []
         self.x = 0
-        for _ in range(3):
+        self.make_snake()
+    def make_snake(self):
+        for position in POSITIONS:
+            self.add_tail(position=position)
+    def add_tail(self,position):
             new_turtle = turtle.Turtle()
             new_turtle.shape("square")
             new_turtle.color("white")
             new_turtle.penup()
-            new_turtle.setx(self.x)
-            self.x-=20
+            new_turtle.goto(position)
             self.tails.append(new_turtle)
+    def grow(self):
+        position = self.tails[-1].position()
+        self.add_tail(position=position)
     def move(self):
         for turtle in range(len(self.tails)-1,0,-1):
             new_x = self.tails[turtle-1].xcor()

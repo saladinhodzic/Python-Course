@@ -23,8 +23,15 @@ while game_is_on:
     snake.move()
     if snake.tails[0].distance(food)<15:
         food.refresh()
+        snake.grow()
         score.update_score()
     if snake.tails[0].xcor() > 290 or snake.tails[0].xcor() < -290 or snake.tails[0].ycor()>290 or snake.tails[0].ycor()< -290:
         game_is_on = False
         score.game_over()
+    for tail in snake.tails:
+        if tail == snake.tails[0]:
+            pass
+        elif snake.tails[0].distance(tail) < 10:
+            game_is_on=False
+            score.game_over()
 screen.exitonclick()
