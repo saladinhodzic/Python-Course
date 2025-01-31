@@ -18,10 +18,14 @@ class Snake():
             self.tails[turtle].goto(new_x,new_y)
         self.tails[0].forward(20)
     def up(self):
-        self.tails[0].setheading(90)
+        if self.tails[0].heading() != 270:
+            self.tails[0].setheading(90)
     def down(self):
-        self.tails[0].setheading(270)
+        if self.tails[0].heading() != 90:
+            self.tails[0].setheading(270)
     def right(self):
-        self.tails[0].setheading(0)
+        if self.tails[0].heading() != 180:
+            self.tails[0].setheading(0)
     def left(self):
-        self.tails[0].setheading(180)
+        if self.tails[0].heading() != 0:    
+            self.tails[0].setheading(180)
