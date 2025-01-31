@@ -17,3 +17,11 @@ class Snake():
             new_y = self.tails[turtle-1].ycor()
             self.tails[turtle].goto(new_x,new_y)
         self.tails[0].forward(20)
+    def up(self):
+        self.tails[0].setheading(90)
+    def down(self):
+        self.tails[0].setheading(270)
+    def right(self):
+        self.tails[0].setheading(0)
+    def left(self):
+        self.tails[0].setheading(180)
