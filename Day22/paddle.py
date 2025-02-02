@@ -1,16 +1,17 @@
 from turtle import Turtle
-POSITIONS = [(-380,0),(-380,-20),(-380,-40)]
 class Paddle(Turtle):
     def __init__(self):
         super().__init__()
         self.squares = []
-        self.create_paddle()
+        self.x = -380
+        self.y = 0
     def create_paddle(self):
-        for i in range(3):
+        for _ in range(3):
             square = Turtle("square")
             square.color("white")
             square.penup()
-            square.goto(POSITIONS[i])
+            square.goto(self.x,self.y)
+            self.y-=20
             square.setheading(90)
             self.squares.append(square)
     def move_up(self):
