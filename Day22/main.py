@@ -25,14 +25,15 @@ screen.onkeypress(second_player.move_down,"s")
 
 # making the ball
 ball = Ball()
-ball.random_heading()
 
 # starting the game
 game_on = True
 while game_on:
     screen.update() 
-    time.sleep(0.1)
-    ball.forward(10)
+    time.sleep(0.05)
+    ball.move()
+    if ball.ycor()< -290 or ball.ycor() > 290:
+        ball.bounce()
 
 # exiting the program
 screen.exitonclick()

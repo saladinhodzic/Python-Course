@@ -7,7 +7,11 @@ class Ball(Turtle):
         self.color("white")
         self.penup()
         self.shapesize(0.75)
-    def random_heading(self):
-        heading = random.randint(0,270)
-        self.setheading(heading)
-    
+        self.y = 10
+        self.x = random.randint(-10,10)
+    def move(self):
+        y = self.ycor() + self.y
+        x = self.xcor() + self.x
+        self.goto(x,y)
+    def bounce(self):
+        self.y *= -1 
