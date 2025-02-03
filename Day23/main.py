@@ -17,3 +17,5 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.05)
     screen.update()
+    if player.ycor()>280:
+        player.finish()
