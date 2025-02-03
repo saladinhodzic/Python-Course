@@ -34,6 +34,9 @@ while game_on:
     ball.move()
     if ball.ycor()< -290 or ball.ycor() > 290:
         ball.bounce()
+    for i in range(len(first_player.squares)):
+        if first_player.squares[i].distance(ball) <25 or second_player.squares[i].distance(ball)<25:
+            ball.paddle_hit()
 
 # exiting the program
 screen.exitonclick()
