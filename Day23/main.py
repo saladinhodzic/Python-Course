@@ -29,9 +29,11 @@ while game_is_on:
         spawn_cars=0
     for car in cars.cars:
         if player.distance(car)<25:
+            level.game_over()
             game_is_on=False
     if player.ycor()>280:
         player.finish()
         level.update_score()
         cars.level+=1
     spawn_cars+=1
+screen.exitonclick( )
