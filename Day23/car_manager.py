@@ -8,6 +8,7 @@ MOVE_INCREMENT = 10
 class CarManager(Turtle):
     def __init__(self):
         super().__init__()
+        self.level = 0
         self.cars=[]
         self.hideturtle()
     def spawn(self):
@@ -21,5 +22,4 @@ class CarManager(Turtle):
             self.cars.append(vehicle)
     def move(self):
         for car in self.cars:
-            car.goto(car.xcor()-STARTING_MOVE_DISTANCE,car.ycor())
-
+            car.goto(car.xcor()-(STARTING_MOVE_DISTANCE + MOVE_INCREMENT*self.level),car.ycor())

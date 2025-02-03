@@ -15,9 +15,10 @@ screen.onkey(player.move,'space')
 
 # making cars
 cars = CarManager()
-game_is_on = True
 spawn_cars=0
 cars.spawn()
+
+game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
@@ -30,4 +31,5 @@ while game_is_on:
             game_is_on=False
     if player.ycor()>280:
         player.finish()
+        cars.level+=1
     spawn_cars+=1
