@@ -24,7 +24,10 @@ while game_is_on:
     cars.move()
     if spawn_cars == 6:
         cars.spawn()
-        spawn_cars=0 
+        spawn_cars=0
+    for car in cars.cars:
+        if player.distance(car)<25:
+            game_is_on=False
     if player.ycor()>280:
         player.finish()
     spawn_cars+=1
