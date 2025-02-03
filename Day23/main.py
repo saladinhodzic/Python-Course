@@ -13,9 +13,18 @@ screen.tracer(0)
 player = Player()
 screen.onkey(player.move,'space')
 
+# making cars
+cars = CarManager()
 game_is_on = True
+spawn_cars=0
+cars.spawn()
 while game_is_on:
-    time.sleep(0.05)
+    time.sleep(0.1)
     screen.update()
+    cars.move()
+    if spawn_cars == 6:
+        cars.spawn()
+        spawn_cars=0 
     if player.ycor()>280:
         player.finish()
+    spawn_cars+=1
