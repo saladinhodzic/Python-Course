@@ -3,6 +3,7 @@ import time
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from score import Score
 # creating screen
 screen = Screen()
 screen.setup(800,600)
@@ -26,12 +27,20 @@ screen.onkeypress(second_player.move_down,"s")
 # making the ball
 ball = Ball()
 
+# making the scoreboard
+score = Score()
+
 # starting the game
 game_on = True
 while game_on:
     screen.update() 
     time.sleep(0.05)
     ball.move()
+    if ball.xcor()>390 or ball.xcor()<-390:
+        score.update_score(ball)
+        ball.restart()
+        time.sleep(0.3)
+        ball.move()
     if ball.ycor()< -290 or ball.ycor() > 290:
         ball.bounce()
     for i in range(len(first_player.squares)):

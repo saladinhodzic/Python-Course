@@ -16,3 +16,5 @@ class Ball(Turtle):
         self.y *= -1 
     def paddle_hit(self):
         self.x *= -1
+    def restart(self):
+        self.goto(0,0)
