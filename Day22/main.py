@@ -4,11 +4,15 @@ from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 from score import Score
+from track import Track
 # creating screen
 screen = Screen()
 screen.setup(800,600)
 screen.tracer(0)
 screen.bgcolor("black")
+
+# creating track for better UI
+track = Track()
 
 # creating paddle
 first_player = Paddle()

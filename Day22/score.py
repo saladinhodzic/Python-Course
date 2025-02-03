@@ -1,5 +1,5 @@
 from turtle import Turtle
-FONT = ("Arial",20,"normal")
+FONT = ("Montserrat",26,"normal")
 class Score(Turtle):
     def __init__(self):
         super().__init__()
@@ -12,7 +12,7 @@ class Score(Turtle):
         self.update_text()
     def update_text(self):
         self.clear()
-        self.write(f"{self.first_player} | {self.second_player}",align='center',font =FONT )
+        self.write(f"{self.first_player}  {self.second_player}",align='center',font =FONT )
     def update_score(self,ball):
         if ball.xcor()>390:
             self.first_player+=1
