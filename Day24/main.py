@@ -1,2 +1,2 @@
-with open("C:/Users/Saladin/Desktop/text.txt", 'w') as file:
-    file.write("Saladin")
+with open("../../text.txt", 'w') as file:
+    file.write("Saladin Hodzic")
