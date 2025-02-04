@@ -36,3 +36,9 @@ class Snake():
     def left(self):
         if self.tails[0].heading() != 0:    
             self.tails[0].setheading(180)
+    def reset(self):
+        for tail in self.tails:
+            tail.goto(1000,1000)
+        self.tails.clear()
+            
+        self.make_snake()

@@ -26,10 +26,10 @@ while game_is_on:
         snake.grow()
         score.update_score()
     if snake.tails[0].xcor() > 290 or snake.tails[0].xcor() < -290 or snake.tails[0].ycor()>290 or snake.tails[0].ycor()< -290:
-        game_is_on = False
-        score.game_over()
+        score.reset()
+        snake.reset()
     for tail in snake.tails[1:]:
         if snake.tails[0].distance(tail) < 10:
-            game_is_on=False
-            score.game_over()
+            score.reset()
+            snake.reset()
 screen.exitonclick()
