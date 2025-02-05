@@ -6,5 +6,5 @@ dictionary = {row.letter:row.code for (index,row) in data.iterrows()}
 
 # asking for user input
 name = input("Enter your name: ").upper()
-nato = [value for letter in name for (key,value) in dictionary.items() if key == letter]
+nato = [dictionary[letter] for letter in name]
 print(nato)
