@@ -8,9 +8,13 @@ window.minsize(width=500,height=500)
 label = Label(text="Hello")
 label.pack()
 
-# making button
+# entry
+
+input = Entry(width=10)
+input.pack()
 def button_click():
-    label["text"] = "Button was clicked"
+    label["text"] = input.get()
+# making button
 button = Button(text="Click me", command=button_click)
 button.pack()
 window.mainloop()
