@@ -14,7 +14,15 @@ CHECKMARK = "✔"
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
+def start_timer():
+    countdown(5)
+
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+
+def countdown(count):
+    canvas.itemconfig(canvas_text,text = count)
+    if count > 0:
+        window.after(1000,countdown,count-1)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -28,10 +36,10 @@ state.grid(column=1,row=0)
 canvas = Canvas(height=250,width=200,bg=YELLOW,highlightthickness=0)
 tomato = PhotoImage(file="tomato.png")
 canvas.create_image(100,112,image = tomato)
-canvas.create_text(103,130,text="00:00",fill="white",font=(FONT_NAME,30,"bold"))
+canvas_text =canvas.create_text(103,130,text="00:00",fill="white",font=(FONT_NAME,30,"bold"))
 canvas.grid(column=1,row=1)
 
-start = Button(text="Start")
+start = Button(text="Start",command=start_timer)
 start.grid(column=0,row=2)
 
 reset = Button(text="Reset")
