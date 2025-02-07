@@ -15,12 +15,16 @@ CHECKMARK = "✔"
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 def start_timer():
-    countdown(5)
+    countdown(15)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 def countdown(count):
-    canvas.itemconfig(canvas_text,text = count)
+    minutes = count // 60
+    seconds = count % 60
+    if seconds < 10:
+        seconds = f"0{seconds}"
+    canvas.itemconfig(canvas_text,text = f"{minutes}:{seconds}")
     if count > 0:
         window.after(1000,countdown,count-1)
 
