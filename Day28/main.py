@@ -10,8 +10,14 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 CHECKMARK = "✔"
 reps = 0
+timer = None
 # ---------------------------- TIMER RESET ------------------------------- # 
-
+def reset_countdown():
+    window.after_cancel(timer)
+    canvas.itemconfig(canvas_text,text="00:00")
+    checkmark.config(text="")
+    state.config(text="Timer",fg=GREEN)
+    
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 def start_timer():
@@ -23,6 +29,7 @@ def start_timer():
     if reps == 8:
         countdown(round(long_break))
         state["text"] = "Long Break"
+        state["fg"] = RED
         checkmark["text"] += CHECKMARK
         
     if reps % 2 != 0:
@@ -32,6 +39,8 @@ def start_timer():
         countdown(round(short_break))
         state["text"] = "Break"
         checkmark["text"] += CHECKMARK
+        state["fg"] = PINK
+        
     
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -43,7 +52,8 @@ def countdown(count):
         seconds = f"0{seconds}"
     canvas.itemconfig(canvas_text,text = f"{minutes}:{seconds}")
     if count > 0:
-        window.after(1000,countdown,count-1)
+        global timer
+        timer = window.after(1000,countdown,count-1)
     else:
         start_timer()
 
@@ -65,7 +75,7 @@ canvas.grid(column=1,row=1)
 start = Button(text="Start",command=start_timer)
 start.grid(column=0,row=2)
 
-reset = Button(text="Reset")
+reset = Button(text="Reset",command=reset_countdown)
 reset.grid(column=2,row=2)
 
 checkmark = Label(text="",fg=GREEN,bg=YELLOW,font=(25))
