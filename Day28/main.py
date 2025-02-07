@@ -17,6 +17,8 @@ def reset_countdown():
     canvas.itemconfig(canvas_text,text="00:00")
     checkmark.config(text="")
     state.config(text="Timer",fg=GREEN)
+    global reps
+    reps = 0
     
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
