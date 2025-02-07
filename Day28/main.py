@@ -25,9 +25,9 @@ def reset_countdown():
 def start_timer():
     global reps
     reps+=1
-    countdown_seconds = 0.1 * 60
-    short_break = 0.15 * 60
-    long_break = 0.2 * 60
+    countdown_seconds = WORK_MIN * 60
+    short_break =SHORT_BREAK_MIN * 60
+    long_break =LONG_BREAK_MIN * 60
     if reps == 8:
         countdown(round(long_break))
         state["text"] = "Long Break"
