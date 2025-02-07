@@ -19,7 +19,7 @@ new_button.grid(column=3,row=0)
 # entry
 
 input = Entry(width=10)
-input.grid(column=4,row=4)
+input.grid(column=3,row=2)
 
 
 
