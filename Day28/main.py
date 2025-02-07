@@ -9,13 +9,30 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 CHECKMARK = "✔"
-
+reps = 0
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 def start_timer():
-    countdown(15)
+    global reps
+    reps+=1
+    countdown_seconds = 0.1 * 60
+    short_break = 0.15 * 60
+    long_break = 0.2 * 60
+    if reps == 8:
+        countdown(round(long_break))
+        state["text"] = "Long Break"
+        checkmark["text"] += CHECKMARK
+        
+    if reps % 2 != 0:
+        countdown(round(countdown_seconds))
+        state["text"] = "Work"
+    else:
+        countdown(round(short_break))
+        state["text"] = "Break"
+        checkmark["text"] += CHECKMARK
+    
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
@@ -27,6 +44,8 @@ def countdown(count):
     canvas.itemconfig(canvas_text,text = f"{minutes}:{seconds}")
     if count > 0:
         window.after(1000,countdown,count-1)
+    else:
+        start_timer()
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -49,7 +68,7 @@ start.grid(column=0,row=2)
 reset = Button(text="Reset")
 reset.grid(column=2,row=2)
 
-checkmark = Label(text=CHECKMARK,fg=GREEN,bg=YELLOW,font=(25))
+checkmark = Label(text="",fg=GREEN,bg=YELLOW,font=(25))
 checkmark.grid(column=1,row=3)
 
 
