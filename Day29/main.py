@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -7,8 +8,15 @@ def add_password():
     website = input_1.get()
     email = input_2.get()
     password = input_3.get()
-    with open("data.txt",'a') as data:
-        data.write(f"{website} | {email} | {password}\n")
+    if len(website) == 0 or len(email) ==0 or len(password)==0:
+        messagebox.showerror(title="ERROR",message="Please dont leave inputs empty.")
+        return
+    is_ok = messagebox.askokcancel(title=website,message=f"Your email {email}\nYour password {password}\nIs it okay to proceed?")
+    if is_ok:
+        with open("data.txt",'a') as data:
+            data.write(f"{website} | {email} | {password}\n")
+            input_1.delete(0,END)
+            input_3.delete(0,END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
