@@ -43,7 +43,17 @@ def add_password():
                 json.dump(data,data_file,indent=4)
                 input_1.delete(0,END)
                 input_3.delete(0,END)
-
+# ---------------------------- FIND PASSWORD ------------------------------- #
+def find_website():
+    website = input_1.get()
+    try:
+        with open("data.json") as data_file:
+            data = json.load(data_file)
+            messagebox.showinfo(title=website,message=f"Your email: {data[website]["email"]}\nYour password: {data[website]["password"]}")
+    except FileNotFoundError:
+        messagebox.showerror(title=website,message="File not found.")
+    except KeyError:
+        messagebox.showerror(title=website,message="There is no such saved info.")
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -56,24 +66,26 @@ canvas.grid(column=1,row=0)
 
 label_1= Label(text="Website: ")
 label_1.grid(column=0,row=1)
-input_1 = Entry(width=35)
+input_1 = Entry(width=25)
 input_1.focus()
-input_1.grid(column=1,row=1,columnspan=2)
+input_1.grid(column=1,row=1)
+search_button = Button(text="Search",command=find_website,width=15)
+search_button.grid(row=1,column=2)
 
-label_2 = Label(text="Email/Username: ")
+label_2 = Label(text="Email/Username: ",pady=5)
 label_2.grid(column=0,row=2)
-input_2 = Entry(width=35)
+input_2 = Entry(width=44)
 input_2.insert(0,"hsaladin06@gmail.com")
 input_2.grid(column=1,row=2,columnspan=2)
 
 label_3 = Label(text="Password: ")
 label_3.grid(column=0,row=3)
-input_3 = Entry(width=21)
+input_3 = Entry(width=25)
 input_3.grid(column=1,row=3)
 button_1 = Button(text="Generate Password",command=generate)
 button_1.grid(column=2,row=3)
 
-button_2 = Button(text="Add",width=35,command=add_password)
+button_2 = Button(text="Add",width=37,command=add_password)
 button_2.grid(column=1,row=4,columnspan=2)
 
 
