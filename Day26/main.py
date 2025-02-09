@@ -5,6 +5,12 @@ data = pandas.read_csv("nato_phonetic_alphabet.csv")
 dictionary = {row.letter:row.code for (index,row) in data.iterrows()}
 
 # asking for user input
-name = input("Enter your name: ").upper()
-nato = [dictionary[letter] for letter in name]
-print(nato)
+def generate(dictionary):
+    name = input("Enter your name: ").upper()
+    try:
+        nato = [dictionary[letter] for letter in name]
+        return nato
+    except KeyError:
+        print("Enter valid name")
+        return generate(dictionary)
+print(generate(dictionary))
