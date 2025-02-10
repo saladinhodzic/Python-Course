@@ -1,5 +1,7 @@
 from tkinter import *
 
+FONT_LANG = ("Ariel",35,"italic")
+FONT_WORD = ("Ariel",60,"bold")
 BACKGROUND = "#F2EFE7"
 # making the UI
 
@@ -12,6 +14,8 @@ front_card = PhotoImage(file = "images/card_front.png")
 canvas = Canvas(width=800,height=526,bg=BACKGROUND)
 canvas.create_image(400,270,image = front_card)
 canvas.grid(column=0,row=0,columnspan=2)
+lang = canvas.create_text(400,150,text="German",font=FONT_LANG)
+word = canvas.create_text(400,263,text="Ich",font=FONT_WORD)
 
 wrong = PhotoImage(file="images/wrong.png")
 right = PhotoImage(file="images/right.png")
