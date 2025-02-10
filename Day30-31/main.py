@@ -1,11 +1,21 @@
 from tkinter import *
-
+import pandas
+import random
 FONT_LANG = ("Ariel",35,"italic")
 FONT_WORD = ("Ariel",60,"bold")
 BACKGROUND = "#F2EFE7"
+
+# showing random words
+
+def generate_word():
+    data = pandas.read_csv("words.csv")
+    data_dict = data.to_dict(orient="records")
+    random_word = random.choice(data_dict)
+    canvas.itemconfig(word,text=random_word["German"])
 # making the UI
 
 window = Tk()
+
 window.title("Flashy Card")
 window.minsize(width=800,height=550)
 window.config(padx=50,pady=50)
@@ -22,7 +32,7 @@ right = PhotoImage(file="images/right.png")
 
 wrong_button = Button(image=wrong,highlightthickness=0)
 wrong_button.grid(column=0,row=1)
-right_button = Button(image = right,highlightthickness=0)
+right_button = Button(image = right,highlightthickness=0,command=generate_word)
 right_button.grid(column=1,row=1)
 
 
