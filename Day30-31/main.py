@@ -1,22 +1,25 @@
 from tkinter import *
 import pandas
 import random
-FONT_LANG = ("Ariel",35,"italic")
-FONT_WORD = ("Ariel",60,"bold")
+FONT_LANG = ("Arial",35,"italic")
+FONT_WORD = ("Arial",60,"bold")
 BACKGROUND = "#F2EFE7"
+timer = None
 
 # showing random words
-
+data = pandas.read_csv("words.csv")
+data_dict = data.to_dict(orient="records")
 def generate_word():
-    data = pandas.read_csv("words.csv")
-    data_dict = data.to_dict(orient="records")
+    global timer,random_word
+    if timer:
+        window.after_cancel(timer)
     random_word = random.choice(data_dict)
     canvas.itemconfig(word,text=random_word["German"],fill='black')
     canvas.itemconfig(lang,text="German",fill='black')
     canvas.itemconfig(background_image,image=front_card)
-    window.after(3000,lambda : flip(random_word))
+    timer = window.after(3000,flip)
     
-def flip(random_word):
+def flip():
     canvas.itemconfig(background_image,image = back_card)
     canvas.itemconfig(lang,text = "English",fill = "white")
     canvas.itemconfig(word,text = random_word["English"],fill = "white")
