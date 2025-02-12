@@ -15,10 +15,6 @@ except FileNotFoundError:
     data_dict = data.to_dict(orient="records")
 def generate_word():
     global timer,random_word
-    if random_word:
-        data_dict.remove(random_word)
-        updated_data = pandas.DataFrame(data_dict)
-        updated_data.to_csv('words_to_learn.csv')
     if timer:
         window.after_cancel(timer)
     random_word = random.choice(data_dict)
@@ -27,6 +23,11 @@ def generate_word():
     canvas.itemconfig(background_image,image=front_card)
     timer = window.after(3000,flip)
     
+def update_csv():
+    data_dict.remove(random_word)
+    updated_data = pandas.DataFrame(data_dict)
+    updated_data.to_csv('words_to_learn.csv',index=False)
+    generate_word()
 def flip():
     canvas.itemconfig(background_image,image = back_card)
     canvas.itemconfig(lang,text = "English",fill = "white")
@@ -49,9 +50,9 @@ word = canvas.create_text(400,263,font=FONT_WORD)
 wrong = PhotoImage(file="images/wrong.png")
 right = PhotoImage(file="images/right.png")
 
-wrong_button = Button(image=wrong,highlightthickness=0)
+wrong_button = Button(image=wrong,highlightthickness=0,command=generate_word)
 wrong_button.grid(column=0,row=1)
-right_button = Button(image = right,highlightthickness=0,command=generate_word)
+right_button = Button(image = right,highlightthickness=0,command=update_csv)
 right_button.grid(column=1,row=1)
 
 generate_word()
