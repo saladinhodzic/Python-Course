@@ -5,12 +5,20 @@ FONT_LANG = ("Arial",35,"italic")
 FONT_WORD = ("Arial",60,"bold")
 BACKGROUND = "#F2EFE7"
 timer = None
-
+random_word = None
 # showing random words
-data = pandas.read_csv("words.csv")
-data_dict = data.to_dict(orient="records")
+try:
+    data = pandas.read_csv("words_to_learn.csv")
+    data_dict = data.to_dict(orient="records")
+except FileNotFoundError:
+    data = pandas.read_csv("words.csv")
+    data_dict = data.to_dict(orient="records")
 def generate_word():
     global timer,random_word
+    if random_word:
+        data_dict.remove(random_word)
+        updated_data = pandas.DataFrame(data_dict)
+        updated_data.to_csv('words_to_learn.csv')
     if timer:
         window.after_cancel(timer)
     random_word = random.choice(data_dict)
