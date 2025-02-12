@@ -9,9 +9,9 @@ random_word = None
 # showing random words
 try:
     data = pandas.read_csv("words_to_learn.csv")
-    data_dict = data.to_dict(orient="records")
 except FileNotFoundError:
     data = pandas.read_csv("words.csv")
+else:
     data_dict = data.to_dict(orient="records")
 def generate_word():
     global timer,random_word
