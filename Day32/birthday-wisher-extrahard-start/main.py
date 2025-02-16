@@ -23,8 +23,7 @@ for dict in data_dict:
             with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
                 connection.starttls()
                 connection.login(user=my_email,password=password)
-                print(dict["email"])
-                connection.sendmail(from_addr=my_email,to_addrs=dict["email"],msg=birthday_wish)
+                connection.sendmail(from_addr=my_email,to_addrs=f"{dict["email"]}",msg=birthday_wish)
 # if today_date
 
 # 3. If step 2 is true, pick a random letter from letter templates and replace the [NAME] with the person's actual name from birthdays.csv
