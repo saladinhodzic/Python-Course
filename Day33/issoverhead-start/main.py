@@ -35,13 +35,12 @@ time_now = datetime.now()
 
 my_email = "testingpythoncode321@gmail.com"
 password = "wpkj fcii pimv gcfg"
-
 if MY_LAT - 5<= iss_latitude <= MY_LAT+5 and MY_LONG-5 <=iss_longitude<= MY_LONG+5:
-    if time_now > sunset or time_now < sunrise:
-        with smtplib.SMTP(host="smtp.gmail.com",port=587) as connection:
-            connection.starttls()
-            connection.login(user=my_email,password=password)
-            connection.sendmail(from_addr=my_email,to_addrs="hsaladin06@gmail.com",msg="Look up!")
+        if time_now > sunset or time_now < sunrise:
+            with smtplib.SMTP(host="smtp.gmail.com",port=587) as connection:
+                connection.starttls()
+                connection.login(user=my_email,password=password)
+                connection.sendmail(from_addr=my_email,to_addrs="hsaladin06@gmail.com",msg="Subject:Look up!\n\n ISS is above you!")
 
 
 
