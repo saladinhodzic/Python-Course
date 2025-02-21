@@ -28,12 +28,15 @@ class UserInterface():
         question = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text,text = question)
     def check_true(self):
-        answer = self.quiz.check_answer("True")
-        if answer:
-            print("You got it right")
-        self.get_next_question()
+        self.get_feedback(self.quiz.check_answer("True"))
     def check_false(self):
         answer = self.quiz.check_answer("False")
+        self.get_feedback(answer=answer)
+    def get_feedback(self,answer):
         if answer:
-            print("You got it wrong")
-        self.get_next_question()
+            self.canvas.config(bg="green")
+        else:
+            self.canvas.config(bg="red")
+        self.window.after(1000,self.get_next_question)
+        # self.canvas.config(bg="white")
+    
