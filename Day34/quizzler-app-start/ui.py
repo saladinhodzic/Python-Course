@@ -1,7 +1,8 @@
 THEME_COLOR = "#375362"
+from quiz_brain import QuizBrain
 from tkinter import *
 class UserInterface():
-    def __init__(self,quiz_brain):
+    def __init__(self,quiz_brain:QuizBrain):
         self.quiz = quiz_brain
         self.window = Tk()
         self.window.title("Quiz")
