@@ -17,8 +17,8 @@ class UserInterface():
         # creating buttons
         self.true = PhotoImage(file="images/true.png")
         self.false = PhotoImage(file="images/false.png")
-        self.button1 = Button(image=self.true,highlightthickness=0)
-        self.button2 = Button(image=self.false,highlightthickness=0)
+        self.button1 = Button(image=self.true,highlightthickness=0,command=self.check_true)
+        self.button2 = Button(image=self.false,highlightthickness=0,command=self.check_false)
         self.button1.grid(column=0,row=2)
         self.button2.grid(column=1,row=2)
         # get questions
@@ -27,3 +27,13 @@ class UserInterface():
     def get_next_question(self):
         question = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text,text = question)
+    def check_true(self):
+        answer = self.quiz.check_answer("True")
+        if answer:
+            print("You got it right")
+        self.get_next_question()
+    def check_false(self):
+        answer = self.quiz.check_answer("False")
+        if answer:
+            print("You got it wrong")
+        self.get_next_question()
