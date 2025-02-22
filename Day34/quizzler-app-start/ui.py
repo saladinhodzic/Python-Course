@@ -25,9 +25,14 @@ class UserInterface():
         self.get_next_question()
         self.window.mainloop()
     def get_next_question(self):
-        question = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text,text = question)
         self.canvas.config(bg = "white")
+        if self.quiz.still_has_questions():
+            question = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text,text = question)
+        else:
+            self.canvas.itemconfig(self.question_text,text = "You've reached the end of the quiz")
+            self.button1.config(state="disabled")
+            self.button2.config(state="disabled")
     def check_true(self):
         self.get_feedback(self.quiz.check_answer("True"))
     def check_false(self):
