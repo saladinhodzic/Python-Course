@@ -8,7 +8,7 @@ class UserInterface():
         self.window.title("Quiz")
         self.window.config(bg=THEME_COLOR,padx=20,pady=20,width=400,height=600)
         # creating label for score
-        self.label = Label(text="Score : 0",bg=THEME_COLOR,fg="white",font=("Arial",16))
+        self.label = Label(text=f"Score : {self.quiz.score}",bg=THEME_COLOR,fg="white",font=("Arial",16))
         self.label.grid(column=1,row=0)
         # creating canvas
         self.canvas = Canvas(width=300,height=250)
@@ -27,6 +27,7 @@ class UserInterface():
     def get_next_question(self):
         question = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text,text = question)
+        self.canvas.config(bg = "white")
     def check_true(self):
         self.get_feedback(self.quiz.check_answer("True"))
     def check_false(self):
@@ -35,6 +36,7 @@ class UserInterface():
     def get_feedback(self,answer):
         if answer:
             self.canvas.config(bg="green")
+            self.label.config(text=f"Score : {self.quiz.score}")
         else:
             self.canvas.config(bg="red")
         self.window.after(1000,self.get_next_question)
