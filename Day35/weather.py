@@ -1,5 +1,8 @@
 import requests
+from twilio.rest import Client
 
+ACCOUNT_SID = "AC2f8475f8b617394a89cab6c7c055e97f"
+AUTH_TOKEN = "7f9b9c7aaf6ebffb46d8a43cb31f8e80"
 MY_LONGITUDE = 20.501587
 MY_LATITUDE = 43.160314
 API_KEY = "bd5e378503939ddaee76f12ad7a97608"
@@ -16,4 +19,10 @@ for day in data["list"]:
     if int(condition_code) < 700:
         will_rain = True
 if will_rain:
-    print("Bring an umbrella")
+    client = Client(ACCOUNT_SID,AUTH_TOKEN)
+    message = client.messages \
+        .create(
+            body="It's going to rain today.",
+            to="+381638424288",
+            from_="+17623394703"
+        )
