@@ -20,6 +20,5 @@ if will_rain:
     message = client.messages \
         .create(
             body="It's going to rain today.",
-            to="+381638424288",
-            from_="+17623394703"
+            
         )
