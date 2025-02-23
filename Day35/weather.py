@@ -9,6 +9,11 @@ response = requests.get(URL)
 response.raise_for_status()
 # get the weather data
 data = response.json()
+
+will_rain = False
 for day in data["list"]:
-    if day["weather"][0]["id"] < 800:
-        print("Bring an umbrella")
+    condition_code = day["weather"][0]["id"]
+    if int(condition_code) < 700:
+        will_rain = True
+if will_rain:
+    print("Bring an umbrella")
