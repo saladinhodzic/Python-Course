@@ -8,8 +8,8 @@ import os
 ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 API_KEY = os.getenv("WEATHER_API_KEY")
-MY_LONGITUDE = 20.501587
-MY_LATITUDE = 43.160314
+MY_LONGITUDE = 25.501587
+MY_LATITUDE = 45.160314
 URL = f"https://api.openweathermap.org/data/2.5/forecast?lat={MY_LATITUDE}&lon={MY_LONGITUDE}&appid={API_KEY}&cnt=4"
 
 response = requests.get(URL)
@@ -27,6 +27,6 @@ if will_rain:
     message = client.messages \
         .create(
             body="It's going to rain today.",
-            to="+381638424288",
+            to="+381666666",
             from_="+17623394703"
         )
