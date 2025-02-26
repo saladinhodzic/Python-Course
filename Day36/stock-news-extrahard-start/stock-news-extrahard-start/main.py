@@ -1,4 +1,5 @@
 import os
+import datetime as dt
 import requests
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -6,12 +7,21 @@ COMPANY_NAME = "Tesla Inc"
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 parameters = {
-    "function":"TIME_SERIES_WEEKLY",
+    "function":"TIME_SERIES_DAILY",
     "symbol" : STOCK,
     "apikey": os.environ.get("API_KEY")
 }
 response = requests.get("https://www.alphavantage.co/query?",params=parameters)
-print(response.json())
+response.raise_for_status()
+data = response.json()
+
+date_now = dt.datetime.now().date()
+yesterday = float(data["Time Series (Daily)"][f"2025-02-{date_now.day-2}"]["1. open"])
+today = float(data["Time Series (Daily)"][f"2025-02-{date_now.day-1}"]["1. open"])
+
+percentage =round(((today-yesterday)/yesterday)*100,2)
+if abs(percentage)>2:
+    print("Get news")
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
