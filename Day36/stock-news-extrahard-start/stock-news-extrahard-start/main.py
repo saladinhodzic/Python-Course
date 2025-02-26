@@ -20,8 +20,14 @@ yesterday = float(data["Time Series (Daily)"][f"2025-02-{date_now.day-2}"]["1. o
 today = float(data["Time Series (Daily)"][f"2025-02-{date_now.day-1}"]["1. open"])
 
 percentage =round(((today-yesterday)/yesterday)*100,2)
+
+news_parameters = {
+    "apiKey":os.environ.get("NEWS_API"),
+    "q":COMPANY_NAME
+}
 if abs(percentage)>2:
-    print("Get news")
+    news_response = requests.get("https://newsapi.org/v2/everything",params=news_parameters)
+    print(news_response.status_code)
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
