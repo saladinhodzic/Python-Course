@@ -1,6 +1,7 @@
 import os
 import datetime as dt
 import requests
+from twilio.rest import Client
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -33,7 +34,9 @@ if abs(percentage)>2:
     news_response.raise_for_status()
     news_data = news_response.json()
     for article in news_data["articles"]:
-        print(article["content"])
+        client = Client(os.environ.get("ACCOUNT_SID"),os.environ.get("TWILLIO_TOKEN"))
+        message = client.messages \
+            .create(to="+381638424288",from_="+17623394703",body=f"TSLA: {percentage}%\n{article["content"]}")
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
