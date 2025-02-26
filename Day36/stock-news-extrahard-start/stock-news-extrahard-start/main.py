@@ -23,11 +23,17 @@ percentage =round(((today-yesterday)/yesterday)*100,2)
 
 news_parameters = {
     "apiKey":os.environ.get("NEWS_API"),
-    "q":COMPANY_NAME
+    "q":COMPANY_NAME,
+    "pageSize":4,
+    "searchIn":"content",
+    "language":"en"
 }
 if abs(percentage)>2:
     news_response = requests.get("https://newsapi.org/v2/everything",params=news_parameters)
-    print(news_response.status_code)
+    news_response.raise_for_status()
+    news_data = news_response.json()
+    for article in news_data["articles"]:
+        print(article["content"])
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
