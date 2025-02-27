@@ -29,14 +29,13 @@ news_parameters = {
     "searchIn":"content",
     "language":"en"
 }
-if abs(percentage)>2:
+if abs(percentage):
     news_response = requests.get("https://newsapi.org/v2/everything",params=news_parameters)
     news_response.raise_for_status()
     news_data = news_response.json()
-    for article in news_data["articles"]:
-        client = Client(os.environ.get("ACCOUNT_SID"),os.environ.get("TWILLIO_TOKEN"))
-        message = client.messages \
-            .create(to="+381638424288",from_="+17623394703",body=f"TSLA: {percentage}%\n{article["content"]}")
+    client = Client(os.environ.get("ACCOUNT_SID"),os.environ.get("TWILLIO_TOKEN"))
+    message = client.messages \
+            .create(to="+381638424288",from_="+17623394703",body=f"TSLA: {percentage}%\n{news_data["articles"][0]["content"]}")
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME. 
