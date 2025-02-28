@@ -17,10 +17,10 @@ graph_endpoint = f"{url}/{USERNAME}/graphs"
 
 graph_config = {
     "id":"sakkka1",
-    "name":"Studying",
-    "unit":"hours",
+    "name":"Walking",
+    "unit":"km",
     "type":"float",
-    "color":"kuro"
+    "color":"sora"
 }
 
 headers = {
