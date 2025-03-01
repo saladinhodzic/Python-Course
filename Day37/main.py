@@ -35,6 +35,10 @@ pixel_endpoint = f"{url}/{USERNAME}/graphs/sakkka1"
 today = datetime.now()
 pixel_config = {
     "date" : today.strftime("%Y%m%d"),
-    "quantity": "1.1"
+    "quantity": "3"
 }
-post_pixel = requests.post(url = pixel_endpoint,json=pixel_config, headers = headers)
+# post_pixel = requests.post(url = pixel_endpoint,json=pixel_config, headers = headers)
+
+pixel_update_endpoint = f"{pixel_endpoint}/20250227"
+
+pixel_update = requests.put(pixel_update_endpoint,json={"quantity":"0.5"},headers=headers)
