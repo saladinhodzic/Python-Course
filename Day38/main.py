@@ -11,4 +11,11 @@ HEADERS = {
 query = input("What exercise you did? ")
 
 response = requests.post(url=URL,json={"query":query},headers=HEADERS)
-print(response.json())
+
+data = response.json()
+duration = data["exercises"][0]['duration_min']
+calories = data["exercises"][0]['nf_calories']
+exercise = data["exercises"][0]["name"]
+# SHEETY API ENDPOINT
+
+sheety_api = "https://api.sheety.co/b72a2bb486406ba3a1d6c186930e9930/vezbanje/workouts"
