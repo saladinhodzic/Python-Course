@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 USERNAME = "saladin"
 TOKEN = "asbd1yw91hrsjfdb19"
 create_user_params = {
@@ -31,9 +32,9 @@ headers = {
 
 pixel_endpoint = f"{url}/{USERNAME}/graphs/sakkka1"
 
+today = datetime.now()
 pixel_config = {
-    "date" : "20250227",
+    "date" : today.strftime("%Y%m%d"),
     "quantity": "1.1"
 }
-
 post_pixel = requests.post(url = pixel_endpoint,json=pixel_config, headers = headers)
