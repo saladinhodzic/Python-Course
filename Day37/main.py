@@ -39,6 +39,11 @@ pixel_config = {
 }
 # post_pixel = requests.post(url = pixel_endpoint,json=pixel_config, headers = headers)
 
-pixel_update_endpoint = f"{pixel_endpoint}/20250227"
+# UPDATING THE PIXEL
+# pixel_update_endpoint = f"{pixel_endpoint}/20250227"
+# pixel_update = requests.put(pixel_update_endpoint,json={"quantity":"0.5"},headers=headers)
 
-pixel_update = requests.put(pixel_update_endpoint,json={"quantity":"0.5"},headers=headers)
+# DELETING THE PIXEL
+
+pixel_delete_endpoint = f"{pixel_endpoint}/20250227"
+pixel_delete = requests.delete(pixel_delete_endpoint,headers=headers)
