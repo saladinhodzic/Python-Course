@@ -21,6 +21,9 @@ today = datetime.now().date()
 time = datetime.now().time()
 # SHEETY API ENDPOINT
 sheety_api = "https://api.sheety.co/b72a2bb486406ba3a1d6c186930e9930/vezbanje/workouts"
+sheety_headers = {
+    "Authorization" : f"Bearer {os.getenv("SHEETY_KEY")}"
+}
 sheety_data = {
     "workout":
     {
@@ -32,5 +35,5 @@ sheety_data = {
     }
 }
 
-sheety_response = requests.post(url=sheety_api,json=sheety_data)
+sheety_response = requests.post(url=sheety_api,json=sheety_data,headers=sheety_headers)
 print(sheety_response.text)
