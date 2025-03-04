@@ -1,3 +1,4 @@
+import os
 import time
 from datetime import datetime, timedelta
 from data_manager import DataManager
@@ -54,3 +55,9 @@ for destination in sheet_data:
         )
         cheapest_flight = find_cheapest_flight(stopover_flights)
         print(f"Cheapest indirect flight price is: £{cheapest_flight.price}")
+
+    for email in data_manager.emails:
+        with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
+            connection.starttls()
+            connection.login(user=os.getenv("MY_EMAIL"),password=os.getenv("MY_PASS"))
+            connection.sendmail(from_addr=os.getenv("MY_EMAIL"),to_addrs=email,msg= f"Cheapest indirect flight price is: ${cheapest_flight.price}")
