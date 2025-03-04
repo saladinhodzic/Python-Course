@@ -23,7 +23,7 @@ for row in sheet_data:
 print(f"sheet_data:\n {sheet_data}")
 
 data_manager.destination_data = sheet_data
-
+print(data_manager.emails)
 # ==================== Search for Flights and Send Notifications ====================
 
 tomorrow = datetime.now() + timedelta(days=1)
