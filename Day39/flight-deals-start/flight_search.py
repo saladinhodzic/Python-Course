@@ -32,4 +32,4 @@ class FlightSearch:
         "max":1
         }
         response = requests.get(url="https://test.api.amadeus.com/v2/shopping/flight-offers",params=query,headers=header)
-        return response.json()["data"][0]["price"]["total"]
+        return response.json()
