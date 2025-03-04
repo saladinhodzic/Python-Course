@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from data_manager import DataManager
 from flight_search import FlightSearch
 from flight_data import find_cheapest_flight
+import smtplib
 
 # ==================== Set up the Flight Search ====================
 
