@@ -27,3 +27,4 @@ class DataManager:
         for user in data["users"]:
             emails.append(user["email"])
         return emails
+    
