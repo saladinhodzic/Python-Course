@@ -4,4 +4,5 @@ from pprint import pprint
 
 URL = "https://api.sheety.co/b72a2bb486406ba3a1d6c186930e9930/avioJeftinaPutovanja/prices"
 response = requests.get(url=URL)
-pprint(response.json())
+sheet_data = response.json()["prices"]
+pprint(sheet_data)
