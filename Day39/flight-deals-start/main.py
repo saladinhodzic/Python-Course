@@ -14,7 +14,13 @@ city_origin = "LON"
 
 tommorow = datetime.now() + timedelta(days=1)
 
+# GET THE CHEAPEST FLIGHT
+
 for city in sheet_data:
     response = get_flights.search_flights(city_origin,city["iataCode"],from_time=tommorow)
     cheapest_flight = find_cheapest_flight(response)
-    print(f"Cheapest flight for {city["city"]} is {cheapest_flight.price}")
+    if cheapest_flight.price < city["lowestPrice"]:
+        print(f"Great deal!\nWe found for you very cheap flight for {city["city"]} for {cheapest_flight.price}$")
+    
+# COMPARE IT WITH OUR SHEETS
+
