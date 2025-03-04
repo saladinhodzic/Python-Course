@@ -22,14 +22,14 @@ class FlightSearch:
         response = requests.post(url="https://test.api.amadeus.com/v1/security/oauth2/token",headers=self.headers,data=self.body)
         return response.json()["access_token"]
 
-    def search_flights(self,origin_city,destination_city,from_time):\
-        
+    def search_flights(self,origin_city,destination_city,from_time): 
         header = {"Authorization":f"Bearer {self.token}"}
         query = {
         "originLocationCode":origin_city,
         "destinationLocationCode":destination_city,
         "departureDate":from_time.strftime("%Y-%m-%d"),
-        "adults":1
+        "adults":1,
+        "max":1
         }
         response = requests.get(url="https://test.api.amadeus.com/v2/shopping/flight-offers",params=query,headers=header)
-        return response.json()
+        return response.json()["data"][0]["price"]["total"]

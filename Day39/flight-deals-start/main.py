@@ -15,4 +15,4 @@ tommorow = datetime.now() + timedelta(days=1)
 
 for city in sheet_data:
     response = get_flights.search_flights(city_origin,city["iataCode"],from_time=tommorow)
-    print(response)
+    print(f"Flight ticket for {city["city"]} is {response}")
