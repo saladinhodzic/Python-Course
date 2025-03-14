@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import pprint
 load_dotenv()
 
 date = input("Which date would you like to travel to?(YYYY-MM-DD) ")
