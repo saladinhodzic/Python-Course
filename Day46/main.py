@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import pprint
 load_dotenv()
 
 date = input("Which date would you like to travel to?(YYYY-MM-DD) ")
@@ -26,3 +27,14 @@ sp= spotipy.Spotify(auth_manager=SpotifyOAuth(
     scope="playlist-modify-private"
 ))
 user_id = sp.current_user()["id"]
+year = date.split("-")[0]
+song_uris = []
+for title in titles:
+    result= sp.search(q=f"track:{title} year:{year}",type="track")
+    try:
+        uri = result['tracks']["items"][0]["uri"]
+        song_uris.append(uri)
+    except IndexError:
+        print(f"That song {title} does not exist on Spotify")
+playlist = sp.user_playlist_create(user=user_id,name=f"{date} TOP 100 BILLBOARD",public=False)
+sp.playlist_add_items(playlist_id=playlist["id"],items=song_uris)
