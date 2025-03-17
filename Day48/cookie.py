@@ -24,3 +24,4 @@ while True:
         cps = driver.find_element(By.ID,"cps").text.split(" : ")[1]
         print(f"You were making {cps} cookies per second!")
         break
+driver.quit()
