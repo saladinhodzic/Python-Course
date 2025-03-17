@@ -6,6 +6,7 @@ options.add_experimental_option("detach",True)
 driver = webdriver.Chrome(options=options)
 driver.get("https://orteil.dashnet.org/experiments/cookie/")
 start_time = time.time()
+end_time = time.time() + 60
 while True:
     time.sleep(0.01)
     driver.find_element(By.ID,"cookie").click() 
@@ -19,3 +20,7 @@ while True:
                     item.click()
             except Exception as e:
                 print(f"Error {e}")
+    if current_time >= end_time:
+        cps = driver.find_element(By.ID,"cps").text.split(" : ")[1]
+        print(f"You were making {cps} cookies per second!")
+        break
