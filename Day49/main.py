@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 import os
 from dotenv import load_dotenv
 import time
+import random
 load_dotenv()
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach",True)
@@ -15,12 +16,19 @@ email = driver.find_element(By.ID,"base-sign-in-modal_session_key")
 email.send_keys(os.getenv("EMAIL"))
 password = driver.find_element(By.ID,"base-sign-in-modal_session_password")
 password.send_keys(os.getenv("PASS"))
-submit = driver.find_element(By.CLASS_NAME,".sign-in-form__submit-btn--full-width")
+submit = driver.find_element(By.XPATH,'//*[@id="base-sign-in-modal"]/div/section/div/div/form/div[2]/button')
 submit.click()
-time.sleep(15)
+time.sleep(3)
 easy_apply = driver.find_element(By.CLASS_NAME,"jobs-apply-button")
 easy_apply.click()
-phone = driver.find_element(By.CLASS_NAME," artdeco-text-input--input")
+phone = driver.find_element(By.ID,"single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4175894995-10075439561-phoneNumber-nationalNumber")
 phone.send_keys(os.getenv("PHONE"))
-next = driver.find_element(By.ID,"ember395")
+next = driver.find_element(By.CSS_SELECTOR,'footer button')
 next.click()
+next.click()
+inputs = driver.find_elements(By.CSS_SELECTOR,"form input")
+for input in inputs:
+    input.send_keys(str(random.randint(1,3)))
+next.click()
+submit_application = driver.find_elements(By.CSS_SELECTOR,"footer button")[1]
+submit_application.click()
