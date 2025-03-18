@@ -1,6 +1,8 @@
 # Using Selenium to automate job applying on Linkedin
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import os
 from dotenv import load_dotenv
 import time
@@ -18,7 +20,7 @@ password = driver.find_element(By.ID,"base-sign-in-modal_session_password")
 password.send_keys(os.getenv("PASS"))
 submit = driver.find_element(By.XPATH,'//*[@id="base-sign-in-modal"]/div/section/div/div/form/div[2]/button')
 submit.click()
-time.sleep(3)
+time.sleep(2)
 easy_apply = driver.find_element(By.CLASS_NAME,"jobs-apply-button")
 easy_apply.click()
 phone = driver.find_element(By.ID,"single-line-text-form-component-formElement-urn-li-jobs-applyformcommon-easyApplyFormElement-4175894995-10075439561-phoneNumber-nationalNumber")
@@ -29,6 +31,3 @@ next.click()
 inputs = driver.find_elements(By.CSS_SELECTOR,"form input")
 for input in inputs:
     input.send_keys(str(random.randint(1,3)))
-next.click()
-submit_application = driver.find_elements(By.CSS_SELECTOR,"footer button")[1]
-submit_application.click()
