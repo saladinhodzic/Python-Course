@@ -5,15 +5,16 @@ class InternetSpeedBot():
     def __init__(self):
         self.up = 150
         self.down = 10
-        self.driver = webdriver.Chrome()
-    def get_internet_speed(self):
         self.options = webdriver.ChromeOptions()
         self.options.add_experimental_option("detach",True)
+        self.driver = webdriver.Chrome(options=self.options)
+    def get_internet_speed(self):
         self.driver.get("https://www.speedtest.net/")
-        self.start = self.driver.find_element(By.CLASS_NAME,"js-start-test").click()
+        self.driver.find_element(By.CLASS_NAME,"js-start-test").click()
         time.sleep(40)
-        self.download = self.driver.find_element(By.CLASS_NAME,"download-speed").text
-        self.upload = self.driver.find_element(By.CLASS_NAME,"upload-speed").text
-        print(f"Download: {self.download}\nUpload: {self.upload}")
+        download = self.driver.find_element(By.CLASS_NAME,"download-speed").text
+        upload = self.driver.find_element(By.CLASS_NAME,"upload-speed").text
+        print(f"Download: {download}\nUpload: {upload}")
     def tweet(self):
-        pass
+        self.driver.get("https://x.com/home")
+        # self.input = self.driver.find_element(By.CLASS_NAME,"public-DraftStyleDefault-block")
