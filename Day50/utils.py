@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
+import os
+from dotenv import load_dotenv
+load_dotenv()
 class InternetSpeedBot():
     def __init__(self):
         self.up = 150
@@ -17,4 +21,14 @@ class InternetSpeedBot():
         print(f"Download: {download}\nUpload: {upload}")
     def tweet(self):
         self.driver.get("https://x.com/home")
-        # self.input = self.driver.find_element(By.CLASS_NAME,"public-DraftStyleDefault-block")
+        time.sleep(5)
+        email = self.driver.find_element(By.CSS_SELECTOR,"input")
+        email.send_keys(os.getenv("EMAIL"),Keys.ENTER)
+        time.sleep(5)
+        user = self.driver.find_element(By.CSS_SELECTOR,"input")
+        user.send_keys(os.getenv("USER"),Keys.ENTER)
+        time.sleep(5)
+        password = self.driver.find_elements(By.CSS_SELECTOR,"input")
+        password[1].send_keys(os.getenv("PASSWORD"),Keys.ENTER)
+        
+        
