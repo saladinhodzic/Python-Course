@@ -6,12 +6,14 @@ import time
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach",True)
 driver = webdriver.Chrome(options=options)
-driver.get("https://books.toscrape.com/")
-# scraping the book titles
+driver.get("https://practicetestautomation.com/practice-test-login/")
+# automate login page
 try:
-    titles = driver.find_elements(By.CSS_SELECTOR,"ol h3 a")
-    with open("books.txt",'w') as file:
-        for title in titles:
-            file.write(f"{title.text}\n")
+    username = driver.find_element(By.ID,"username")
+    username.send_keys("student")
+    password = driver.find_element(By.ID,"password")
+    password.send_keys("Password123")
+    submit = driver.find_element(By.ID,"submit")
+    submit.click()
 except Exception as e:
-    print(f"Failed to extract titles {e}")
+    print(f"Failed to login {e}")
