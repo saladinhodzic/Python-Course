@@ -712,6 +712,24 @@ Calculate the pairwise Euclidean distance between two lists.
 Create a list and set the values between the 25th and 75th percentile to 0.
 '''
 
-lst = [1,2,3,4,5]
-percentile_25th = sorted(lst)[int(len(lst) * 0.25)]
-print(percentile_25th)
+# lst = [1,2,3,4,5]
+# percentile_25th = sorted(lst)[int(len(lst) * 0.25)]
+# print(percentile_25th)
+
+'''Inicijalizacija matrice
+
+Napiši funkciju koja kreira matricu dimenzija 
+𝑚
+×
+𝑛
+m×n i popunjava je nulama.'''
+
+def ispis(mat,m,n):
+    for i in range(n):
+        for j in range(m):
+            print(mat[i][j],end="|")
+        print("\n")
+m = 3
+n = 4
+mat = [[0 for _ in range(m)] for _ in range(n)]
+ispis(mat,m,n)
