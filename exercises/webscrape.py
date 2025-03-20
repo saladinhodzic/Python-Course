@@ -10,7 +10,8 @@ driver.get("https://books.toscrape.com/")
 # scraping the book titles
 try:
     titles = driver.find_elements(By.CSS_SELECTOR,"ol h3 a")
-    for title in titles:
-        print(title.text)
+    with open("books.txt",'w') as file:
+        for title in titles:
+            file.write(f"{title.text}\n")
 except Exception as e:
     print(f"Failed to extract titles {e}")
