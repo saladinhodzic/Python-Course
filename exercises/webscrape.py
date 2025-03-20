@@ -6,13 +6,11 @@ import time
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach",True)
 driver = webdriver.Chrome(options=options)
-driver.get("https://youtube.com")
-# searching on the google
+driver.get("https://books.toscrape.com/")
+# scraping the book titles
 try:
-    shorts = driver.find_element(By.CSS_SELECTOR,"a[title='Shorts']")
-    shorts.click()
-    time.sleep(10)
-    # returning back to the main page
-    driver.back()
+    titles = driver.find_elements(By.CSS_SELECTOR,"ol h3 a")
+    for title in titles:
+        print(title.text)
 except Exception as e:
-    print(f"Failed to find textarea object {e}")
+    print(f"Failed to extract titles {e}")
