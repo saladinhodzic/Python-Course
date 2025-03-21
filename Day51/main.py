@@ -8,4 +8,6 @@ html = response.text
 soup = BeautifulSoup(html,"html.parser")
 price_tags = soup.select(".PropertyCardWrapper__StyledPriceLine")
 prices = [price.getText().lstrip("$").rstrip("+/mo 1 bd") for price in price_tags]
-print(prices)
+address_tags = soup.find_all("address")
+addresses = [address.getText().strip("\n ") for address in address_tags]
+print(addresses)
