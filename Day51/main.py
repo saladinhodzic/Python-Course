@@ -6,4 +6,6 @@ import requests
 response = requests.get("https://appbrewery.github.io/Zillow-Clone/")
 html = response.text
 soup = BeautifulSoup(html,"html.parser")
-print(soup.prettify())
+price_tags = soup.select(".PropertyCardWrapper__StyledPriceLine")
+prices = [price.getText().lstrip("$").rstrip("+/mo 1 bd") for price in price_tags]
+print(prices)
