@@ -22,14 +22,18 @@ options.add_experimental_option("detach",True)
 driver = webdriver.Chrome(options=options)
 driver.get("https://forms.gle/a9o6nW8fGva7GW1Z6")
 try:
-    inputs = driver.find_elements(By.CSS_SELECTOR,"input[type='text']")
-    time.sleep(3)
-    address,price,link = inputs
-    address.send_keys(addresses[0])
-    price.send_keys(prices[0])
-    link.send_keys(links[0])
-    submit = driver.find_element(By.CSS_SELECTOR,"div[role='button']")
-    time.sleep(3)
-    submit.click()
+    for i in range(5):
+        inputs = driver.find_elements(By.CSS_SELECTOR,"input[type='text']")
+        time.sleep(3)
+        address,price,link = inputs
+        address.send_keys(addresses[i])
+        price.send_keys(prices[i])
+        link.send_keys(links[i])
+        submit = driver.find_element(By.CSS_SELECTOR,"div[role='button']")
+        time.sleep(3)
+        submit.click()
+        time.sleep(3)
+        send_another = driver.find_element(By.CSS_SELECTOR,"a")
+        send_another.click()
 except Exception as e:
-    print(f"Failed to locate input tag {e}")
+    print(f"Failed to locate tag {e}")
