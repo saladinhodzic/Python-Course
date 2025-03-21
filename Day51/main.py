@@ -22,7 +22,8 @@ options.add_experimental_option("detach",True)
 driver = webdriver.Chrome(options=options)
 driver.get("https://forms.gle/a9o6nW8fGva7GW1Z6")
 try:
-    inputs = driver.find_element(By.CSS_SELECTOR,"input[aria-describedby='i2 i3']")
+    inputs = driver.find_element(By.CSS_SELECTOR,"input[type='text']")
+    time.sleep(3)
     inputs.send_keys("Saki")
 except Exception as e:
     print(f"Failed to locate input tag {e}")
