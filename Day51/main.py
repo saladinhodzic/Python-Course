@@ -10,4 +10,5 @@ price_tags = soup.select(".PropertyCardWrapper__StyledPriceLine")
 prices = [price.getText().lstrip("$").rstrip("+/mo 1 bd") for price in price_tags]
 address_tags = soup.find_all("address")
 addresses = [address.getText().strip("\n ") for address in address_tags]
-print(addresses)
+link_tags = soup.select(".StyledPropertyCardDataArea-anchor")
+links = [link["href"] for link in link_tags]
