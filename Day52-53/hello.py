@@ -7,8 +7,19 @@ def bold(function):
         return "<b>" + function() + "</b>"
     return wrapper
 
+def emphasis(function):
+    def wrapper():
+        return f"<em>{function()}</em>"
+    return wrapper
+
+def underlined(function):
+    def wrapper():
+        return f"<u>{function()}</u>"
+    return wrapper
 @app.route("/")
 @bold
+@emphasis
+@underlined
 def hello_world():
     return "Hello, World!"
 
