@@ -6,11 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello {{name}}</h1>
-    <h2>I think you are {{gender}}<h2>
-    <h2>I'm {{percentage * 100}}% sure</h2>
+    {%for blog in data: %} {% if blog['id'] == 2: %}
+    <h1>{{blog['title']}}</h1>
+    <h2>{{blog['subtitle']}}</h2>
+    {%endif%} {%endfor%}
   </body>
-  <footer>
-    <p>Copyright {{date}}. Built by Saladin</p>
-  </footer>
 </html>
