@@ -30,10 +30,12 @@ def show_post(index):
             requested_post = blog_post
     return render_template("post.html", post=requested_post)
 
-@app.route("/login",methods=["POST"])
+@app.route("/contact",methods=["POST","GET"])
 def recieve_data():
-    print(f"{request.form["name"]},{request.form["email"]},{request.form["phone"]},{request.form["message"]}")
-    return "<h1>You successfully logged in</h1>"
+    if request.method == "POST":
+        return "<h1>You successfully logged in</h1>"
+    else:
+        return render_template("contact.html")
 
 
 if __name__ == "__main__":
