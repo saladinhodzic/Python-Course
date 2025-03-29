@@ -33,7 +33,7 @@ def show_post(index):
 @app.route("/contact",methods=["POST","GET"])
 def recieve_data():
     if request.method == "POST":
-        return "<h1>You successfully logged in</h1>"
+        return render_template("contact.html",text = "Successfully sent the message")
     else:
         return render_template("contact.html")
 
