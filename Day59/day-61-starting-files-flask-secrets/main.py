@@ -1,11 +1,11 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField
-from wtforms.validators import DataRequired,Email
+from wtforms.validators import DataRequired,Email,Length
 
 class MyForm(FlaskForm):
     email = StringField(label='Email', validators=[DataRequired(),Email()])
-    password = PasswordField(label="Password",validators=[DataRequired()])
+    password = PasswordField(label="Password",validators=[DataRequired(),Length(min=8)])
     button = SubmitField(label="Submit")
 '''
 Red underlines? Install the required packages first: 
