@@ -4,7 +4,8 @@ from wtforms import StringField
 from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
-    name = StringField('name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+    password = StringField("Password",validators=[DataRequired()])
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
