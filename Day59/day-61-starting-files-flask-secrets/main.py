@@ -1,11 +1,11 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField,PasswordField
 from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired()])
-    password = StringField("Password",validators=[DataRequired()])
+    email = StringField(label='Email', validators=[DataRequired()])
+    password = PasswordField(label="Password",validators=[DataRequired()])
 '''
 Red underlines? Install the required packages first: 
 Open the Terminal in PyCharm (bottom left). 
