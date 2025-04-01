@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired,Email
 
 class MyForm(FlaskForm):
-    email = StringField(label='Email', validators=[DataRequired()])
+    email = StringField(label='Email', validators=[DataRequired(),Email()])
     password = PasswordField(label="Password",validators=[DataRequired()])
     button = SubmitField(label="Submit")
 '''
