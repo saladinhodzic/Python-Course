@@ -29,9 +29,10 @@ app.secret_key = "Hello"
 def home():
     return render_template('index.html')
 
-@app.route("/login")
+@app.route("/login",methods = ["POST","GET"])
 def login():
     my_form = MyForm()
+    my_form.validate_on_submit()
     return render_template("login.html",form = my_form)
 if __name__ == '__main__':
     app.run(debug=True)

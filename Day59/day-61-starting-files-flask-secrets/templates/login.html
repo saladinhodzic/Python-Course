@@ -8,7 +8,7 @@
     <div class="container">
       <h1>Login</h1>
       <!-- This is where our form will go. -->
-      <form action="{{url_for('login')}}" method="post">
+      <form action="{{url_for('login')}}" method="post" novalidate>
         {{ form.csrf_token }} {{form.email.label}} {{form.email(size=30)}}
         {{form.password.label}} {{form.password(size=30)}} {{form.button}}
       </form>
