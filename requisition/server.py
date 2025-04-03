@@ -4,8 +4,17 @@ app = Flask(__name__)
 
 @app.route("/",methods=["POST","GET"])
 def home():
-    store_name = request.form.get("radnja")
-    return render_template("index.html",store = store_name)
+    try:
+        articles = {}
+        store_name = request.form.get("radnja")
+        if store_name not in articles:
+            articles[store_name] = {}
+        need = request.form.get("artikl")
+        quantity = request.form.get("kolicina")
+        articles[store_name][need] = quantity
+    except KeyError as e:
+        print(e)
+    return render_template("index.html",articles = articles)
 
 if __name__ == "__main__":
     app.run(debug=True)
