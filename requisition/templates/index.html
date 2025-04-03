@@ -7,11 +7,14 @@
   </head>
   <body>
     <h1>Premija</h1>
+    {% if not store: %}
     <form action="" method="post">
       <h2>Unesite ime radnje:</h2>
       <input type="text" placeholder="Ime radnje: " name="radnja" />
       <button type="submit">Potvrdi</button>
     </form>
+    {% else: %}
     <h2>{{store}}</h2>
+    {% endif %}
   </body>
 </html>
