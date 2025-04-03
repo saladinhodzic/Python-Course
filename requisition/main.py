@@ -1,6 +1,6 @@
 # Requisition Project using Python
-from datetime import datetime
-date = str(datetime.now().date())
+from datetime import datetime,timedelta
+date = str(datetime.now().date() + timedelta(days=1))
 month = date.split("-")[1]
 day = date.split("-")[2]
 
@@ -27,5 +27,5 @@ for key,items in articles.items():
     pattern += f"\n{key}:\n"
     
     for item,quantity in items.items():
-        pattern += f" {quantity}x {item}\n"
+        pattern += f" {quantity} {item}\n"
 print(pattern)
