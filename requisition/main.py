@@ -28,4 +28,6 @@ for key,items in articles.items():
     
     for item,quantity in items.items():
         pattern += f" {quantity} {item}\n"
-print(pattern)
+
+with open("premija.txt",'w') as file:
+    file.write(pattern)
