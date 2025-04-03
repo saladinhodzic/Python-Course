@@ -9,20 +9,22 @@ pattern = f"PRM-{day}{month}-ODR290\n"
 articles = {}
 
 def add_articles(local):
-    needs = input(f"What do you need for {local}: ").title()
-    if needs:
-        if local not in articles.keys():
-            quantity = input(f"How much of {needs} you need: ")
-            articles[local] = {needs:quantity}
-            return add_articles(local)
-        quantity = input(f"How much of {needs} you else need: ")
-        articles[local].update({needs:quantity})
-        return add_articles(local)
-for _ in range(2):
+    if local not in articles:
+        articles[local] = {}
+    while True:
+        need = input(f"What do you need for {local}: ").title()
+        if need == '':
+            break
+        quantity = input(f"How much of {need} you need: ")
+        articles[local][need] = quantity
+    
+for _ in range(3):
     local = input("Enter the local name: ").title()
     add_articles(local)
-    pattern += f"{local}:\n"
-    for item,quantity in articles[local].items():
-        pattern+=f"{quantity}x {item}\n"
 
+for key,items in articles.items():
+    pattern += f"\n{key}:\n"
+    
+    for item,quantity in items.items():
+        pattern += f" {quantity}x {item}\n"
 print(pattern)
