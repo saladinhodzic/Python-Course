@@ -20,7 +20,8 @@ def add_articles(local):
     
 for _ in range(3):
     local = input("Enter the local name: ").title()
-    add_articles(local)
+    if local:
+        add_articles(local)
 
 for key,items in articles.items():
     pattern += f"\n{key}:\n"
