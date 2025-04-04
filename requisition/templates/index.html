@@ -9,8 +9,8 @@
     <h1>Premija</h1>
     <form action="" method="post">
       <h2>Unesite radnju:</h2>
-      <select id="local">
-        <option value="sg2">Sg2</option>
+      <select name="local" id="local">
+        <option selected value="sg2">Sg2</option>
         <option value="sg3">Sg3</option>
         <option value="sg4">Sg4</option>
         <option value="sg5">Sg5</option>
@@ -18,8 +18,8 @@
       </select>
       <h2>Unesite artikl:</h2>
 
-      <select id="artikl">
-        <option value="majonez">Majonez</option>
+      <select name="artikl" id="artikl">
+        <option selected value="majonez">Majonez</option>
         <option value="pavlaka">Pavlaka</option>
         <option value="kecap">Kecap</option>
         <option value="tortilje">Tortilje</option>
@@ -32,7 +32,16 @@
         <option value="cola">Coca cola</option>
       </select>
       <h2>Unesite kolicinu:</h2>
-      <input type="number" name="kolicina" />
+      <input type="number" name="kolicina" min="1" max="12" />
+      <select name="vrsta" id="vrsta">
+        <option selected value="paket">Paket</option>
+        <option value="kanta">Kanta</option>
+        <option value="balon">Balon</option>
+        <option value="kg">Kilograma</option>
+      </select>
+      <br />
+      <br />
+      <button type="submit">Dodaj</button>
     </form>
   </body>
 </html>
