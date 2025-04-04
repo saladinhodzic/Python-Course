@@ -1,5 +1,25 @@
-PRM-0404-ODR290
+PRM-0504-ODR290
 
-Sg2:
- 3x kante Kecapa
- 4x kante Majonez
+Sg3 (Vrh Carsije):
+ 25kg Brasna
+ 1x balon Kecap
+ 5x kanti Majoneza
+ 3x kante Pavlake
+ 3x paketa Pomfrita
+ 1x tegla Krastavica
+ 1x paket Salveta
+
+Sg4 (Centar):
+ 6x kanti Majoneza
+ 4x kante Pavlake
+ 1x paket Chillito
+ 2x balona Kecapa
+ 3x paketa Pomfrita
+
+Sg5 (Bolnice):
+ 5x kanti Majoneza
+ 1x paket Chillito
+ 2x paketa Pomfrita
+ 2x paketa Ulja
+ 1x paket Salveta
+ 1x paket Coca Cola(Limenka)
