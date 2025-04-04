@@ -5,6 +5,7 @@ month = date.split("-")[1]
 day = date.split("-")[2]
 
 pattern = f"PRM-{day}{month}-ODR290\n"
+meat = f"CHK-{day}{month}-ODR291"
 
 articles = {}
 
@@ -24,10 +25,10 @@ for _ in range(3):
         add_articles(local)
 
 for key,items in articles.items():
-    pattern += f"\n{key}:\n"
+    meat += f"\n{key}:\n"
     
     for item,quantity in items.items():
-        pattern += f" {quantity} {item}\n"
+        meat += f" {quantity} {item}\n"
 
-with open("premija.txt",'w') as file:
-    file.write(pattern)
+with open("piletina.txt",'w') as file:
+    file.write(meat)

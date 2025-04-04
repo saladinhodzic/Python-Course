@@ -7,23 +7,17 @@
   </head>
   <body>
     <h1>Premija</h1>
-    {% if store : %}
     <form action="" method="post">
-      <h2>Unesite ime radnje:</h2>
-      <input type="text" placeholder="Ime radnje: " name="radnja" />
-      <button type="submit">Potvrdi</button>
+      <h2>Sg2:</h2>
+      <input type="text" name="sg2" />
+      <h2>Sg3:</h2>
+      <input type="text" name="sg3" />
+      <h2>Sg4:</h2>
+      <input type="text" name="sg4" />
+      <h2>Sg5:</h2>
+      <input type="text" name="sg5" />
+      <h2>Wings:</h2>
+      <input type="text" name="2ings" />
     </form>
-    {% else: %}
-    <form action="" method="post">
-      {% if not need: %}
-      <h2>Sta ti treba za {{store}}?</h2>
-      <input type="text" placeholder="Unesite artikl" name="artikl" />
-      {% else: %}
-      <h2>Koliko ti treba {{need}}?</h2>
-      <input type="text" placeholder="Unesite kolicinu" name="kolicina" />
-      {% endif %}
-      <button type="submit">Potvrdi</button>
-    </form>
-    {% endif %}
   </body>
 </html>
