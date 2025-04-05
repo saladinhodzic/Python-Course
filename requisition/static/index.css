@@ -8,15 +8,29 @@ body {
   background-color: #fce7c8;
 }
 
+h1 {
+  font-size: 4em;
+  font-weight: 500;
+  color: #f0a04b;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 500;
+  color: #b1c29e;
+}
+
 .wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  gap: 1em;
+  gap: 2em;
 }
 
 .btn {
+  margin: 0 0.5em;
   font-size: 2.5em;
   padding: 1em 2em;
   background-color: #f0a04b;
