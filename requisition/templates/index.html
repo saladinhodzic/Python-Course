@@ -44,10 +44,12 @@
       <button type="submit">Dodaj</button>
     </form>
     <div class="articles">
-      {% for article,value in articles.items(): %}
-      <h2>{{ article }}</h2>
-      <p>{{value}}</p>
-      {% endfor %}
+      {% for local,value in articles.items(): %}
+      <h2>{{ local }}</h2>
+      {% for article,quantity in value.items(): %}
+
+      <p>{{quantity}} {{article}}</p>
+      {% endfor %} {% endfor %}
     </div>
   </body>
 </html>
