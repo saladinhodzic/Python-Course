@@ -4,8 +4,12 @@ app = Flask(__name__)
 
 articles = {}
 
-@app.route("/",methods=["POST","GET"])
+@app.route("/")
 def home():
+    return render_template("index.html")
+
+@app.route("/premija",methods=["POST","GET"])
+def premija():
     if request.method == "POST":
         local = request.form.get("local")
         artikl = request.form.get("artikl")
@@ -14,6 +18,6 @@ def home():
         if local not in articles:
             articles[local] = {}
         articles[local][artikl] = f"{kolicina}x {vrsta}"
-    return render_template("index.html",articles=articles)
+    return render_template("premija.html",articles=articles)
 if __name__ == "__main__":
     app.run(debug=True)
