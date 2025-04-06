@@ -20,11 +20,11 @@
         <form action="" method="post">
           <h2>Unesite radnju:</h2>
           <select name="local" id="local">
-            <option selected value="sg2">Sg2</option>
-            <option value="sg3">Sg3</option>
-            <option value="sg4">Sg4</option>
-            <option value="sg5">Sg5</option>
-            <option value="wings">Wings</option>
+            <option selected value="sg2 (yu-radio)">Sg2 (YU-Radio)</option>
+            <option value="sg3 (vrh carsije)">Sg3 (Vrh Carsije)</option>
+            <option value="sg4 (centar)">Sg4 (Centar)</option>
+            <option value="sg5 (bolnice)">Sg5 (Bolnice)</option>
+            <option value="wings (prvomajska)">Wings (Prvomajska)</option>
           </select>
           <h2>Unesite artikl:</h2>
 
@@ -61,7 +61,7 @@
         </form>
       </div>
       <div class="output">
-        <h2>Roba:</h2>
+        <h2>Roba: {{order}}</h2>
         <div class="articles">
           {% for local,value in articles.items(): %}
           <h3>{{ local }}</h3>
