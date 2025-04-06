@@ -4,6 +4,12 @@
   font-family: "Poppins";
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   background-color: #fce7c8;
 }
@@ -47,6 +53,7 @@ h2 {
 select,
 input {
   width: 100%;
+  outline: 0;
   background-color: #fada7a;
   padding: 1em 1em;
   margin-bottom: 1em;
@@ -58,4 +65,8 @@ input {
 select:hover {
   cursor: pointer;
   border: 1px solid #f0a04b;
+}
+
+input:focus {
+  border: 2px solid #f0a04b;
 }
