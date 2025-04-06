@@ -1,3 +1,31 @@
 h2 {
   font-size: 2em;
 }
+
+.wrapper {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  grid-gap: 2em;
+}
+
+.output {
+  border: 2px solid #f0a04b;
+  background-color: #fada7a;
+  box-shadow: inset -2px 1px 10px 1px #f0a04b;
+  height: 75%;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1em 2em;
+}
+
+.output h2 {
+  color: #f0a04b;
+}
+
+.btn {
+  margin: 0;
+  width: 100%;
+  font-size: 1em;
+}
