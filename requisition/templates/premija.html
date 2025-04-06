@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=\, initial-scale=1.0" />
     <title>Requistion</title>
+    <link rel="stylesheet" href="static/index.css" />
+    <link rel="stylesheet" href="static/premija.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,50 +14,58 @@
     />
   </head>
   <body>
-    <h1>Premija</h1>
-    <form action="" method="post">
-      <h2>Unesite radnju:</h2>
-      <select name="local" id="local">
-        <option selected value="sg2">Sg2</option>
-        <option value="sg3">Sg3</option>
-        <option value="sg4">Sg4</option>
-        <option value="sg5">Sg5</option>
-        <option value="wings">Wings</option>
-      </select>
-      <h2>Unesite artikl:</h2>
+    <div class="wrapper">
+      <h1>Premija</h1>
+      <form action="" method="post">
+        <h2>Unesite radnju:</h2>
+        <select name="local" id="local">
+          <option selected value="sg2">Sg2</option>
+          <option value="sg3">Sg3</option>
+          <option value="sg4">Sg4</option>
+          <option value="sg5">Sg5</option>
+          <option value="wings">Wings</option>
+        </select>
+        <h2>Unesite artikl:</h2>
 
-      <select name="artikl" id="artikl">
-        <option selected value="majonez">Majonez</option>
-        <option value="pavlaka">Pavlaka</option>
-        <option value="kecap">Kecap</option>
-        <option value="tortilje">Tortilje</option>
-        <option value="brasno">Brasno</option>
-        <option value="pomfrit">Pomfrit</option>
-        <option value="chillito">Chillito</option>
-        <option value="salvete">Salvete</option>
-        <option value="ulje">Ulje</option>
-        <option value="krastavica">Krastavica</option>
-        <option value="cola">Coca cola</option>
-      </select>
-      <h2>Unesite kolicinu:</h2>
-      <input type="number" name="kolicina" min="1" max="12" />
-      <select name="vrsta" id="vrsta">
-        <option selected value="paket">Paket</option>
-        <option value="kanta">Kanta</option>
-        <option value="balon">Balon</option>
-        <option value="kg">Kilograma</option>
-      </select>
-      <br />
-      <br />
-      <button type="submit">Dodaj</button>
-    </form>
-    <div class="articles">
-      {% for local,value in articles.items(): %}
-      <h2>{{ local }}</h2>
-      {% for article,quantity in value.items(): %}
+        <select name="artikl" id="artikl">
+          <option selected value="majonez">Majonez</option>
+          <option value="pavlaka">Pavlaka</option>
+          <option value="kecap">Kecap</option>
+          <option value="tortilje">Tortilje</option>
+          <option value="brasno">Brasno</option>
+          <option value="pomfrit">Pomfrit</option>
+          <option value="chillito">Chillito</option>
+          <option value="salvete">Salvete</option>
+          <option value="ulje">Ulje</option>
+          <option value="krastavica">Krastavica</option>
+          <option value="cola">Coca cola</option>
+        </select>
+        <h2>Unesite kolicinu:</h2>
+        <input
+          type="number"
+          name="kolicina"
+          min="1"
+          max="12"
+          placeholder="Unesite kolicinu:"
+        />
+        <select name="vrsta" id="vrsta">
+          <option selected value="paket">Paket</option>
+          <option value="kanta">Kanta</option>
+          <option value="balon">Balon</option>
+          <option value="kg">Kilograma</option>
+        </select>
+        <br />
+        <br />
+        <button type="submit">Dodaj</button>
+      </form>
+      <div class="articles">
+        {% for local,value in articles.items(): %}
+        <h2>{{ local }}</h2>
+        {% for article,quantity in value.items(): %}
 
-      <p>{{quantity}} {{article}}</p>
-      {% endfor %} {% endfor %}
+        <p>{{quantity}} {{article}}</p>
+        {% endfor %} {% endfor %}
+      </div>
     </div>
   </body>
 </html>

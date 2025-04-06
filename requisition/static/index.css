@@ -43,3 +43,19 @@ h2 {
 .btn:hover {
   background-color: #fada7a;
 }
+
+select,
+input {
+  width: 100%;
+  background-color: #fada7a;
+  padding: 1em 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid #fada7a;
+  transition: ease-in 200ms all;
+}
+
+select:hover {
+  cursor: pointer;
+  border: 1px solid #f0a04b;
+}
