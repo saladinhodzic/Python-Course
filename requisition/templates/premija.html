@@ -29,17 +29,17 @@
           <h2>Unesite artikl:</h2>
 
           <select name="artikl" id="artikl">
-            <option selected value="majonez">Majonez</option>
-            <option value="pavlaka">Pavlaka</option>
-            <option value="kecap">Kecap</option>
-            <option value="tortilje">Tortilje</option>
-            <option value="brasno">Brasno</option>
-            <option value="pomfrit">Pomfrit</option>
-            <option value="chillito">Chillito</option>
-            <option value="salvete">Salvete</option>
-            <option value="ulje">Ulje</option>
-            <option value="krastavica">Krastavica</option>
-            <option value="cola">Coca cola</option>
+            <option selected value="x kante majonez">Majonez</option>
+            <option value="x kanta pavlaka">Pavlaka</option>
+            <option value="x balona kecap">Kecap</option>
+            <option value="x paketa tortilje">Tortilje</option>
+            <option value="kg brasno">Brasno</option>
+            <option value="x paketa pomfrit">Pomfrit</option>
+            <option value="x paketa chillito">Chillito</option>
+            <option value="x paketa salvete">Salvete</option>
+            <option value="x paketa ulje">Ulje</option>
+            <option value="x tegla krastavica">Krastavica</option>
+            <option value="x paketa cola">Coca cola</option>
           </select>
           <h2>Unesite kolicinu:</h2>
           <input
@@ -49,12 +49,12 @@
             max="12"
             placeholder="Unesite kolicinu:"
           />
-          <select name="vrsta" id="vrsta">
+          <!-- <select name="vrsta" id="vrsta">
             <option selected value="paket">Paket</option>
             <option value="kanta">Kanta</option>
             <option value="balon">Balon</option>
             <option value="kg">Kilograma</option>
-          </select>
+          </select> -->
           <br />
           <br />
           <button class="btn" type="submit">Dodaj</button>
@@ -67,7 +67,7 @@
           <h3>{{ local }}</h3>
           {% for article,quantity in value.items(): %}
 
-          <p>{{quantity}} {{article}}</p>
+          <p>{{quantity}}{{article}}</p>
           {% endfor %} {% endfor %}
         </div>
       </div>

@@ -19,10 +19,9 @@ def premija():
         local = request.form.get("local").title()
         artikl = request.form.get("artikl").title()
         kolicina = request.form.get("kolicina")
-        vrsta = request.form.get("vrsta")
         if local not in articles:
             articles[local] = {}
-        articles[local][artikl] = f"{kolicina}x {vrsta}"
+        articles[local][artikl] = f"{kolicina}"
     return render_template("premija.html",articles=articles,order = premija_pattern)
 if __name__ == "__main__":
     app.run(debug=True)
