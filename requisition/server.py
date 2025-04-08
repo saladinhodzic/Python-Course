@@ -4,7 +4,11 @@ from datetime import datetime,timedelta
 date = str(datetime.now().date() + timedelta(days=1))
 month = date.split("-")[1]
 day = date.split("-")[2]
-premija_pattern = f"PRM-{day}{month}-ORD456"
+with open("premija_order.txt",'r+') as order:
+    ord = int(order.read()) + 1
+    premija_pattern = f"PRM-{day}{month}-ORD{ord}"
+    order.seek(0)
+    order.write(str(ord))
 app = Flask(__name__)
 
 articles = {}
