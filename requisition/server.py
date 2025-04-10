@@ -1,8 +1,8 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 from datetime import datetime,timedelta
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,PasswordField
-from wtforms.validators import DataRequired,Length
+from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
     input = StringField("Ime radnje: ",validators=[DataRequired("Obavezan unos")])
@@ -26,7 +26,7 @@ articles = {}
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return redirect(url_for('auth'))
 
 @app.route("/premija",methods=["POST","GET"])
 def premija():
