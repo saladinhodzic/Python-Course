@@ -36,9 +36,9 @@ h2 {
 }
 
 .btn {
-  margin: 0 0.5em;
-  font-size: 2.5em;
-  padding: 1em 2em;
+  margin: 0em;
+  font-size: 2em;
+  padding: 0.5em 1em;
   background-color: #f0a04b;
   cursor: pointer;
   border-radius: 5px;

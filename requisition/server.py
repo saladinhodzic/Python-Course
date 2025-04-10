@@ -14,7 +14,7 @@ class User(UserMixin):
 class MyForm(FlaskForm):
     input = StringField("Ime radnje: ",validators=[DataRequired("Obavezan unos")])
     password = PasswordField("Unesite lozinku: ",validators=[DataRequired("Obavezan unos")])
-    submit = SubmitField("Potvrdi")
+    submit = SubmitField("Potvrdi",render_kw={'class':'btn'})
 # tracking order date
 date = str(datetime.now().date() + timedelta(days=1))
 month = date.split("-")[1]
