@@ -36,6 +36,7 @@ def load_user(id):
     return User(id)
 
 articles = {}
+bread = {}
 
 @app.route("/")
 def home():
@@ -57,7 +58,13 @@ def premija():
 
 @app.route('/kiflice',methods = ['GET','POST'])
 def kiflice():
-    return render_template("kiflice.html")
+    if request.method == "POST":
+        local = request.form.get('local').title()
+        kolicina = request.form.get('kolicina').title()
+        if local not in bread:
+            bread[local] = {}
+        bread[local] = kolicina
+    return render_template("kiflice.html",bread=bread)
 
 @app.route("/auth",methods= ["POST","GET"])
 def auth():

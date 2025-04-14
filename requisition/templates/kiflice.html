@@ -26,27 +26,13 @@
             <option value="sg5 (bolnice)">Sg5 (Bolnice)</option>
             <option value="wings (prvomajska)">Wings (Prvomajska)</option>
           </select>
-          <h2>Unesite artikl:</h2>
 
-          <select name="artikl" id="artikl">
-            <option selected value="x kante majoneza">Majonez</option>
-            <option value="x kanta pavlake">Pavlaka</option>
-            <option value="x balona kecapa">Kecap</option>
-            <option value="x paketa tortilja">Tortilje</option>
-            <option value="kg brasna">Brasno</option>
-            <option value="x paketa pomfrita">Pomfrit</option>
-            <option value="x paketa chillito">Chillito</option>
-            <option value="x paketa salveta">Salvete</option>
-            <option value="x paketa ulja">Ulje</option>
-            <option value="x tegla krastavica">Krastavica</option>
-            <option value="x paketa coca cola(limenka)">Coca cola</option>
-          </select>
           <h2>Unesite kolicinu:</h2>
           <input
             type="number"
             name="kolicina"
-            min="1"
-            max="12"
+            min="50"
+            max="500"
             placeholder="Unesite kolicinu:"
             required
           />
@@ -56,14 +42,13 @@
         </form>
       </div>
       <div class="output">
-        <h2>Roba: {{order}}</h2>
+        <h2>Za sutra:</h2>
         <div class="articles">
-          {% for local,value in articles.items(): %}
+          {% for local,value in bread.items(): %}
           <h3>{{ local }}:</h3>
-          {% for article,quantity in value.items(): %}
 
-          <p>{{quantity}}{{article}}</p>
-          {% endfor %} {% endfor %}
+          <p>{{value}} kiflica</p>
+          {% endfor %}
         </div>
       </div>
     </div>
