@@ -55,6 +55,10 @@ def premija():
         articles[local][artikl] = f"{kolicina}"
     return render_template("premija.html",articles=articles,order = premija_pattern)
 
+@app.route('/kiflice',methods = ['GET','POST'])
+def kiflice():
+    return render_template("kiflice.html")
+
 @app.route("/auth",methods= ["POST","GET"])
 def auth():
     form = MyForm()
